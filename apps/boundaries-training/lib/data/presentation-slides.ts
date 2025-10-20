@@ -855,32 +855,35 @@ export const presentationSlides: Slide[] = [
       {
         number: 1,
         title: 'Check Role & Scope',
-        description: 'Is this within my professional responsibilities?'
+        description: `Is this within my professional responsibilities? Review Policy #2 (Scope of Practice): Does this action fall within CMDHD's definition of your job duties? Ask yourself: "Would I do this if I weren't trying to be helpful?" If it involves transportation, running errands, financial assistance, or personal favors—it's outside your scope. When uncertain, default to "no" and explore alternatives within your professional role.`
       },
       {
         number: 2,
         title: 'Scan for Conflict',
-        description: 'Do I have any pre-existing or dual relationships?'
+        description: `Do I have any pre-existing or dual relationships with this client, their family, or associates? Review Policies #4 and #5 (Conflicts of Interest): Consider social connections (same church, gym, school), professional ties (work for same employer, mutual colleagues), business relationships (they provide services you use), or family connections. In rural settings, some overlap is inevitable—disclosure to your supervisor is required, not optional. Document the relationship and any safeguards discussed.`
       },
       {
         number: 3,
         title: 'Confirm Consent',
-        description: 'Have I asked permission if physical contact is involved?'
+        description: `Have I obtained clear, voluntary consent for any physical contact or boundary-relevant interaction? Review Policies #7-9 (Physical Boundaries, Consent, Touch): Before any physical contact—even supportive gestures—ask permission explicitly: "Would it be okay if I [specific action]?" Respect any hesitation as a "no." Consider trauma history, cultural norms, power dynamics, and context. Never assume consent. When in doubt, maintain physical distance and use verbal support instead.`
       },
       {
         number: 4,
         title: 'Check Time & Channel',
-        description: 'Is this during work hours and through proper channels?'
+        description: `Is this interaction occurring during defined work hours and through CMDHD-approved communication channels? Review Policy #13 (Work Hours): Services should occur within your scheduled hours unless pre-approved by your supervisor for specific circumstances. Use only work phone, work email, or EHR messaging—never personal cell, personal social media, or non-work platforms. After-hours client contact (even responding to texts) requires supervisor approval and thorough documentation. Establish clear communication boundaries in your informed consent.`
       },
       {
         number: 5,
         title: 'Document & Debrief',
-        description: 'Have I documented the interaction and consulted as needed?'
+        description: `Have I thoroughly documented this interaction, boundary decision, or consultation in the client record? Best practices: Record what occurred, your clinical reasoning, any policies consulted (cite specific numbers), consultation with supervisor (who, when, what guidance), client's response, and your action plan. Use objective, professional language. For complex boundary situations, document proactively—before and after. If you answered "no" or "unsure" to any previous step, consult your supervisor before proceeding and document that consultation. Regular supervision on complex cases is protection, not punishment.`
       }
     ],
     facilitatorNotes: [
       'This tool prevents decision paralysis and standardizes care.',
-      `If you can't answer "yes" to all five, it's time to call supervision.`
+      `If you can't answer "yes" to all five steps, pause and consult your supervisor before proceeding.`,
+      `Emphasize: This is a proactive tool—use it BEFORE acting, not after you've already crossed a boundary.`,
+      `Rural context: Steps 2 and 4 will require the most nuance. Dual relationships and community contact are inevitable—proper handling through disclosure and documentation is key.`,
+      `Real-world application: Walk through one of the scenario examples (slides 25-29) using this decision tree to demonstrate practical use.`
     ]
   },
   {
