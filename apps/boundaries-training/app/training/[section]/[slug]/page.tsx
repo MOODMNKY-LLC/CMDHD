@@ -2,16 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useEffect } from "react";
-import { createPortal } from "react-dom";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -29,46 +19,6 @@ export default function TrainingPage() {
   );
 
   const currentItem = currentSection?.items.find((item) => item.href === pathname);
-
-  // Render breadcrumb into header
-  useEffect(() => {
-    const container = document.getElementById("breadcrumb-container");
-    if (!container) return;
-
-    const breadcrumbElement = (
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">
-              <Home className="h-4 w-4" />
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/training">Training</BreadcrumbLink>
-          </BreadcrumbItem>
-          {currentSection && (
-            <>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>{currentSection.title}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </>
-          )}
-          {currentItem && (
-            <>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage className="max-w-[200px] truncate">{currentItem.label}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </>
-          )}
-        </BreadcrumbList>
-      </Breadcrumb>
-    );
-
-    createPortal(breadcrumbElement, container);
-  }, [pathname, currentSection, currentItem]);
 
   return (
     <div className="space-y-8">

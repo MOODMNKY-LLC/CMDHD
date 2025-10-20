@@ -1,47 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
-import { createPortal } from "react-dom";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Home, ArrowRight, Clock, CheckCircle } from "lucide-react";
+import { ArrowRight, Clock, CheckCircle } from "lucide-react";
 import { trainingData } from "@/lib/data";
 
 export default function TrainingIndexPage() {
-  // Render breadcrumb into header
-  useEffect(() => {
-    const container = document.getElementById("breadcrumb-container");
-    if (!container) return;
-
-    const breadcrumbElement = (
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">
-              <Home className="h-4 w-4" />
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Training Dashboard</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-    );
-
-    createPortal(breadcrumbElement, container);
-  }, []);
-
   const firstTrainingItem = trainingData[0]?.items[0];
 
   return (
