@@ -40,7 +40,7 @@ export function SignUpForm({
     }
 
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
@@ -48,7 +48,16 @@ export function SignUpForm({
         },
       });
       if (error) throw error;
-      router.push("/auth/sign-up-success");
+      
+      // In local dev with auto-confirm enabled, user is logged in immediately
+      // Force refresh to update server components with new auth state
+      if (data.user && data.session) {
+        router.refresh();
+        router.push("/");
+      } else {
+        // Email confirmation required - redirect to success page
+        router.push("/auth/sign-up-success");
+      }
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {

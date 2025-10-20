@@ -3,14 +3,16 @@ import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "@/components/logout-button";
 
-const nav = [
-  { href: "/", label: "Home" },
-  { href: "/scenarios", label: "Scenarios" },
-  { href: "/counties", label: "Counties" },
-  { href: "/resources", label: "Resources" },
-  { href: "/policy", label: "Policy" },
-  { href: "/feedback", label: "Feedback" },
-];
+  const nav = [
+    { href: "/", label: "Home" },
+    { href: "/demo", label: "Demo" },
+    { href: "/presentation", label: "Presentation" },
+    { href: "/scenarios", label: "Scenarios" },
+    { href: "/counties", label: "Counties" },
+    { href: "/resources", label: "Resources" },
+    { href: "/policy", label: "Policy" },
+    { href: "/feedback", label: "Feedback" },
+  ];
 
 export async function SiteHeader() {
   const supabase = await createClient();

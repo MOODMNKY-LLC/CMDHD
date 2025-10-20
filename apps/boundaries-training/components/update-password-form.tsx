@@ -33,6 +33,9 @@ export function UpdatePasswordForm({
     try {
       const { error } = await supabase.auth.updateUser({ password });
       if (error) throw error;
+      
+      // Force refresh to update server components with new auth state
+      router.refresh();
       // Redirect to home page after successful password update
       router.push("/");
     } catch (error: unknown) {
