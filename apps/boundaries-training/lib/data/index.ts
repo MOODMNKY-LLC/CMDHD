@@ -2,5 +2,5 @@
 export * from './scenarios';
 export * from './counties';
 export * from './learning';
-export * from './training-content';
+export * from './training';
 

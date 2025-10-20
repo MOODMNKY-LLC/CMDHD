@@ -2,7 +2,13 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
+import {
+  BookOpen,
+  ChevronRight,
+  LogOut,
+  User2,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -17,75 +23,75 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { TeamSwitcher } from "@/components/team-switcher";
-import { NavUser } from "@/components/nav-user";
-import { 
-  getGroupsForSection, 
-  type TrainingSection 
-} from "@/lib/data/training-content";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { trainingModules } from "@/lib/data";
+import { createClient } from "@/lib/supabase/client";
 
-interface TrainingSidebarProps {
-  user?: any;
-}
-
-export function TrainingSidebar({ user }: TrainingSidebarProps) {
+export function TrainingSidebar() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const currentModule = searchParams.get("module");
-  
-  // Default to "presentation" section
-  const [activeSection, setActiveSection] = React.useState<TrainingSection>("presentation");
-  
-  // Get groups based on active section
-  const groups = getGroupsForSection(activeSection);
+  const [user, setUser] = React.useState<{ email?: string } | null>(null);
+
+  React.useEffect(() => {
+    const fetchUser = async () => {
+      const supabase = createClient();
+      const { data } = await supabase.auth.getUser();
+      setUser(data.user);
+    };
+    fetchUser();
+  }, []);
+
+  const handleSignOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    window.location.href = "/";
+  };
 
   return (
-    <Sidebar collapsible="icon" variant="inset">
+    <Sidebar collapsible="icon">
       <SidebarHeader>
-        <TeamSwitcher 
-          activeSection={activeSection} 
-          onSectionChange={setActiveSection} 
-        />
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton size="lg" asChild>
+              <Link href="/protected">
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                  <BookOpen className="size-4" />
+                </div>
+                <div className="flex flex-col gap-0.5 leading-none">
+                  <span className="font-semibold">CMDHD Training</span>
+                  <span className="text-xs text-muted-foreground">
+                    Professional Boundaries
+                  </span>
+                </div>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarHeader>
-      
+
       <SidebarContent>
-        {groups.map((group) => (
-          <SidebarGroup key={group.title}>
+        {trainingModules.map((module) => (
+          <SidebarGroup key={module.id}>
             <SidebarGroupLabel>
-              <group.icon className="mr-2 h-4 w-4" />
-              {group.title}
+              <module.icon className="mr-2 h-4 w-4" />
+              {module.title}
             </SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {group.items.map((item) => {
-                  // Check if this item is active
-                  const isActive = 
-                    pathname === item.href || 
-                    (currentModule && item.href.includes(currentModule));
-                  
-                  // Check if it's an external link
-                  const isExternal = item.href.startsWith("http");
-                  
+                {module.items.map((item) => {
+                  const isActive = pathname === item.href;
                   return (
-                    <SidebarMenuItem key={item.label}>
-                      <SidebarMenuButton 
-                        asChild 
-                        isActive={isActive}
-                        tooltip={item.label}
-                      >
-                        {isExternal ? (
-                          <a 
-                            href={item.href} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                          >
-                            <span>{item.label}</span>
-                          </a>
-                        ) : (
-                          <Link href={item.href}>
-                            <span>{item.label}</span>
-                          </Link>
-                        )}
+                    <SidebarMenuItem key={item.id}>
+                      <SidebarMenuButton asChild isActive={isActive}>
+                        <Link href={item.href}>
+                          <span>{item.title}</span>
+                        </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   );
@@ -95,11 +101,53 @@ export function TrainingSidebar({ user }: TrainingSidebarProps) {
           </SidebarGroup>
         ))}
       </SidebarContent>
-      
+
       <SidebarFooter>
-        <NavUser user={user} />
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <SidebarMenuButton
+                  size="lg"
+                  className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                >
+                  <Avatar className="h-8 w-8 rounded-lg">
+                    <AvatarFallback className="rounded-lg bg-primary text-primary-foreground">
+                      {user?.email?.substring(0, 2).toUpperCase() || "U"}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="grid flex-1 text-left text-sm leading-tight">
+                    <span className="truncate font-semibold">
+                      {user?.email || "User"}
+                    </span>
+                    <span className="truncate text-xs text-muted-foreground">
+                      Training Participant
+                    </span>
+                  </div>
+                  <ChevronRight className="ml-auto size-4" />
+                </SidebarMenuButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+                side="bottom"
+                align="end"
+                sideOffset={4}
+              >
+                <DropdownMenuItem className="cursor-pointer">
+                  <User2 className="mr-2 h-4 w-4" />
+                  <span>Profile</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer">
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span>Sign out</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarFooter>
-      
+
       <SidebarRail />
     </Sidebar>
   );
