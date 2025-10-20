@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cmdhd/ui/*": ["packages/ui/src/*"],
+      "@cmdhd/utils/*": ["packages/utils/src/*"],
+      "@cmdhd/config/*": ["packages/config/src/*"],
+      "@cmdhd/env": ["packages/env/src/index.ts"]
+    }
+  }
+}
