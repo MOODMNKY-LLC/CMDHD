@@ -833,25 +833,7 @@ export const presentationSlides: Slide[] = [
     duration: 5,
     title: 'County-Specific Scenarios',
     talkingPoints: [
-      `Each county in our district faces unique relational challenges and boundary pressures.`,
-      ``,
-      `Form small groups by county and discuss your assigned scenario:`,
-      ``,
-      `• Arenac: "Everyone knows everyone" — tight-knit communities where anonymity is impossible`,
-      `• Clare/Gladwin: Limited resources — long waitlists and few alternative providers create pressure to overextend`,
-      `• Isabella: Campus and tribal contexts — dual relationships with college students and Indigenous community members`,
-      `• Osceola/Roscommon: Rural overlaps — geographic isolation and provider shortages compound boundary challenges`,
-      ``,
-      `──────────────────────────`,
-      ``,
-      `Group Discussion Questions:`,
-      ``,
-      `1. What boundary tension does this scenario create?`,
-      `2. Which policy/policies apply? (Cite specific numbers)`,
-      `3. What would you do? Use the 5-Step Decision Tree`,
-      `4. When would you consult your supervisor?`,
-      ``,
-      `Remember: The goal isn't to have perfect answers—it's to practice the thinking process.`
+      'Form small groups by county and discuss your assigned scenario.'
     ],
     facilitatorNotes: [
       'Allow 3-4 minutes for group discussion',

@@ -71,6 +71,120 @@ function TitleSlideComponent({ slide }: { slide: TitleSlide }) {
 function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
   const [pollResponse, setPollResponse] = useState<number | null>(null);
 
+  // Special layout for County-Specific Scenarios slide
+  if (slide.title === 'County-Specific Scenarios') {
+    return (
+      <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-6xl mx-auto py-12 px-8">
+        <div className="mb-8 text-center">
+          <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Each county in our district faces unique relational challenges and boundary pressures.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          {/* Arenac County */}
+          <Card className="border-l-4 border-l-primary">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-2xl">Arenac County</CardTitle>
+              <CardDescription className="text-base">&ldquo;Everyone knows everyone&rdquo;</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-base text-muted-foreground">
+                Tight-knit communities where anonymity is impossible
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Clare/Gladwin County */}
+          <Card className="border-l-4 border-l-primary">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-2xl">Clare/Gladwin</CardTitle>
+              <CardDescription className="text-base">Limited resources</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-base text-muted-foreground">
+                Long waitlists and few alternative providers create pressure to overextend
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Isabella County */}
+          <Card className="border-l-4 border-l-primary">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-2xl">Isabella County</CardTitle>
+              <CardDescription className="text-base">Campus and tribal contexts</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-base text-muted-foreground">
+                Dual relationships with college students and Indigenous community members
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Osceola/Roscommon County */}
+          <Card className="border-l-4 border-l-primary">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-2xl">Osceola/Roscommon</CardTitle>
+              <CardDescription className="text-base">Rural overlaps</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-base text-muted-foreground">
+                Geographic isolation and provider shortages compound boundary challenges
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card className="border-2 border-primary/20 bg-primary/5">
+          <CardHeader>
+            <CardTitle className="text-2xl flex items-center gap-2">
+              <MessageCircle className="h-6 w-6" />
+              Group Discussion Questions
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ol className="space-y-3 text-lg">
+              <li className="flex items-start gap-3">
+                <Badge variant="default" className="mt-1 h-6 w-6 flex items-center justify-center p-0 shrink-0">1</Badge>
+                <span>What boundary tension does this scenario create?</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Badge variant="default" className="mt-1 h-6 w-6 flex items-center justify-center p-0 shrink-0">2</Badge>
+                <span>Which policy/policies apply? (Cite specific numbers)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Badge variant="default" className="mt-1 h-6 w-6 flex items-center justify-center p-0 shrink-0">3</Badge>
+                <span>What would you do? Use the 5-Step Decision Tree</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Badge variant="default" className="mt-1 h-6 w-6 flex items-center justify-center p-0 shrink-0">4</Badge>
+                <span>When would you consult your supervisor?</span>
+              </li>
+            </ol>
+            <p className="text-base text-muted-foreground italic mt-6 text-center">
+              Remember: The goal isn&apos;t to have perfect answers—it&apos;s to practice the thinking process.
+            </p>
+          </CardContent>
+        </Card>
+
+        {slide.facilitatorNotes && slide.facilitatorNotes.length > 0 && (
+          <Alert className="mt-6">
+            <AlertDescription>
+              <p className="font-semibold mb-1">Facilitator Notes:</p>
+              <ul className="space-y-1 text-sm">
+                {slide.facilitatorNotes.map((note, index) => (
+                  <li key={index}>{note}</li>
+                ))}
+              </ul>
+            </AlertDescription>
+          </Alert>
+        )}
+      </div>
+    );
+  }
+
+  // Default content slide layout
   return (
     <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-5xl mx-auto py-12 px-8">
       {/* Policy reference badge (compact, top) */}
