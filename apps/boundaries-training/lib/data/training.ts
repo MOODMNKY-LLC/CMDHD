@@ -4,361 +4,293 @@ import {
   Users,
   MessageCircle,
   ClipboardList,
-  Heart,
-  Activity,
   Lightbulb,
+  HelpCircle,
+  Layers,
   GitBranch,
   CheckCircle,
+  type LucideIcon,
 } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 
-export interface TrainingSlide {
-  id: string;
-  title: string;
+export interface TrainingItem {
+  label: string;
   href: string;
   description?: string;
 }
 
-export interface TrainingModule {
-  id: string;
+export interface TrainingSection {
   title: string;
   icon: LucideIcon;
-  description: string;
-  items: TrainingSlide[];
+  items: TrainingItem[];
 }
 
-export const trainingModules: TrainingModule[] = [
+export const trainingData: TrainingSection[] = [
   {
-    id: "opening",
     title: "Opening & Framing",
     icon: BookOpen,
-    description: "Introduction and context for the training",
     items: [
       {
-        id: "title",
-        title: "The Story We're Telling Ourselves",
-        href: "/protected/training/opening/title",
-        description: "Understanding our internal narratives about boundaries"
+        label: "The Story We're Telling Ourselves",
+        href: "/training/opening/story",
+        description: "Introduction to the training framework",
       },
       {
-        id: "why-boundaries",
-        title: "Why Boundaries Matter",
-        href: "/protected/training/opening/why-boundaries",
-        description: "The importance of professional boundaries in rural health"
+        label: "Why Boundaries Matter",
+        href: "/training/opening/why-boundaries",
+        description: "Understanding the importance of professional boundaries",
       },
       {
-        id: "goals",
-        title: "Session Goals",
-        href: "/protected/training/opening/goals",
-        description: "What we aim to accomplish today"
+        label: "Session Goals",
+        href: "/training/opening/goals",
+        description: "What we aim to achieve together",
       },
       {
-        id: "agenda",
-        title: "Agenda & Expectations",
-        href: "/protected/training/opening/agenda",
-        description: "Training structure and participant expectations"
+        label: "Agenda & Expectations",
+        href: "/training/opening/agenda",
+        description: "Session structure and guidelines",
       },
     ],
   },
   {
-    id: "policy",
     title: "Policy Fundamentals",
     icon: FileText,
-    description: "Core CMDHD policies and ethical frameworks",
     items: [
       {
-        id: "overview",
-        title: "CMDHD Policy Overview",
-        href: "/protected/training/policy/overview",
-        description: "Comprehensive overview of professional boundaries policy"
+        label: "CMDHD Policy Overview",
+        href: "/training/policy/overview",
+        description: "Core policy framework and purpose",
       },
       {
-        id: "scope",
-        title: "Scope of Practice & Limits",
-        href: "/protected/training/policy/scope",
-        description: "Understanding professional role boundaries"
+        label: "Scope of Practice & Limits",
+        href: "/training/policy/scope",
+        description: "Understanding professional role boundaries",
       },
       {
-        id: "ethics",
-        title: "Ethical Frameworks",
-        href: "/protected/training/policy/ethics",
-        description: "NASW, ANA, and other professional codes"
+        label: "Ethical Frameworks",
+        href: "/training/policy/ethics",
+        description: "Professional ethics and standards",
       },
       {
-        id: "conflicts",
-        title: "Conflict of Interest & Dual Relationships",
-        href: "/protected/training/policy/conflicts",
-        description: "Identifying and managing conflicts"
+        label: "Conflict of Interest & Dual Relationships",
+        href: "/training/policy/conflicts",
+        description: "Identifying and managing conflicts",
       },
       {
-        id: "supervision",
-        title: "Supervisor Escalation Path",
-        href: "/protected/training/policy/supervision",
-        description: "When and how to involve supervisors"
+        label: "Supervisor Escalation Path",
+        href: "/training/policy/supervision",
+        description: "When and how to escalate concerns",
       },
     ],
   },
   {
-    id: "social",
     title: "Social & Relational Boundaries",
     icon: Users,
-    description: "Managing personal and professional relationships",
     items: [
       {
-        id: "pre-existing",
-        title: "Pre-Existing Personal Relationships",
-        href: "/protected/training/social/pre-existing",
-        description: "Handling relationships that existed before employment"
+        label: "Pre-Existing Personal Relationships",
+        href: "/training/social/pre-existing",
+        description: "Navigating community connections",
       },
       {
-        id: "social-media",
-        title: "Social Media & Digital Contact",
-        href: "/protected/training/social/social-media",
-        description: "Online boundaries and digital communication"
+        label: "Social Media & Digital Contact",
+        href: "/training/social/digital",
+        description: "Professional boundaries online",
       },
       {
-        id: "involvement",
-        title: "Over/Under-Involvement",
-        href: "/protected/training/social/involvement",
-        description: "Finding the right balance in client relationships"
+        label: "Over/Under-Involvement",
+        href: "/training/social/involvement",
+        description: "Finding the right balance",
       },
       {
-        id: "emotional",
-        title: "Emotional Awareness",
-        href: "/protected/training/social/emotional",
-        description: "Recognizing emotional dynamics and transference"
+        label: "Emotional Awareness",
+        href: "/training/social/emotional",
+        description: "Managing professional relationships",
       },
     ],
   },
   {
-    id: "communication",
     title: "Communication Standards",
     icon: MessageCircle,
-    description: "Professional language and interaction guidelines",
     items: [
       {
-        id: "language",
-        title: "Professional Language",
-        href: "/protected/training/communication/language",
-        description: "Appropriate professional communication"
+        label: "Professional Language",
+        href: "/training/communication/language",
+        description: "Appropriate communication practices",
       },
       {
-        id: "identity",
-        title: "Identity & Pronoun Use",
-        href: "/protected/training/communication/identity",
-        description: "Respectful and affirming communication"
+        label: "Identity & Pronoun Use",
+        href: "/training/communication/identity",
+        description: "Respectful and inclusive communication",
       },
       {
-        id: "topics",
-        title: "Avoiding Controversial Topics",
-        href: "/protected/training/communication/topics",
-        description: "Maintaining neutrality on sensitive subjects"
+        label: "Avoiding Controversial Topics",
+        href: "/training/communication/controversial",
+        description: "Maintaining professional neutrality",
       },
       {
-        id: "disclosure",
-        title: "Limited Self-Disclosure",
-        href: "/protected/training/communication/disclosure",
-        description: "When and how to share personal information"
+        label: "Limited Self-Disclosure",
+        href: "/training/communication/disclosure",
+        description: "Professional sharing guidelines",
       },
     ],
   },
   {
-    id: "operational",
     title: "Operational Policies",
     icon: ClipboardList,
-    description: "Day-to-day operational boundaries",
     items: [
       {
-        id: "physical",
-        title: "Physical Boundaries & Consent",
-        href: "/protected/training/operational/physical",
-        description: "Touch, space, and physical interaction guidelines"
+        label: "Physical Boundaries & Consent",
+        href: "/training/operational/physical",
+        description: "Appropriate physical interactions",
       },
       {
-        id: "hours",
-        title: "Work Hours & Service Scope",
-        href: "/protected/training/operational/hours",
-        description: "Time boundaries and scope limitations"
+        label: "Work Hours & Service Scope",
+        href: "/training/operational/hours",
+        description: "Time and service boundaries",
       },
       {
-        id: "gifts",
-        title: "Gifts & Gratuities",
-        href: "/protected/training/operational/gifts",
-        description: "Policy on accepting gifts from clients"
+        label: "Gifts & Gratuities",
+        href: "/training/operational/gifts",
+        description: "Policy on accepting items from clients",
       },
       {
-        id: "documentation",
-        title: "Documentation & Confidentiality",
-        href: "/protected/training/operational/documentation",
-        description: "Record-keeping and privacy requirements"
+        label: "Documentation & Confidentiality",
+        href: "/training/operational/documentation",
+        description: "Record-keeping and privacy standards",
       },
     ],
   },
   {
-    id: "reflection",
     title: "Interactive Reflection",
-    icon: Heart,
-    description: "Personal awareness and self-assessment",
-    items: [
-      {
-        id: "story",
-        title: "The Story I'm Telling Myself",
-        href: "/protected/training/reflection/story",
-        description: "Examining our internal narratives"
-      },
-      {
-        id: "self-check",
-        title: "Personal Self-Check",
-        href: "/protected/training/reflection/self-check",
-        description: "Self-assessment tool for boundary awareness"
-      },
-    ],
-  },
-  {
-    id: "scenarios",
-    title: "Quick Polls & Scenarios",
-    icon: Activity,
-    description: "Interactive case studies and decision-making",
-    items: [
-      {
-        id: "ride",
-        title: "It's Just a Ride",
-        href: "/protected/training/scenarios/ride",
-        description: "Transportation request scenario"
-      },
-      {
-        id: "texting",
-        title: "Texting After Hours",
-        href: "/protected/training/scenarios/texting",
-        description: "Communication boundaries scenario"
-      },
-      {
-        id: "cookies",
-        title: "Cookies as Thanks",
-        href: "/protected/training/scenarios/cookies",
-        description: "Gift acceptance scenario"
-      },
-      {
-        id: "church",
-        title: "Same Church",
-        href: "/protected/training/scenarios/church",
-        description: "Community overlap scenario"
-      },
-      {
-        id: "friend-request",
-        title: "Friend Request",
-        href: "/protected/training/scenarios/friend-request",
-        description: "Social media boundaries scenario"
-      },
-      {
-        id: "hug",
-        title: "Comforting Hug",
-        href: "/protected/training/scenarios/hug",
-        description: "Physical boundaries scenario"
-      },
-    ],
-  },
-  {
-    id: "gray-zone",
-    title: "Gray Zone Lab",
     icon: Lightbulb,
-    description: "Complex scenarios requiring deeper analysis",
     items: [
       {
-        id: "county-groups",
-        title: "County Group Scenarios",
-        href: "/protected/training/gray-zone/county-groups",
-        description: "Small group exercises by county"
+        label: "The Story I'm Telling Myself",
+        href: "/training/reflection/story",
+        description: "Personal reflection exercise",
       },
       {
-        id: "shared-lessons",
-        title: "Shared Lessons",
-        href: "/protected/training/gray-zone/shared-lessons",
-        description: "Insights and learning from group discussions"
+        label: "Personal Self-Check",
+        href: "/training/reflection/self-check",
+        description: "Assessing your boundary awareness",
       },
     ],
   },
   {
-    id: "decision-tree",
+    title: "Quick Polls & Scenarios",
+    icon: HelpCircle,
+    items: [
+      {
+        label: "It's Just a Ride",
+        href: "/training/scenarios/ride",
+        description: "Transportation boundary scenario",
+      },
+      {
+        label: "Texting After Hours",
+        href: "/training/scenarios/texting",
+        description: "Communication timing scenario",
+      },
+      {
+        label: "Cookies as Thanks",
+        href: "/training/scenarios/cookies",
+        description: "Gift acceptance scenario",
+      },
+      {
+        label: "Same Church",
+        href: "/training/scenarios/church",
+        description: "Community connection scenario",
+      },
+      {
+        label: "Friend Request",
+        href: "/training/scenarios/friend-request",
+        description: "Social media boundary scenario",
+      },
+      {
+        label: "Comforting Hug",
+        href: "/training/scenarios/hug",
+        description: "Physical boundary scenario",
+      },
+    ],
+  },
+  {
+    title: "Gray Zone Lab",
+    icon: Layers,
+    items: [
+      {
+        label: "County Group Scenarios",
+        href: "/training/gray-zone/county-scenarios",
+        description: "Regional challenge discussions",
+      },
+      {
+        label: "Shared Lessons",
+        href: "/training/gray-zone/shared-lessons",
+        description: "Learning from collective experience",
+      },
+    ],
+  },
+  {
     title: "Decision Tree & Documentation",
     icon: GitBranch,
-    description: "Tools for decision-making and record-keeping",
     items: [
       {
-        id: "overview",
-        title: "Decision Tree Overview",
-        href: "/protected/training/decision-tree/overview",
-        description: "Step-by-step decision-making framework"
+        label: "Decision Tree Overview",
+        href: "/training/decision/tree",
+        description: "Framework for boundary decisions",
       },
       {
-        id: "supervisor-script",
-        title: "Supervisor Communication Script",
-        href: "/protected/training/decision-tree/supervisor-script",
-        description: "How to communicate boundary concerns"
+        label: "Supervisor Communication Script",
+        href: "/training/decision/communication",
+        description: "How to raise concerns effectively",
       },
       {
-        id: "documentation",
-        title: "Documentation Template Walkthrough",
-        href: "/protected/training/decision-tree/documentation",
-        description: "Proper documentation of boundary situations"
+        label: "Documentation Template Walkthrough",
+        href: "/training/decision/documentation",
+        description: "Recording boundary considerations",
       },
     ],
   },
   {
-    id: "closing",
     title: "Closing & Commitments",
     icon: CheckCircle,
-    description: "Summary and next steps",
     items: [
       {
-        id: "summary",
-        title: "Summary of Key Points",
-        href: "/protected/training/closing/summary",
-        description: "Review of main takeaways"
+        label: "Summary of Key Points",
+        href: "/training/closing/summary",
+        description: "Reviewing core concepts",
       },
       {
-        id: "commitment",
-        title: "Personal Commitment",
-        href: "/protected/training/closing/commitment",
-        description: "Individual action plans and pledges"
+        label: "Personal Commitment",
+        href: "/training/closing/commitment",
+        description: "Your professional pledge",
       },
       {
-        id: "evaluation",
-        title: "Evaluation & Feedback",
-        href: "/protected/training/closing/evaluation",
-        description: "Training assessment and feedback"
+        label: "Evaluation & Feedback",
+        href: "/training/closing/evaluation",
+        description: "Share your training experience",
       },
     ],
   },
 ];
 
-// Helper function to get all slides across all modules
-export function getAllSlides(): TrainingSlide[] {
-  return trainingModules.flatMap((module) => module.items);
-}
-
-// Helper function to find a specific slide
-export function findSlide(moduleId: string, slideId: string): TrainingSlide | undefined {
-  const trainingModule = trainingModules.find((m) => m.id === moduleId);
-  return trainingModule?.items.find((item) => item.id === slideId);
-}
-
-// Helper function to get navigation context (previous/next)
-export function getSlideNavigation(moduleId: string, slideId: string) {
-  const allSlides = getAllSlides();
-  const currentIndex = allSlides.findIndex(
-    (slide) => slide.href === `/protected/training/${moduleId}/${slideId}`
+// Helper function to get all training items in order
+export function getAllTrainingItems(): Array<TrainingItem & { section: string }> {
+  return trainingData.flatMap((section) =>
+    section.items.map((item) => ({
+      ...item,
+      section: section.title,
+    }))
   );
+}
+
+// Helper function to get next/previous items
+export function getAdjacentItems(currentHref: string) {
+  const allItems = getAllTrainingItems();
+  const currentIndex = allItems.findIndex((item) => item.href === currentHref);
 
   return {
-    previous: currentIndex > 0 ? allSlides[currentIndex - 1] : null,
-    next: currentIndex < allSlides.length - 1 ? allSlides[currentIndex + 1] : null,
-    current: allSlides[currentIndex],
-    progress: {
-      current: currentIndex + 1,
-      total: allSlides.length,
-      percentage: Math.round(((currentIndex + 1) / allSlides.length) * 100),
-    },
+    previous: currentIndex > 0 ? allItems[currentIndex - 1] : null,
+    next: currentIndex < allItems.length - 1 ? allItems[currentIndex + 1] : null,
+    current: allItems[currentIndex] || null,
   };
 }
 
