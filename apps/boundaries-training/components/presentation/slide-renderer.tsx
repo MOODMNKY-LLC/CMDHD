@@ -354,66 +354,74 @@ function PollSlideComponent({ slide }: { slide: PollSlide }) {
   }, [slide.id]);
 
   return (
-    <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-4xl mx-auto py-12 px-8">
-      <div className="mb-10 text-center">
-        <Badge className="mb-6 text-base px-4 py-2">{slide.boundaryFocus}</Badge>
-        <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>
-      </div>
+    <div className="flex flex-col h-full justify-center px-8 sm:px-12 md:px-16 lg:px-24 py-8 overflow-hidden">
+      <div className="max-w-5xl mx-auto w-full space-y-8">
+        {/* Header */}
+        <div className="text-center space-y-4">
+          <Badge variant="secondary" className="text-sm px-4 py-1.5">
+            {slide.boundaryFocus}
+          </Badge>
+          <h2 className="text-5xl sm:text-6xl font-bold">{slide.title}</h2>
+        </div>
 
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>Scenario</CardTitle>
-          <CardDescription className="text-base leading-relaxed">
-            {slide.scenario}
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="font-semibold mb-4 text-lg">{slide.question}</p>
+        {/* Scenario & Question */}
+        <div className="space-y-6">
           <div className="space-y-3">
-            {slide.options.map((option, index) => (
-              <Button
-                key={index}
-                variant={selectedOption === index ? "default" : "outline"}
-                className="w-full justify-start text-left h-auto py-4 px-6"
-                onClick={() => {
-                  setSelectedOption(index);
-                  setShowAnswer(true);
-                }}
-              >
-                <span className="mr-3 font-bold">
-                  {String.fromCharCode(65 + index)}.
-                </span>
-                {option}
-              </Button>
-            ))}
+            <h3 className="text-xl font-semibold text-primary">Scenario</h3>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {slide.scenario}
+            </p>
           </div>
-        </CardContent>
-      </Card>
+          
+          <p className="text-2xl font-semibold">{slide.question}</p>
+        </div>
 
-      {showAnswer && (
-        <Card 
-          className="border-primary cursor-pointer hover:border-primary/70 transition-colors"
-          onClick={() => setShowAnswer(false)}
-        >
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between">
-              <span className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600" />
-                Explanation
+        {/* Options */}
+        <div className="space-y-3">
+          {slide.options.map((option, index) => (
+            <Button
+              key={index}
+              variant={selectedOption === index ? "default" : "outline"}
+              className="w-full justify-start text-left h-auto py-4 px-6 text-lg min-h-[56px] touch-manipulation"
+              onClick={() => {
+                setSelectedOption(index);
+                setShowAnswer(true);
+              }}
+            >
+              <span className="mr-4 font-bold text-xl">
+                {String.fromCharCode(65 + index)}.
               </span>
-              <span className="text-sm text-muted-foreground font-normal">Click to hide</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-4 text-lg leading-relaxed">{slide.explanation}</p>
-            {slide.policyReference && (
-              <Badge variant="outline" className="text-sm">
-                {slide.policyReference}
-              </Badge>
-            )}
-          </CardContent>
-        </Card>
-      )}
+              <span className="flex-1">{option}</span>
+            </Button>
+          ))}
+        </div>
+
+        {/* Explanation (slide in from below) */}
+        {showAnswer && (
+          <div 
+            className="mt-8 pt-6 border-t-2 border-primary/20 bg-primary/5 rounded-lg p-6 cursor-pointer hover:bg-primary/10 transition-colors animate-in slide-in-from-bottom-4 duration-300"
+            onClick={() => setShowAnswer(false)}
+          >
+            <div className="flex items-start gap-3 mb-4">
+              <CheckCircle2 className="h-6 w-6 text-green-600 shrink-0 mt-0.5" />
+              <div className="flex-1">
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="text-xl font-semibold">Explanation</h4>
+                  <span className="text-sm text-muted-foreground">Click to hide ↑</span>
+                </div>
+                <p className="text-lg leading-relaxed text-foreground mb-4">
+                  {slide.explanation}
+                </p>
+                {slide.policyReference && (
+                  <Badge variant="outline" className="text-sm">
+                    {slide.policyReference}
+                  </Badge>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -422,27 +430,36 @@ function ReflectionSlideComponent({ slide }: { slide: ReflectionSlide }) {
   const [response, setResponse] = useState("");
 
   return (
-    <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-4xl mx-auto py-12 px-8">
-      <div className="mb-10 text-center">
-        <h2 className="text-5xl font-bold mb-6">{slide.title}</h2>
-      </div>
+    <div className="flex flex-col h-full justify-center px-8 sm:px-12 md:px-16 lg:px-24 py-8 overflow-hidden">
+      <div className="max-w-4xl mx-auto w-full space-y-8">
+        {/* Header */}
+        <div className="text-center space-y-4">
+          <h2 className="text-5xl sm:text-6xl font-bold">{slide.title}</h2>
+          <p className="text-2xl text-muted-foreground">{slide.prompt}</p>
+        </div>
 
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle className="text-xl">{slide.prompt}</CardTitle>
-        </CardHeader>
-        <CardContent>
+        {/* Response Area */}
+        <div className="space-y-4">
           <Textarea
             placeholder={slide.placeholder || "Your reflection..."}
             value={response}
             onChange={(e) => setResponse(e.target.value)}
-            className="min-h-[200px] text-lg"
+            className="min-h-[240px] text-lg border-2 focus:border-primary resize-none"
           />
-          <Button className="mt-4 w-full" size="lg">
+          <Button 
+            className="w-full min-h-[56px] text-lg touch-manipulation" 
+            size="lg"
+            disabled={!response.trim()}
+          >
             Submit (Anonymous)
           </Button>
-        </CardContent>
-      </Card>
+        </div>
+
+        {/* Helper text */}
+        <p className="text-center text-sm text-muted-foreground italic">
+          Your response is anonymous and will be used to improve future training sessions.
+        </p>
+      </div>
 
       <FacilitatorNotes notes={slide.talkingPoints} label="Discussion Points" />
     </div>
