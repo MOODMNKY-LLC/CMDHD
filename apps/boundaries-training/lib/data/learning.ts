@@ -6,7 +6,6 @@ import {
   LogIn,
   PlayCircle,
   Pencil,
-  Award,
   Shield,
   FileText,
   Users,
@@ -78,12 +77,6 @@ export const trainingSteps: TrainingStep[] = [
     icon: Pencil,
     title: "Reflect and Submit Feedback",
     description: "Complete a brief evaluation and optional reflection statement to personalize your learning."
-  },
-  {
-    id: 4,
-    icon: Award,
-    title: "Receive Completion Record",
-    description: "Download your completion certificate for HR records and professional development tracking."
   }
 ];
 
