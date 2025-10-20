@@ -5,10 +5,10 @@ import { LogoutButton } from "@/components/logout-button";
 
 const nav = [
   { href: "/", label: "Home" },
-  { href: "/policy", label: "Policy" },
   { href: "/scenarios", label: "Scenarios" },
   { href: "/counties", label: "Counties" },
   { href: "/resources", label: "Resources" },
+  { href: "/policy", label: "Policy" },
   { href: "/feedback", label: "Feedback" },
 ];
 
