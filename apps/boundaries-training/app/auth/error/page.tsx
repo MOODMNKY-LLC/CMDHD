@@ -1,4 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function Page({
   searchParams,
@@ -17,7 +19,7 @@ export default async function Page({
                 Sorry, something went wrong.
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-4">
               {params?.error ? (
                 <p className="text-sm text-muted-foreground">
                   Code error: {params.error}
@@ -27,6 +29,14 @@ export default async function Page({
                   An unspecified error occurred.
                 </p>
               )}
+              <div className="flex gap-2">
+                <Button asChild variant="outline" className="flex-1">
+                  <Link href="/auth/login">Try Again</Link>
+                </Button>
+                <Button asChild className="flex-1">
+                  <Link href="/">Go to Home</Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
