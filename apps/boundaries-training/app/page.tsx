@@ -66,7 +66,7 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button asChild size="lg" className="text-base shadow-lg shadow-primary/25">
-                  <Link href="/protected">
+                  <Link href="/presentation">
                     Enter Training
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -274,7 +274,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button asChild size="lg" className="text-base shadow-xl shadow-primary/25">
-                <Link href="/protected">
+                <Link href="/presentation">
                   Start Training Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
