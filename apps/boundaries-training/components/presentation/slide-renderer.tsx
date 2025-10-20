@@ -15,6 +15,7 @@ import {
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle2, Circle, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { PolicyCard } from "./policy-card";
 import type {
   Slide,
   TitleSlide,
@@ -72,8 +73,18 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
 
   return (
     <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-5xl mx-auto py-12 px-8">
+      {/* Policy reference badge (compact, top) */}
+      {slide.policyReference && (
+        <div className="mb-6">
+          <PolicyCard policy={slide.policyReference} variant="compact" />
+        </div>
+      )}
+
       <div className="mb-8">
         <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
+        {slide.subtitle && (
+          <p className="text-2xl text-muted-foreground mb-2">{slide.subtitle}</p>
+        )}
         {slide.objective && (
           <p className="text-xl text-muted-foreground italic">
             Objective: {slide.objective}

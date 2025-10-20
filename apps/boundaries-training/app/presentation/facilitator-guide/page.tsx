@@ -17,7 +17,8 @@ import {
   CheckCircle2,
   AlertTriangle,
   FileText,
-  Lightbulb
+  Lightbulb,
+  Shield
 } from 'lucide-react';
 import { presentationSlides, presentationSections } from '@/lib/data/presentation-slides';
 
@@ -211,6 +212,9 @@ export default function FacilitatorGuidePage() {
                             </span>
                           </div>
                           <CardTitle className="text-xl">{slide.type === 'title' ? (slide as any).title : (slide as any).title}</CardTitle>
+                          {(slide as any).subtitle && (
+                            <p className="text-sm text-muted-foreground mt-1">{(slide as any).subtitle}</p>
+                          )}
                           {(slide as any).objective && (
                             <CardDescription className="mt-2">
                               <strong>Objective:</strong> {(slide as any).objective}
@@ -220,6 +224,25 @@ export default function FacilitatorGuidePage() {
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
+                      {/* Policy Reference (Content Slides) */}
+                      {slide.type === 'content' && (slide as any).policyReference && (
+                        <Alert className="border-l-4 border-l-primary bg-primary/5">
+                          <Shield className="h-4 w-4" />
+                          <AlertTitle className="text-base">
+                            CMDHD Policy §{(slide as any).policyReference.section}
+                            {(slide as any).policyReference.externalRef && (
+                              <span className="text-sm text-muted-foreground ml-2">
+                                {(slide as any).policyReference.externalRef}
+                              </span>
+                            )}
+                          </AlertTitle>
+                          <AlertDescription className="text-sm mt-2">
+                            <p className="font-semibold mb-2">{(slide as any).policyReference.title}</p>
+                            <p className="text-muted-foreground leading-relaxed">{(slide as any).policyReference.text}</p>
+                          </AlertDescription>
+                        </Alert>
+                      )}
+
                       {/* Talking Points */}
                       {(slide as any).talkingPoints && (slide as any).talkingPoints.length > 0 && (
                         <div>
