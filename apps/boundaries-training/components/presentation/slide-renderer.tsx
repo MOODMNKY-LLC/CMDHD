@@ -224,106 +224,100 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
   const isContentHeavy = slide.talkingPoints.length > 5;
   
   return (
-    <div className={cn(
-      "flex flex-col h-full max-w-5xl mx-auto overflow-hidden",
-      isContentHeavy ? "py-4 sm:py-6 px-4 sm:px-8" : "py-8 sm:py-12 px-4 sm:px-8 justify-center"
-    )}>
-      {/* Policy reference badge (compact, top) */}
-      {slide.policyReference && (
-        <div className={isContentHeavy ? "mb-2 sm:mb-3" : "mb-4 sm:mb-6"}>
-          <PolicyCard policy={slide.policyReference} variant="compact" />
+    <div className="flex flex-col h-full justify-center px-8 sm:px-12 md:px-16 lg:px-24 py-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full space-y-8">
+        {/* Policy reference badge (compact, top) */}
+        {slide.policyReference && (
+          <div className="mb-6">
+            <PolicyCard policy={slide.policyReference} variant="compact" />
+          </div>
+        )}
+
+        {/* Header Section */}
+        <div className="space-y-3">
+          <h2 className={cn(
+            "font-bold",
+            isContentHeavy ? "text-4xl sm:text-5xl" : "text-5xl sm:text-6xl"
+          )}>{slide.title}</h2>
+          {slide.subtitle && (
+            <p className={cn(
+              "text-muted-foreground",
+              isContentHeavy ? "text-xl sm:text-2xl" : "text-2xl sm:text-3xl"
+            )}>{slide.subtitle}</p>
+          )}
+          {slide.objective && (
+            <p className={cn(
+              "text-muted-foreground italic",
+              isContentHeavy ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
+            )}>
+              {slide.objective}
+            </p>
+          )}
         </div>
-      )}
 
-      <div className={isContentHeavy ? "mb-3 sm:mb-4" : "mb-6 sm:mb-8"}>
-        <h2 className={cn(
-          "font-bold mb-2 sm:mb-3",
-          isContentHeavy ? "text-3xl sm:text-4xl" : "text-4xl sm:text-5xl"
-        )}>{slide.title}</h2>
-        {slide.subtitle && (
-          <p className={cn(
-            "text-muted-foreground mb-2",
-            isContentHeavy ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
-          )}>{slide.subtitle}</p>
-        )}
-        {slide.objective && (
-          <p className={cn(
-            "text-muted-foreground italic",
-            isContentHeavy ? "text-base sm:text-lg" : "text-lg sm:text-xl"
-          )}>
-            Objective: {slide.objective}
-          </p>
-        )}
-      </div>
-
-      <Card className="flex-1 border-2 overflow-hidden flex flex-col">
-        <CardContent className={cn(
-          "flex-1 overflow-hidden flex items-center",
-          isContentHeavy ? "py-6 px-6" : "py-8 px-8"
+        {/* Content Section */}
+        <div className={cn(
+          "w-full",
+          isContentHeavy ? "space-y-6" : "space-y-8"
         )}>
-          <div className={cn(
-            "w-full",
-            isContentHeavy ? "space-y-5" : "space-y-7"
-          )}>
-            {slide.talkingPoints.map((point, index) => {
-              const parsed = parseContentPoint(point);
-              
-              if (parsed.type === 'header') {
-                return (
-                  <div key={index}>
-                    {index > 0 && <Separator className={cn(
-                      "mb-5",
-                      isContentHeavy ? "mt-4" : "mt-6"
-                    )} />}
-                    <div className="space-y-3">
-                      <h3 className={cn(
-                        "font-bold text-primary border-l-4 border-primary pl-4",
-                        isContentHeavy ? "text-xl" : "text-2xl"
-                      )}>
-                        {parsed.header}
-                      </h3>
-                      <p className={cn(
-                        "text-foreground pl-4 leading-relaxed",
-                        isContentHeavy ? "text-lg" : "text-xl"
-                      )}>
-                        {parsed.content}
-                      </p>
-                    </div>
-                  </div>
-                );
-              }
-              
-              if (parsed.type === 'bullet') {
-                return (
-                  <div key={index} className="flex items-start gap-3 pl-6">
-                    <ChevronRight className={cn(
-                      "mt-1 text-primary shrink-0",
-                      isContentHeavy ? "h-5 w-5" : "h-6 w-6"
-                    )} />
-                    <span className={cn(
-                      "leading-relaxed",
-                      isContentHeavy ? "text-lg" : "text-xl"
-                    )}>{parsed.content}</span>
-                  </div>
-                );
-              }
-              
+          {slide.talkingPoints.map((point, index) => {
+            const parsed = parseContentPoint(point);
+            
+            if (parsed.type === 'header') {
               return (
-                <div key={index} className="flex items-start gap-4">
-                  <Circle className={cn(
-                    "fill-primary text-primary shrink-0",
-                    isContentHeavy ? "h-3 w-3 mt-2" : "h-3.5 w-3.5 mt-2.5"
+                <div key={index}>
+                  {index > 0 && <Separator className={cn(
+                    "mb-6",
+                    isContentHeavy ? "mt-5" : "mt-7"
+                  )} />}
+                  <div className="space-y-4">
+                    <h3 className={cn(
+                      "font-bold text-primary border-l-4 border-primary pl-5",
+                      isContentHeavy ? "text-2xl" : "text-3xl"
+                    )}>
+                      {parsed.header}
+                    </h3>
+                    <p className={cn(
+                      "text-foreground pl-5 leading-relaxed",
+                      isContentHeavy ? "text-xl" : "text-2xl"
+                    )}>
+                      {parsed.content}
+                    </p>
+                  </div>
+                </div>
+              );
+            }
+            
+            if (parsed.type === 'bullet') {
+              return (
+                <div key={index} className="flex items-start gap-4 pl-8">
+                  <ChevronRight className={cn(
+                    "mt-1.5 text-primary shrink-0",
+                    isContentHeavy ? "h-6 w-6" : "h-7 w-7"
                   )} />
                   <span className={cn(
                     "leading-relaxed",
-                    isContentHeavy ? "text-lg" : "text-xl"
-                    )}>{parsed.content}</span>
+                    isContentHeavy ? "text-xl" : "text-2xl"
+                  )}>{parsed.content}</span>
                 </div>
               );
-            })}
-          </div>
-        </CardContent>
-      </Card>
+            }
+            
+            return (
+              <div key={index} className="flex items-start gap-5">
+                <Circle className={cn(
+                  "fill-primary text-primary shrink-0",
+                  isContentHeavy ? "h-3.5 w-3.5 mt-2.5" : "h-4 w-4 mt-3"
+                )} />
+                <span className={cn(
+                  "leading-relaxed",
+                  isContentHeavy ? "text-xl" : "text-2xl"
+                  )}>{parsed.content}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
       {slide.interactive && (
         <Card className="mb-6 border-primary/50 bg-primary/5">
