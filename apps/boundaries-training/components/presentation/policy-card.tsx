@@ -14,7 +14,7 @@ export function PolicyCard({ policy, variant = "default" }: PolicyCardProps) {
     return (
       <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border-l-4 border-primary rounded-r text-sm">
         <Shield className="h-4 w-4 text-primary flex-shrink-0" />
-        <span className="font-semibold">CMDHD Policy §{policy.section}</span>
+        <span className="font-semibold">CMDHD Policy #{policy.section}</span>
         {policy.externalRef && (
           <span className="text-muted-foreground">• {policy.externalRef}</span>
         )}
@@ -26,7 +26,7 @@ export function PolicyCard({ policy, variant = "default" }: PolicyCardProps) {
     <Alert className="border-l-4 border-l-primary bg-primary/5 print:border print:border-primary/20">
       <Shield className="h-4 w-4" />
       <AlertTitle className="text-base">
-        CMDHD Policy §{policy.section}
+        CMDHD Policy #{policy.section}
         {policy.externalRef && (
           <span className="text-sm text-muted-foreground ml-2">
             {policy.externalRef}

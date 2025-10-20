@@ -229,7 +229,7 @@ export default function FacilitatorGuidePage() {
                         <Alert className="border-l-4 border-l-primary bg-primary/5">
                           <Shield className="h-4 w-4" />
                           <AlertTitle className="text-base">
-                            CMDHD Policy §{(slide as any).policyReference.section}
+                            CMDHD Policy #{(slide as any).policyReference.section}
                             {(slide as any).policyReference.externalRef && (
                               <span className="text-sm text-muted-foreground ml-2">
                                 {(slide as any).policyReference.externalRef}
