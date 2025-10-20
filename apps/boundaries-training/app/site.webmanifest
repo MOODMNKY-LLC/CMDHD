@@ -1,7 +1,7 @@
 {
   "name": "CMDHD Professional Boundaries Training",
   "short_name": "CMDHD Boundaries",
-  "description": "Embracing Professional Boundaries: Interactive training module for Central Michigan District Health Department staff",
+  "description": "Interactive professional boundaries training for Central Michigan District Health Department staff",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -22,44 +22,28 @@
       "purpose": "any maskable"
     }
   ],
+  "categories": ["education", "health", "training"],
   "shortcuts": [
     {
       "name": "Start Training",
       "short_name": "Training",
-      "description": "Begin the interactive presentation",
+      "description": "Begin the professional boundaries training presentation",
       "url": "/presentation",
-      "icons": [
-        {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "View Policy",
       "short_name": "Policy",
-      "description": "Read the professional boundaries policy",
+      "description": "Review the professional boundaries policy document",
       "url": "/policy",
-      "icons": [
-        {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Practice Scenarios",
       "short_name": "Scenarios",
-      "description": "Work through boundary scenarios",
+      "description": "Explore boundary scenarios and case studies",
       "url": "/scenarios",
-      "icons": [
-        {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     }
-  ],
-  "categories": ["education", "training", "healthcare"],
-  "prefer_related_applications": false
+  ]
 }

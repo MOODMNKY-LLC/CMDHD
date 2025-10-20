@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "@/components/logout-button";
-import { MobileNav } from "@/components/mobile-nav";
 
 export async function SiteHeader() {
   const supabase = await createClient();
@@ -12,12 +11,9 @@ export async function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <MobileNav user={user ? { email: user.email as string } : undefined} />
-          <Link href="/" className="font-semibold text-sm hover:text-primary transition-colors">
-            CMDHD Boundaries
-          </Link>
-        </div>
+        <Link href="/" className="font-semibold text-sm hover:text-primary transition-colors">
+          CMDHD Boundaries
+        </Link>
         
         <div className="hidden md:flex items-center gap-1">
           <Link
