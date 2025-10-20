@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
+import { Separator } from "@/components/ui/separator";
 import {
   Table,
   TableBody,
@@ -13,7 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { CheckCircle2, Circle, MessageCircle } from "lucide-react";
+import { CheckCircle2, Circle, MessageCircle, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { PolicyCard } from "./policy-card";
 import type {
@@ -26,6 +27,39 @@ import type {
   QuoteSlide,
   TreeSlide,
 } from "@/lib/data/presentation-slides";
+
+// Helper function to parse and render structured content
+interface ParsedContent {
+  type: 'header' | 'content' | 'bullet';
+  header?: string;
+  content: string;
+}
+
+function parseContentPoint(point: string): ParsedContent {
+  // Check if it starts with **Header**: pattern
+  const headerMatch = point.match(/^\*\*(.+?)\*\*:\s*(.+)$/);
+  if (headerMatch) {
+    return {
+      type: 'header',
+      header: headerMatch[1],
+      content: headerMatch[2]
+    };
+  }
+  
+  // Check if it starts with bullet (•)
+  if (point.startsWith('•')) {
+    return {
+      type: 'bullet',
+      content: point.substring(1).trim()
+    };
+  }
+  
+  // Regular content
+  return {
+    type: 'content',
+    content: point
+  };
+}
 
 interface SlideRendererProps {
   slide: Slide;
@@ -206,16 +240,45 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
         )}
       </div>
 
-      <Card className="mb-6">
+      <Card className="mb-6 border-2">
         <CardContent className="pt-8 pb-8">
-          <ul className="space-y-5">
-            {slide.talkingPoints.map((point, index) => (
-              <li key={index} className="flex items-start gap-4">
-                <Circle className="h-3 w-3 mt-2 fill-primary text-primary flex-shrink-0" />
-                <span className="text-xl leading-relaxed">{point}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="space-y-6">
+            {slide.talkingPoints.map((point, index) => {
+              const parsed = parseContentPoint(point);
+              
+              if (parsed.type === 'header') {
+                return (
+                  <div key={index} className="space-y-2">
+                    {index > 0 && <Separator className="my-4" />}
+                    <div className="flex items-start gap-3">
+                      <Badge variant="default" className="mt-1 shrink-0 text-sm px-3 py-1">
+                        {parsed.header}
+                      </Badge>
+                    </div>
+                    <p className="text-lg leading-relaxed text-muted-foreground pl-2">
+                      {parsed.content}
+                    </p>
+                  </div>
+                );
+              }
+              
+              if (parsed.type === 'bullet') {
+                return (
+                  <div key={index} className="flex items-start gap-3 pl-6">
+                    <ChevronRight className="h-5 w-5 mt-0.5 text-primary shrink-0" />
+                    <span className="text-lg leading-relaxed">{parsed.content}</span>
+                  </div>
+                );
+              }
+              
+              return (
+                <div key={index} className="flex items-start gap-3">
+                  <Circle className="h-2.5 w-2.5 mt-2 fill-primary text-primary shrink-0" />
+                  <span className="text-lg leading-relaxed">{parsed.content}</span>
+                </div>
+              );
+            })}
+          </div>
         </CardContent>
       </Card>
 
