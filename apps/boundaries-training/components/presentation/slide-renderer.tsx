@@ -17,6 +17,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle2, Circle, MessageCircle, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { PolicyCard } from "./policy-card";
+import { cn } from "@/lib/utils";
 import type {
   Slide,
   TitleSlide,
@@ -219,43 +220,67 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
   }
 
   // Default content slide layout
+  // Determine if this is a content-heavy slide (many talking points)
+  const isContentHeavy = slide.talkingPoints.length > 5;
+  
   return (
-    <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-5xl mx-auto py-12 px-8">
+    <div className={cn(
+      "flex flex-col h-full max-w-5xl mx-auto overflow-hidden",
+      isContentHeavy ? "py-6 px-8" : "py-12 px-8 justify-center"
+    )}>
       {/* Policy reference badge (compact, top) */}
       {slide.policyReference && (
-        <div className="mb-6">
+        <div className={isContentHeavy ? "mb-3" : "mb-6"}>
           <PolicyCard policy={slide.policyReference} variant="compact" />
         </div>
       )}
 
-      <div className="mb-8">
-        <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
+      <div className={isContentHeavy ? "mb-4" : "mb-8"}>
+        <h2 className={cn(
+          "font-bold mb-3",
+          isContentHeavy ? "text-4xl" : "text-5xl"
+        )}>{slide.title}</h2>
         {slide.subtitle && (
-          <p className="text-2xl text-muted-foreground mb-2">{slide.subtitle}</p>
+          <p className={cn(
+            "text-muted-foreground mb-2",
+            isContentHeavy ? "text-xl" : "text-2xl"
+          )}>{slide.subtitle}</p>
         )}
         {slide.objective && (
-          <p className="text-xl text-muted-foreground italic">
+          <p className={cn(
+            "text-muted-foreground italic",
+            isContentHeavy ? "text-lg" : "text-xl"
+          )}>
             Objective: {slide.objective}
           </p>
         )}
       </div>
 
-      <Card className="mb-6 border-2">
-        <CardContent className="pt-8 pb-8">
-          <div className="space-y-6">
+      <Card className="flex-1 border-2 overflow-hidden flex flex-col">
+        <CardContent className={cn(
+          "flex-1 overflow-hidden",
+          isContentHeavy ? "pt-4 pb-4" : "pt-8 pb-8"
+        )}>
+          <div className={cn(
+            "h-full overflow-y-auto scrollbar-hide",
+            isContentHeavy ? "space-y-3" : "space-y-6"
+          )}>
             {slide.talkingPoints.map((point, index) => {
               const parsed = parseContentPoint(point);
               
               if (parsed.type === 'header') {
                 return (
-                  <div key={index} className="space-y-2">
-                    {index > 0 && <Separator className="my-4" />}
+                  <div key={index} className="space-y-1.5">
+                    {index > 0 && <Separator className={isContentHeavy ? "my-2" : "my-4"} />}
                     <div className="flex items-start gap-3">
-                      <Badge variant="default" className="mt-1 shrink-0 text-sm px-3 py-1">
+                      <Badge variant="default" className="mt-1 shrink-0 text-xs px-2.5 py-0.5">
                         {parsed.header}
                       </Badge>
                     </div>
-                    <p className="text-lg leading-relaxed text-muted-foreground pl-2">
+                    <p className={cn(
+                      "text-muted-foreground pl-2",
+                      isContentHeavy ? "text-base leading-snug" : "text-lg leading-relaxed"
+                    )}>
                       {parsed.content}
                     </p>
                   </div>
@@ -264,17 +289,27 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
               
               if (parsed.type === 'bullet') {
                 return (
-                  <div key={index} className="flex items-start gap-3 pl-6">
-                    <ChevronRight className="h-5 w-5 mt-0.5 text-primary shrink-0" />
-                    <span className="text-lg leading-relaxed">{parsed.content}</span>
+                  <div key={index} className="flex items-start gap-2 pl-6">
+                    <ChevronRight className={cn(
+                      "mt-0.5 text-primary shrink-0",
+                      isContentHeavy ? "h-4 w-4" : "h-5 w-5"
+                    )} />
+                    <span className={cn(
+                      isContentHeavy ? "text-base leading-snug" : "text-lg leading-relaxed"
+                    )}>{parsed.content}</span>
                   </div>
                 );
               }
               
               return (
                 <div key={index} className="flex items-start gap-3">
-                  <Circle className="h-2.5 w-2.5 mt-2 fill-primary text-primary shrink-0" />
-                  <span className="text-lg leading-relaxed">{parsed.content}</span>
+                  <Circle className={cn(
+                    "fill-primary text-primary shrink-0",
+                    isContentHeavy ? "h-2 w-2 mt-1.5" : "h-2.5 w-2.5 mt-2"
+                  )} />
+                  <span className={cn(
+                    isContentHeavy ? "text-base leading-snug" : "text-lg leading-relaxed"
+                    )}>{parsed.content}</span>
                 </div>
               );
             })}
