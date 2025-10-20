@@ -122,25 +122,25 @@ export function PresentationViewer() {
     )}>
       {/* Header */}
       <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex items-center justify-between px-6 py-3">
-          <div className="flex items-center gap-4">
-            <Link href="/">
+        <div className="flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <Link href="/" className="hidden sm:block">
               <Button variant="ghost" size="sm">
                 <Home className="h-4 w-4 mr-2" />
-                Home
+                <span className="hidden md:inline">Home</span>
               </Button>
             </Link>
-            <Link href="/presentation/facilitator-guide" target="_blank">
+            <Link href="/presentation/facilitator-guide" target="_blank" className="hidden sm:block">
               <Button variant="outline" size="sm">
                 <BookOpen className="h-4 w-4 mr-2" />
-                Facilitator Guide
+                <span className="hidden md:inline">Facilitator Guide</span>
               </Button>
             </Link>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="sm">
-                  <Menu className="h-4 w-4 mr-2" />
-                  Table of Contents
+                  <Menu className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Table of Contents</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-[400px] overflow-y-auto">
@@ -185,17 +185,18 @@ export function PresentationViewer() {
             </Sheet>
           </div>
 
-          <div className="flex items-center gap-4">
-            <Badge variant="outline" className="font-mono">
-              Slide {currentSlideIndex + 1} / {totalSlides}
+          <div className="flex items-center gap-2 sm:gap-4">
+            <Badge variant="outline" className="font-mono text-xs sm:text-sm">
+              <span className="hidden xs:inline">Slide </span>{currentSlideIndex + 1} / {totalSlides}
             </Badge>
-            <Badge variant="secondary">
+            <Badge variant="secondary" className="hidden md:inline-flex">
               {currentSlide.section}
             </Badge>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsTimerRunning(!isTimerRunning)}
+              className="hidden sm:flex"
             >
               <Clock className="h-4 w-4 mr-2" />
               {formatTime(elapsedTime)}
@@ -204,6 +205,7 @@ export function PresentationViewer() {
               variant="ghost"
               size="sm"
               onClick={toggleFullscreen}
+              aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
             >
               {isFullscreen ? (
                 <Minimize2 className="h-4 w-4" />
@@ -224,37 +226,42 @@ export function PresentationViewer() {
       </div>
 
       {/* Footer Navigation */}
-      <div className="border-t bg-background/95 backdrop-blur p-4">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <div className="border-t bg-background/95 backdrop-blur p-3 sm:p-4">
+        <div className="flex items-center justify-between max-w-7xl mx-auto gap-2">
           <Button
             variant="outline"
             onClick={goToPrevious}
             disabled={currentSlideIndex === 0}
+            size="sm"
+            className="touch-manipulation"
           >
-            <ChevronLeft className="h-4 w-4 mr-2" />
-            Previous
+            <ChevronLeft className="h-4 w-4 sm:mr-2" />
+            <span className="hidden sm:inline">Previous</span>
           </Button>
 
-          <div className="text-sm text-muted-foreground">
+          <div className="text-xs sm:text-sm text-muted-foreground text-center">
             {currentSlide.duration && (
-              <span>Estimated time: {currentSlide.duration} min</span>
+              <span className="hidden sm:inline">Estimated time: {currentSlide.duration} min</span>
             )}
+            <span className="sm:hidden">{currentSlide.duration} min</span>
           </div>
 
           <Button
             variant="default"
             onClick={goToNext}
             disabled={currentSlideIndex === totalSlides - 1}
+            size="sm"
+            className="touch-manipulation"
           >
-            Next
-            <ChevronRight className="h-4 w-4 ml-2" />
+            <span className="hidden sm:inline">Next</span>
+            <ChevronRight className="h-4 w-4 sm:ml-2" />
           </Button>
         </div>
       </div>
 
       {/* Keyboard Shortcuts Hint */}
       {!isFullscreen && (
-        <div className="fixed bottom-20 right-6 text-xs text-muted-foreground bg-background/80 backdrop-blur p-2 rounded border">
+        <div className="hidden md:block fixed bottom-20 right-6 text-xs text-muted-foreground bg-background/80 backdrop-blur p-2 rounded border">
           <p>← → arrows: navigate • F: fullscreen • T: timer • Esc: exit</p>
         </div>
       )}
