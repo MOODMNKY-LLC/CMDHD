@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/table";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle2, Circle, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PolicyCard } from "./policy-card";
 import type {
   Slide,
@@ -269,6 +269,12 @@ function PollSlideComponent({ slide }: { slide: PollSlide }) {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
 
+  // Reset state when slide changes
+  useEffect(() => {
+    setSelectedOption(null);
+    setShowAnswer(false);
+  }, [slide.id]);
+
   return (
     <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-4xl mx-auto py-12 px-8">
       <div className="mb-10 text-center">
@@ -307,15 +313,21 @@ function PollSlideComponent({ slide }: { slide: PollSlide }) {
       </Card>
 
       {showAnswer && (
-        <Card className="border-primary">
+        <Card 
+          className="border-primary cursor-pointer hover:border-primary/70 transition-colors"
+          onClick={() => setShowAnswer(false)}
+        >
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5 text-green-600" />
-              Explanation
+            <CardTitle className="flex items-center justify-between">
+              <span className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-green-600" />
+                Explanation
+              </span>
+              <span className="text-sm text-muted-foreground font-normal">Click to hide</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="mb-4 text-lg">{slide.explanation}</p>
+            <p className="mb-4 text-lg leading-relaxed">{slide.explanation}</p>
             {slide.policyReference && (
               <Badge variant="outline" className="text-sm">
                 {slide.policyReference}
