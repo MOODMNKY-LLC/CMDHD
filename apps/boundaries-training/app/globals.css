@@ -6,60 +6,60 @@
 
 @layer base {
   :root {
-    /* Professional Blue Theme - Light Mode */
-    --background: 210 40% 96%;
-    --foreground: 222 47% 11%;
-    --card: 210 40% 98%;
-    --card-foreground: 222 47% 11%;
-    --popover: 210 40% 98%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 217 85% 44%;
+    /* Professional Blue Theme - Light Mode (Enhanced Contrast) */
+    --background: 210 25% 98%;
+    --foreground: 222 50% 8%;
+    --card: 210 20% 99%;
+    --card-foreground: 222 50% 8%;
+    --popover: 210 20% 99%;
+    --popover-foreground: 222 50% 8%;
+    --primary: 217 91% 38%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 94%;
-    --muted-foreground: 215 20% 45%;
-    --accent: 210 90% 48%;
+    --secondary: 214 25% 88%;
+    --secondary-foreground: 222 50% 8%;
+    --muted: 210 25% 92%;
+    --muted-foreground: 215 25% 40%;
+    --accent: 210 95% 42%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 85%;
-    --input: 214 32% 85%;
-    --ring: 217 85% 44%;
-    --chart-1: 217 85% 44%;
-    --chart-2: 210 80% 55%;
-    --chart-3: 200 85% 65%;
-    --chart-4: 215 60% 50%;
-    --chart-5: 225 70% 55%;
+    --border: 214 25% 80%;
+    --input: 214 25% 80%;
+    --ring: 217 91% 38%;
+    --chart-1: 217 91% 38%;
+    --chart-2: 210 85% 48%;
+    --chart-3: 200 90% 55%;
+    --chart-4: 215 70% 45%;
+    --chart-5: 225 75% 50%;
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Professional Blue Theme - Dark Mode */
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 217 32% 14%;
-    --card-foreground: 210 40% 98%;
-    --popover: 217 32% 14%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 85% 54%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 210 90% 58%;
-    --accent-foreground: 222 47% 11%;
+    /* Professional Blue Theme - Dark Mode (Enhanced Contrast) */
+    --background: 222 50% 9%;
+    --foreground: 210 20% 99%;
+    --card: 217 40% 12%;
+    --card-foreground: 210 20% 99%;
+    --popover: 217 40% 12%;
+    --popover-foreground: 210 20% 99%;
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 35% 16%;
+    --secondary-foreground: 210 20% 99%;
+    --muted: 217 35% 16%;
+    --muted-foreground: 215 25% 60%;
+    --accent: 210 95% 52%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 217 32% 27%;
-    --input: 217 32% 27%;
-    --ring: 217 85% 54%;
-    --chart-1: 217 85% 54%;
-    --chart-2: 210 80% 65%;
-    --chart-3: 200 85% 75%;
-    --chart-4: 215 60% 60%;
-    --chart-5: 225 70% 65%;
+    --border: 217 30% 24%;
+    --input: 217 30% 24%;
+    --ring: 217 91% 50%;
+    --chart-1: 217 91% 50%;
+    --chart-2: 210 85% 58%;
+    --chart-3: 200 90% 65%;
+    --chart-4: 215 70% 55%;
+    --chart-5: 225 75% 60%;
   }
 
   * {
@@ -72,27 +72,27 @@
 }
 
 :root {
-  /* Sidebar - Professional Blue Light Mode */
-  --sidebar: hsl(210 40% 98%);
-  --sidebar-foreground: hsl(222 47% 11%);
-  --sidebar-primary: hsl(217 85% 44%);
+  /* Sidebar - Professional Blue Light Mode (Enhanced Contrast) */
+  --sidebar: hsl(210 20% 99%);
+  --sidebar-foreground: hsl(222 50% 8%);
+  --sidebar-primary: hsl(217 91% 38%);
   --sidebar-primary-foreground: hsl(0 0% 100%);
-  --sidebar-accent: hsl(214 32% 91%);
-  --sidebar-accent-foreground: hsl(222 47% 11%);
-  --sidebar-border: hsl(214 32% 85%);
-  --sidebar-ring: hsl(217 85% 44%);
+  --sidebar-accent: hsl(214 25% 88%);
+  --sidebar-accent-foreground: hsl(222 50% 8%);
+  --sidebar-border: hsl(214 25% 80%);
+  --sidebar-ring: hsl(217 91% 38%);
 }
 
 .dark {
-  /* Sidebar - Professional Blue Dark Mode */
-  --sidebar: hsl(222 47% 11%);
-  --sidebar-foreground: hsl(210 40% 98%);
-  --sidebar-primary: hsl(217 85% 54%);
+  /* Sidebar - Professional Blue Dark Mode (Enhanced Contrast) */
+  --sidebar: hsl(222 50% 9%);
+  --sidebar-foreground: hsl(210 20% 99%);
+  --sidebar-primary: hsl(217 91% 50%);
   --sidebar-primary-foreground: hsl(0 0% 100%);
-  --sidebar-accent: hsl(217 32% 17%);
-  --sidebar-accent-foreground: hsl(210 40% 98%);
-  --sidebar-border: hsl(217 32% 27%);
-  --sidebar-ring: hsl(217 85% 54%);
+  --sidebar-accent: hsl(217 35% 16%);
+  --sidebar-accent-foreground: hsl(210 20% 99%);
+  --sidebar-border: hsl(217 30% 24%);
+  --sidebar-ring: hsl(217 91% 50%);
 }
 
 @layer base {
