@@ -670,7 +670,15 @@ export const presentationSlides: Slide[] = [
     prompt: 'Boundaries begin with self-awareness. Write one sentence:',
     placeholder: `The story I'm telling myself about boundaries is...`,
     talkingPoints: [
-      'You can submit anonymously—some will appear as a live word cloud.'
+      `This reflection connects to Policy #1: Self-awareness is the foundation of ethical practice.`,
+      `Common narratives we hear from rural providers:`,
+      `• "I'm being rigid if I enforce boundaries"`,
+      `• "Good helpers go above and beyond"`,
+      `• "Saying no means I don't care"`,
+      `• "In small towns, boundaries are impossible"`,
+      `Your inner narrative shapes your boundary decisions—bringing it to light is the first step to changing it.`,
+      `Submit anonymously—some responses will appear in a live word cloud for collective reflection.`,
+      `This isn't about judgment; it's about naming the stories so we can rewrite them together.`
     ]
   },
   {
@@ -683,7 +691,16 @@ export const presentationSlides: Slide[] = [
     prompt: 'Which emotion signals your boundaries are stretching?',
     placeholder: 'Guilt, irritation, urgency, something else?',
     talkingPoints: [
-      'Awareness of those cues prevents ethical drift.'
+      `Research shows that emotional cues precede boundary violations—awareness prevents ethical drift.`,
+      `Common emotional warning signs:`,
+      `• Guilt: "If I don't do this, who will?"`,
+      `• Irritation: Resentment building when requests arrive`,
+      `• Urgency: Feeling pressured to respond immediately`,
+      `• Exhaustion: Chronic fatigue from overextending`,
+      `• Discomfort: "This doesn't feel right, but I can't explain why"`,
+      `Your body and emotions are boundary detectors. Learn to listen.`,
+      `When you notice these signals, pause and apply the 5-Step Decision Tree before acting.`,
+      `Supervision is the space to process these feelings without shame or judgment.`
     ]
   },
 
@@ -816,15 +833,24 @@ export const presentationSlides: Slide[] = [
     duration: 5,
     title: 'County-Specific Scenarios',
     talkingPoints: [
-      'Each county faces unique relational challenges.',
-      'Form small groups by county and discuss your assigned scenario:',
-      '• Arenac: Everyone knows everyone',
-      '• Clare/Gladwin: Limited resources',
-      '• Isabella: Campus and tribal contexts',
-      '• Osceola/Roscommon: Rural overlaps'
+      `Each county in our district faces unique relational challenges and boundary pressures.`,
+      `Form small groups by county and discuss your assigned scenario:`,
+      `• Arenac: "Everyone knows everyone" — tight-knit communities where anonymity is impossible`,
+      `• Clare/Gladwin: Limited resources — long waitlists and few alternative providers create pressure to overextend`,
+      `• Isabella: Campus and tribal contexts — dual relationships with college students and Indigenous community members`,
+      `• Osceola/Roscommon: Rural overlaps — geographic isolation and provider shortages compound boundary challenges`,
+      `Group discussion questions:`,
+      `1. What boundary tension does this scenario create?`,
+      `2. Which policy/policies apply? (Cite specific numbers)`,
+      `3. What would you do? Use the 5-Step Decision Tree`,
+      `4. When would you consult your supervisor?`,
+      `Remember: The goal isn't to have perfect answers—it's to practice the thinking process.`
     ],
     facilitatorNotes: [
-      'Allow 3-4 minutes for group discussion'
+      'Allow 3-4 minutes for group discussion',
+      'Provide county-specific scenarios on handouts or slides',
+      'Encourage use of decision tree and policy references',
+      'Normalize uncertainty—gray zones are gray for a reason'
     ]
   },
   {
@@ -835,11 +861,21 @@ export const presentationSlides: Slide[] = [
     duration: 3,
     title: 'Shared Lessons',
     talkingPoints: [
-      'Despite local differences, supervision remains the universal safeguard.',
-      'Every gray area has a policy touchpoint when you know where to look.'
+      `Despite local differences, supervision remains the universal safeguard across all counties.`,
+      `Every gray area has a policy touchpoint when you know where to look.`,
+      `Key themes that emerge across counties:`,
+      `• Disclosure + documentation = protection in dual relationship contexts`,
+      `• "Can I?" vs. "Should I?" — scope is about judgment, not just permission`,
+      `• When in doubt, consult before acting (not after)`,
+      `• Community size doesn't change professional standards—it changes how we apply them`,
+      `Your supervisors are resources, not gatekeepers. They want to help you navigate complexity.`,
+      `Rural practice requires more boundary vigilance, not less.`
     ],
     facilitatorNotes: [
-      'Activity: Groups share one insight each'
+      'Activity: Ask each group to share one insight or question',
+      'Affirm the complexity—there are no "gotcha" scenarios',
+      'Connect insights back to specific policies',
+      'Emphasize: Supervision is a strength, not a weakness'
     ]
   },
 
@@ -855,27 +891,48 @@ export const presentationSlides: Slide[] = [
       {
         number: 1,
         title: 'Check Role & Scope',
-        description: `Is this within my professional responsibilities? Review Policy #2 (Scope of Practice): Does this action fall within CMDHD's definition of your job duties? Ask yourself: "Would I do this if I weren't trying to be helpful?" If it involves transportation, running errands, financial assistance, or personal favors—it's outside your scope. When uncertain, default to "no" and explore alternatives within your professional role.`
+        description: `Policy #2: Is this within my job duties?
+• Ask: "Would I do this if I weren't trying to be helpful?"
+• Red flags: Transportation, errands, financial help, personal favors
+• When uncertain, default to "no" and explore role-appropriate alternatives`
       },
       {
         number: 2,
         title: 'Scan for Conflict',
-        description: `Do I have any pre-existing or dual relationships with this client, their family, or associates? Review Policies #4 and #5 (Conflicts of Interest): Consider social connections (same church, gym, school), professional ties (work for same employer, mutual colleagues), business relationships (they provide services you use), or family connections. In rural settings, some overlap is inevitable—disclosure to your supervisor is required, not optional. Document the relationship and any safeguards discussed.`
+        description: `Policies #4 & #5: Any dual relationships present?
+• Social: Church, gym, school, community groups
+• Professional: Same employer, mutual colleagues
+• Business: Client provides services I use
+• Family: Any family connections or friendships
+• Rural reality: Overlap is inevitable—disclosure & documentation required`
       },
       {
         number: 3,
         title: 'Confirm Consent',
-        description: `Have I obtained clear, voluntary consent for any physical contact or boundary-relevant interaction? Review Policies #7-9 (Physical Boundaries, Consent, Touch): Before any physical contact—even supportive gestures—ask permission explicitly: "Would it be okay if I [specific action]?" Respect any hesitation as a "no." Consider trauma history, cultural norms, power dynamics, and context. Never assume consent. When in doubt, maintain physical distance and use verbal support instead.`
+        description: `Policies #7-9: Clear permission obtained?
+• Script: "Would it be okay if I [specific action]?"
+• Respect any hesitation as "no"
+• Consider: Trauma history, cultural norms, power dynamics
+• Default: When in doubt, maintain distance and use verbal support`
       },
       {
         number: 4,
         title: 'Check Time & Channel',
-        description: `Is this interaction occurring during defined work hours and through CMDHD-approved communication channels? Review Policy #13 (Work Hours): Services should occur within your scheduled hours unless pre-approved by your supervisor for specific circumstances. Use only work phone, work email, or EHR messaging—never personal cell, personal social media, or non-work platforms. After-hours client contact (even responding to texts) requires supervisor approval and thorough documentation. Establish clear communication boundaries in your informed consent.`
+        description: `Policy #13: Within work hours & approved channels?
+• Use only: Work phone, work email, EHR messaging
+• Never: Personal cell, personal social media, non-work platforms
+• After-hours contact requires supervisor approval + documentation
+• Establish boundaries in informed consent upfront`
       },
       {
         number: 5,
         title: 'Document & Debrief',
-        description: `Have I thoroughly documented this interaction, boundary decision, or consultation in the client record? Best practices: Record what occurred, your clinical reasoning, any policies consulted (cite specific numbers), consultation with supervisor (who, when, what guidance), client's response, and your action plan. Use objective, professional language. For complex boundary situations, document proactively—before and after. If you answered "no" or "unsure" to any previous step, consult your supervisor before proceeding and document that consultation. Regular supervision on complex cases is protection, not punishment.`
+        description: `Best practice: Thorough documentation in client record
+• What occurred + clinical reasoning
+• Policies consulted (cite #s) + supervisor consultation
+• Client response + action plan
+• Use objective, professional language
+• If "no" or "unsure" on any step → consult supervisor first`
       }
     ],
     facilitatorNotes: [
@@ -937,7 +994,16 @@ export const presentationSlides: Slide[] = [
     prompt: 'This month, I will strengthen my professional boundaries by:',
     placeholder: `Share one specific action you will take...`,
     talkingPoints: [
-      'Encourage real, specific examples.'
+      `Research shows that public commitment increases follow-through—this is your accountability moment.`,
+      `Make your commitment specific and measurable. Instead of "I'll have better boundaries," try:`,
+      `• "I will establish work phone hours in my informed consent with new clients"`,
+      `• "I will consult my supervisor before responding to any after-hours contact"`,
+      `• "I will document dual relationships proactively, not reactively"`,
+      `• "I will pause and use the 5-Step Decision Tree before saying yes to out-of-scope requests"`,
+      `• "I will practice saying no with empathy: 'I care about your situation, and this is outside my role. Here's what I can do...'"`,
+      `This commitment isn't about perfection—it's about intentional growth.`,
+      `Your supervisors are here to support you in this commitment. Use them.`,
+      `Optional: Share your commitment with a colleague for mutual accountability.`
     ]
   },
   {
