@@ -10,6 +10,14 @@ export async function updateSession(request: NextRequest) {
   // If the env vars are not set, skip middleware check. You can remove this
   // once you setup the project.
   if (!hasEnvVars) {
+    console.warn("⚠️  Supabase environment variables not set. Skipping auth middleware.");
+    return supabaseResponse;
+  }
+
+  // Skip auth check if using localhost URLs in production
+  if (process.env.NEXT_PUBLIC_SUPABASE_URL?.includes("127.0.0.1") || 
+      process.env.NEXT_PUBLIC_SUPABASE_URL?.includes("localhost")) {
+    console.warn("⚠️  Supabase is configured for localhost. Skipping auth middleware in production.");
     return supabaseResponse;
   }
 
