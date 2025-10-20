@@ -13,10 +13,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle2, Circle, MessageCircle, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { PolicyCard } from "./policy-card";
+import { FacilitatorNotes } from "./facilitator-notes";
 import { cn } from "@/lib/utils";
 import type {
   Slide,
@@ -203,18 +203,7 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
           </CardContent>
         </Card>
 
-        {slide.facilitatorNotes && slide.facilitatorNotes.length > 0 && (
-          <Alert className="mt-6">
-            <AlertDescription>
-              <p className="font-semibold mb-1">Facilitator Notes:</p>
-              <ul className="space-y-1 text-sm">
-                {slide.facilitatorNotes.map((note, index) => (
-                  <li key={index}>{note}</li>
-                ))}
-              </ul>
-            </AlertDescription>
-          </Alert>
-        )}
+        <FacilitatorNotes notes={slide.facilitatorNotes} />
       </div>
     );
   }
@@ -349,18 +338,7 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
         </Card>
       )}
 
-      {slide.facilitatorNotes && slide.facilitatorNotes.length > 0 && (
-        <Alert>
-          <AlertDescription>
-            <p className="font-semibold mb-1">Facilitator Notes:</p>
-            <ul className="space-y-1 text-sm">
-              {slide.facilitatorNotes.map((note, index) => (
-                <li key={index}>{note}</li>
-              ))}
-            </ul>
-          </AlertDescription>
-        </Alert>
-      )}
+      <FacilitatorNotes notes={slide.facilitatorNotes} />
     </div>
   );
 }
@@ -466,15 +444,7 @@ function ReflectionSlideComponent({ slide }: { slide: ReflectionSlide }) {
         </CardContent>
       </Card>
 
-      {slide.talkingPoints && slide.talkingPoints.length > 0 && (
-        <Alert>
-          <AlertDescription>
-            {slide.talkingPoints.map((point, index) => (
-              <p key={index} className="text-sm">{point}</p>
-            ))}
-          </AlertDescription>
-        </Alert>
-      )}
+      <FacilitatorNotes notes={slide.talkingPoints} label="Discussion Points" />
     </div>
   );
 }
@@ -513,11 +483,7 @@ function TableSlideComponent({ slide }: { slide: TableSlide }) {
         </CardContent>
       </Card>
 
-      {slide.facilitatorNote && (
-        <Alert className="mt-6">
-          <AlertDescription>{slide.facilitatorNote}</AlertDescription>
-        </Alert>
-      )}
+      <FacilitatorNotes notes={slide.facilitatorNote ? [slide.facilitatorNote] : undefined} />
     </div>
   );
 }
@@ -565,18 +531,7 @@ function TreeSlideComponent({ slide }: { slide: TreeSlide }) {
         ))}
       </div>
 
-      {slide.facilitatorNotes && slide.facilitatorNotes.length > 0 && (
-        <Alert>
-          <AlertDescription>
-            <p className="font-semibold mb-1">Key Emphasis:</p>
-            <ul className="space-y-1">
-              {slide.facilitatorNotes.map((note, index) => (
-                <li key={index} className="text-sm">{note}</li>
-              ))}
-            </ul>
-          </AlertDescription>
-        </Alert>
-      )}
+      <FacilitatorNotes notes={slide.facilitatorNotes} label="Key Emphasis" />
     </div>
   );
 }
