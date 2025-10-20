@@ -258,57 +258,65 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
 
       <Card className="flex-1 border-2 overflow-hidden flex flex-col">
         <CardContent className={cn(
-          "flex-1 overflow-hidden",
-          isContentHeavy ? "pt-4 pb-4" : "pt-8 pb-8"
+          "flex-1 overflow-hidden flex items-center",
+          isContentHeavy ? "py-6 px-6" : "py-8 px-8"
         )}>
           <div className={cn(
-            "h-full overflow-y-auto scrollbar-hide",
-            isContentHeavy ? "space-y-3" : "space-y-6"
+            "w-full",
+            isContentHeavy ? "space-y-5" : "space-y-7"
           )}>
             {slide.talkingPoints.map((point, index) => {
               const parsed = parseContentPoint(point);
               
               if (parsed.type === 'header') {
                 return (
-                  <div key={index} className="space-y-1.5">
-                    {index > 0 && <Separator className={isContentHeavy ? "my-2" : "my-4"} />}
-                    <div className="flex items-start gap-3">
-                      <Badge variant="default" className="mt-1 shrink-0 text-xs px-2.5 py-0.5">
+                  <div key={index}>
+                    {index > 0 && <Separator className={cn(
+                      "mb-5",
+                      isContentHeavy ? "mt-4" : "mt-6"
+                    )} />}
+                    <div className="space-y-3">
+                      <h3 className={cn(
+                        "font-bold text-primary border-l-4 border-primary pl-4",
+                        isContentHeavy ? "text-xl" : "text-2xl"
+                      )}>
                         {parsed.header}
-                      </Badge>
+                      </h3>
+                      <p className={cn(
+                        "text-foreground pl-4 leading-relaxed",
+                        isContentHeavy ? "text-lg" : "text-xl"
+                      )}>
+                        {parsed.content}
+                      </p>
                     </div>
-                    <p className={cn(
-                      "text-muted-foreground pl-2",
-                      isContentHeavy ? "text-base leading-snug" : "text-lg leading-relaxed"
-                    )}>
-                      {parsed.content}
-                    </p>
                   </div>
                 );
               }
               
               if (parsed.type === 'bullet') {
                 return (
-                  <div key={index} className="flex items-start gap-2 pl-6">
+                  <div key={index} className="flex items-start gap-3 pl-6">
                     <ChevronRight className={cn(
-                      "mt-0.5 text-primary shrink-0",
-                      isContentHeavy ? "h-4 w-4" : "h-5 w-5"
+                      "mt-1 text-primary shrink-0",
+                      isContentHeavy ? "h-5 w-5" : "h-6 w-6"
                     )} />
                     <span className={cn(
-                      isContentHeavy ? "text-base leading-snug" : "text-lg leading-relaxed"
+                      "leading-relaxed",
+                      isContentHeavy ? "text-lg" : "text-xl"
                     )}>{parsed.content}</span>
                   </div>
                 );
               }
               
               return (
-                <div key={index} className="flex items-start gap-3">
+                <div key={index} className="flex items-start gap-4">
                   <Circle className={cn(
                     "fill-primary text-primary shrink-0",
-                    isContentHeavy ? "h-2 w-2 mt-1.5" : "h-2.5 w-2.5 mt-2"
+                    isContentHeavy ? "h-3 w-3 mt-2" : "h-3.5 w-3.5 mt-2.5"
                   )} />
                   <span className={cn(
-                    isContentHeavy ? "text-base leading-snug" : "text-lg leading-relaxed"
+                    "leading-relaxed",
+                    isContentHeavy ? "text-lg" : "text-xl"
                     )}>{parsed.content}</span>
                 </div>
               );
