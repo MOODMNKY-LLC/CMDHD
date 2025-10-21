@@ -717,7 +717,7 @@ export const presentationSlides: Slide[] = [
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
     duration: 1,
-    title: 'Six Mini Scenarios Overview',
+    title: 'The Story I\'m Telling Myself Is...',
     headers: ['Scenario', 'Boundary Focus', 'Key Teaching Point'],
     rows: [
       [`It is Just a Ride`, 'Scope', 'Out-of-role favors create liability.'],
@@ -919,23 +919,6 @@ export const presentationSlides: Slide[] = [
     type: 'content',
     section: 'Gray Zone Lab',
     sectionIndex: 8,
-    duration: 5,
-    title: 'The Story I\'m Telling Myself Is...',
-    talkingPoints: [
-      'Form small groups by county and discuss your assigned scenario.'
-    ],
-    facilitatorNotes: [
-      'Allow 3-4 minutes for group discussion',
-      'Provide county-specific scenarios on handouts or slides',
-      'Encourage use of decision tree and policy references',
-      'Normalize uncertainty—gray zones are gray for a reason'
-    ]
-  },
-  {
-    id: 33,
-    type: 'content',
-    section: 'Gray Zone Lab',
-    sectionIndex: 8,
     duration: 3,
     title: 'Shared Lessons',
     talkingPoints: [
@@ -959,7 +942,7 @@ export const presentationSlides: Slide[] = [
 
   // Section 9: Documentation & Consultation (Slides 33-34)
   {
-    id: 34,
+    id: 33,
     type: 'content',
     section: 'Decision Tree & Documentation',
     sectionIndex: 9,
@@ -984,7 +967,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 35,
+    id: 34,
     type: 'content',
     section: 'Decision Tree & Documentation',
     sectionIndex: 9,
@@ -1012,9 +995,9 @@ export const presentationSlides: Slide[] = [
     ]
   },
 
-  // Section 10: Closing & Commitments (Slides 36-39)
+  // Section 10: Closing & Commitments (Slides 35-38)
   {
-    id: 36,
+    id: 35,
     type: 'content',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1035,7 +1018,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 37,
+    id: 36,
     type: 'reflection',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1057,7 +1040,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 38,
+    id: 37,
     type: 'content',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1083,7 +1066,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 39,
+    id: 38,
     type: 'quote',
     section: 'Closing & Commitments',
     sectionIndex: 10,
