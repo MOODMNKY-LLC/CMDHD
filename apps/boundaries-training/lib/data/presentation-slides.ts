@@ -100,58 +100,16 @@ export const presentationSlides: Slide[] = [
     duration: 2,
     title: `The Story We're Telling Ourselves`,
     subtitle: 'Professional Boundaries Training',
-    quote: 'CMDHD • Facilitator: Simeon Bowman – MOODMNKY LLC'
+    quote: 'CMDHD - Simeon Bowman, MSW Candidate, Founder of MOODMNKY LLC'
   },
   {
     id: 2,
     type: 'content',
     section: 'Opening & Framing',
     sectionIndex: 1,
-    duration: 2,
-    title: 'Why Boundaries Matter',
-    objective: 'Link emotional reflection to ethical clarity and professional sustainability',
-    talkingPoints: [
-      `**Ethical Foundation**: Boundaries uphold the four core principles of healthcare ethics—autonomy (client choice), beneficence (acting in their best interest), non-maleficence (doing no harm), and justice (fair treatment).`,
-      `**Power Differential**: Professional boundaries acknowledge and protect against the inherent power imbalance between provider and client. You have access to sensitive information, professional authority, and influence—boundaries ensure this power serves healing, not harm.`,
-      `**Trust & Predictability**: Boundaries create consistency. Clients know what to expect, which builds safety. Safety enables vulnerability. Vulnerability allows healing. This is the therapeutic foundation.`,
-      `**Rural Reality**: In small communities, boundary challenges are "inevitable and ubiquitous" (research shows this is the #1 ethical concern for rural mental health providers). This training equips you to navigate these overlaps with transparency and integrity.`,
-      `**Provider Well-Being**: Boundaries aren't just about client protection—they prevent burnout, compassion fatigue, and vicarious trauma. Sustainable care requires sustainable boundaries.`,
-      `**Clarity is Kindness**: Clear boundaries reduce confusion, prevent resentment, and model healthy relationships. When you say "no" to what's outside your role, you preserve capacity to say "yes" to what's within it.`
-    ],
-    facilitatorNotes: [
-      `Ask: "Who here works in a smaller town where clients are also neighbors, classmates, or friends? This is where these principles really matter."`,
-      `Emphasize: Boundaries aren't about being cold or distant—they're about being clear, consistent, and protective of the therapeutic relationship.`
-    ]
-  },
-  {
-    id: 3,
-    type: 'content',
-    section: 'Opening & Framing',
-    sectionIndex: 1,
-    duration: 2,
-    title: 'Session Goals',
-    objective: 'Orient participants to measurable learning objectives and outcomes',
-    talkingPoints: [
-      `**By the end of this session, you will be able to:**`,
-      `**Distinguish** between boundary crossings (gray zones requiring judgment) and boundary violations (bright lines that are never acceptable).`,
-      `**Apply** a 5-Step Decision Tree to real-world boundary dilemmas in your practice, including scenarios specific to rural Michigan healthcare.`,
-      `**Identify** which CMDHD policies apply to common boundary situations (scope of practice, dual relationships, gifts, communication, social media).`,
-      `**Articulate** when and how to consult your supervisor about boundary concerns using structured communication.`,
-      `**Commit** to one specific, measurable boundary practice change you will implement this month.`,
-      `**Learning Approach**: This is an interactive, problem-solving session grounded in adult learning principles. You will engage with polls, scenarios, and reflections—not just listen to lectures. Your experience and questions drive the learning.`
-    ],
-    facilitatorNotes: [
-      `Emphasize: These aren't abstract ethics—these are skills you'll use next week.`,
-      `Connect to professional development: This training fulfills CMDHD's ethical practice and risk management requirements.`
-    ]
-  },
-  {
-    id: 4,
-    type: 'content',
-    section: 'Opening & Framing',
-    sectionIndex: 1,
     duration: 1,
     title: 'Agenda & Expectations',
+    subtitle: 'How We Will Learn Together Today',
     talkingPoints: [
       `**Time**: 60 minutes total structured as: 20 min policy foundation, 15 min interactive scenarios, 10 min decision tree & documentation, 10 min county-specific discussion, 5 min closing commitments.`,
       `**Technology**: Use your phones for polls and reflection prompts. QR code on screen links to interactive platform—no login required.`,
@@ -163,6 +121,50 @@ export const presentationSlides: Slide[] = [
     facilitatorNotes: [
       `Set friendly, open tone: "We're all navigating the same challenges in different contexts."`,
       `Acknowledge anxiety: "Boundary training can feel evaluative—it's not. We're building skills together."`
+    ]
+  },
+  {
+    id: 3,
+    type: 'content',
+    section: 'Opening & Framing',
+    sectionIndex: 1,
+    duration: 2,
+    title: 'Session Goals',
+    subtitle: 'What You Will Learn Today',
+    talkingPoints: [
+      `**By the end of this session, you will be able to:**`,
+      `**Distinguish** between boundary crossings (gray zones requiring judgment) and boundary violations (bright lines that are never acceptable).`,
+      `**Apply** a 5-Step Decision Tree to real-world boundary dilemmas in your practice, including scenarios specific to rural Michigan healthcare.`,
+      `**Identify** which CMDHD policies apply to common boundary situations (scope of practice, dual relationships, gifts, communication, social media).`,
+      `**Articulate** when and how to consult your supervisor about boundary concerns using structured communication.`,
+      `**Commit** to one specific, measurable boundary practice change you will implement this month.`
+    ],
+    facilitatorNotes: [
+      `Objective: Orient participants to measurable learning objectives and outcomes`,
+      `Emphasize: These aren't abstract ethics—these are skills you'll use next week.`,
+      `Connect to professional development: This training fulfills CMDHD's ethical practice and risk management requirements.`
+    ]
+  },
+  {
+    id: 4,
+    type: 'content',
+    section: 'Opening & Framing',
+    sectionIndex: 1,
+    duration: 2,
+    title: 'Why Boundaries Matter',
+    subtitle: 'The Foundation of Ethical Healthcare Practice',
+    talkingPoints: [
+      `**Ethical Foundation**: Boundaries uphold the four core principles of healthcare ethics—autonomy (client choice), beneficence (acting in their best interest), non-maleficence (doing no harm), and justice (fair treatment).`,
+      `**Power Differential**: Professional boundaries acknowledge and protect against the inherent power imbalance between provider and client. You have access to sensitive information, professional authority, and influence—boundaries ensure this power serves healing, not harm.`,
+      `**Trust & Predictability**: Boundaries create consistency. Clients know what to expect, which builds safety. Safety enables vulnerability. Vulnerability allows healing. This is the therapeutic foundation.`,
+      `**Rural Reality**: In small communities, boundary challenges are "inevitable and ubiquitous" (research shows this is the #1 ethical concern for rural mental health providers). This training equips you to navigate these overlaps with transparency and integrity.`,
+      `**Provider Well-Being**: Boundaries aren\'t just about client protection—they prevent burnout, compassion fatigue, and vicarious trauma. Sustainable care requires sustainable boundaries.`,
+      `**Clarity is Kindness**: Clear boundaries reduce confusion, prevent resentment, and model healthy relationships. When you say "no" to what's outside your role, you preserve capacity to say "yes" to what's within it.`
+    ],
+    facilitatorNotes: [
+      `Objective: Link emotional reflection to ethical clarity and professional sustainability`,
+      `Ask: "Who here works in a smaller town where clients are also neighbors, classmates, or friends? This is where these principles really matter."`,
+      `Emphasize: Boundaries aren't about being cold or distant—they're about being clear, consistent, and protective of the therapeutic relationship.`
     ]
   },
   
@@ -177,7 +179,7 @@ export const presentationSlides: Slide[] = [
     sectionIndex: 2,
     duration: 2,
     title: 'PURPOSE: Why Professional Boundaries Exist',
-    objective: 'Ground the training in the fundamental rationale for boundaries',
+    subtitle: 'Protecting Clients, Organizations, and Professionals',
     policyReference: {
       section: 'Purpose',
       title: 'Professional Boundaries Policy - Purpose Statement',
@@ -190,6 +192,7 @@ export const presentationSlides: Slide[] = [
       'CMDHD serves six rural counties where personal and professional lives often overlap. These policies provide clarity in situations where social norms may not.'
     ],
     facilitatorNotes: [
+      'Objective: Ground the training in the fundamental rationale for boundaries',
       'Emphasize: Boundaries are protective, not punitive',
       'Connect to rural context: Small communities make boundaries MORE important, not less',
       'Preview: All 15 procedures stem from this foundational purpose'
@@ -202,7 +205,7 @@ export const presentationSlides: Slide[] = [
     sectionIndex: 2,
     duration: 2,
     title: 'POLICY: All Staff Will Follow Procedures',
-    objective: 'Establish policy compliance as mandatory, not optional',
+    subtitle: 'Compliance is Mandatory, Not Optional',
     policyReference: {
       section: 'Policy',
       title: 'Professional Boundaries Policy Statement',
@@ -216,6 +219,7 @@ export const presentationSlides: Slide[] = [
       'The next slides will walk through each procedure in order, showing how policy translates into daily practice.'
     ],
     facilitatorNotes: [
+      'Objective: Establish policy compliance as mandatory, not optional',
       'Set serious tone: This is binding policy, not aspirational guidance',
       'Note: Procedures will be presented in exact policy order (1-15)',
       'Emphasize: Every procedure has a rationale grounded in healthcare ethics and law'
@@ -741,155 +745,96 @@ export const presentationSlides: Slide[] = [
   },
   {
     id: 25,
-    type: 'poll',
+    type: 'reflection',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 1.5,
+    duration: 2,
     title: 'Scenario 1: Emergency Transportation Dilemma',
-    scenario: `A client with a serious wound infection needs urgent follow-up care in 30 minutes. Their ride cancelled, Medicaid transport has a 2-hour wait, and missing this appointment could result in hospitalization. It's January in rural Michigan—roads are icy, and the client lives 15 miles outside of town with no family nearby. They ask if you can drive them "just this once" since you're headed that direction anyway.`,
-    question: 'What should you do?',
-    options: [
-      `Drive them—it's a medical emergency`,
-      'Politely decline and help arrange alternative transport',
-      'Ask your supervisor for a one-time exception',
-      'Drive them but document it as an emergency situation'
-    ],
-    correctAnswer: 1,
-    explanation: `Correct: "Politely decline and help arrange alternative transport." Policy #2 explicitly prohibits transporting clients—no exceptions for weather, urgency, or distance—because it protects you from liability, prevents dependency, and maintains role clarity. Respond: "I understand how stressful this is. Let me call the clinic to explain the situation and arrange medical transport or reschedule for urgent care." Your empathy and problem-solving demonstrate care within professional boundaries. Document the situation and outcome thoroughly.`,
-    policyReference: 'Policy #2: Scope of Practice',
-    boundaryFocus: 'Scope of Practice'
+    prompt: `A client with a serious wound infection needs urgent follow-up care in 30 minutes. Their ride cancelled, Medicaid transport has a 2-hour wait, and missing this appointment could result in hospitalization. It's January in rural Michigan—roads are icy, and the client lives 15 miles outside of town with no family nearby. They ask if you can drive them "just this once" since you're headed that direction anyway.\n\nPause and reflect: What should you do, and why?`,
+    placeholder: 'Consider: What policy applies? What are the risks? How would you respond with empathy while maintaining boundaries?',
+    talkingPoints: [
+      '**Policy #2: Scope of Practice** explicitly prohibits transporting clients—no exceptions for weather, urgency, or distance.',
+      'The best response is to politely decline and help arrange alternative transport. This protects you from liability, prevents dependency, and maintains role clarity.',
+      'Appropriate response: "I understand how stressful this is. Let me call the clinic to explain the situation and arrange medical transport or reschedule for urgent care."',
+      'Your empathy and problem-solving demonstrate care within professional boundaries.',
+      'Document the situation and outcome thoroughly to show your professional judgment and client advocacy.'
+    ]
   },
   {
     id: 26,
-    type: 'poll',
+    type: 'reflection',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 1.5,
+    duration: 2,
     title: 'Scenario 2: Community Crisis Contact',
-    scenario: `At 9:30 PM, you receive a text from a client who also teaches your child at the only school in town. The text expresses anxiety about a near-relapse after encountering a former using partner at tonight's community vigil for a local overdose death. The client mentions feeling reassured seeing you there but is now struggling. You both know everyone in this small community is grieving tonight.`,
-    question: `What's the best response?`,
-    options: [
-      'Respond immediately—this is a genuine crisis',
-      'Respond the next business day through proper channels',
-      'Ignore it to maintain boundaries',
-      'Text back but keep it brief'
-    ],
-    correctAnswer: 1,
-    explanation: `Correct: "Respond the next business day through proper channels." Policy #13 requires after-hours boundaries to protect both your well-being and long-term effectiveness. Responding immediately sets an unsustainable precedent and personalizes the dual relationship. Next business day, respond via work channels: "I received your message. I'm glad you reached out instead of using. Let's process this in our session today. If you're in immediate crisis, call the CMDHD crisis line or text 988." During the session, affirm their healthy choice, acknowledge the dual relationship reality, and establish clear crisis protocols. Document thoroughly.`,
-    policyReference: 'Policy #13: Work Hours',
-    boundaryFocus: 'Work Hours'
+    prompt: `At 9:30 PM, you receive a text from a client who also teaches your child at the only school in town. The text expresses anxiety about a near-relapse after encountering a former using partner at tonight's community vigil for a local overdose death. The client mentions feeling reassured seeing you there but is now struggling. You both know everyone in this small community is grieving tonight.\n\nPause and reflect: What's the best response?`,
+    placeholder: 'Consider: What are the boundary implications? How do you balance compassion with professional limits? What message does your response send?',
+    talkingPoints: [
+      '**Policy #13: Work Hours** requires after-hours boundaries to protect both your well-being and long-term effectiveness.',
+      'The best response is to respond the next business day through proper channels. Responding immediately sets an unsustainable precedent and personalizes the dual relationship.',
+      'Next business day, respond via work channels: "I received your message. I\'m glad you reached out instead of using. Let\'s process this in our session today. If you\'re in immediate crisis, call the CMDHD crisis line or text 988."',
+      'During the session, affirm their healthy choice, acknowledge the dual relationship reality, and establish clear crisis protocols.',
+      'Document thoroughly, including the delayed response rationale and the boundary-setting conversation.'
+    ]
   },
   {
     id: 27,
-    type: 'poll',
+    type: 'reflection',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 1.5,
+    duration: 2,
     title: 'Scenario 3: Healing Gift from Elder',
-    scenario: `A Native American client brings you homemade frybread made by their grandmother. The client explains that in their tradition, accepting food prepared by an elder is a sacred act of connection and healing. They've struggled with feelings of unworthiness throughout treatment, and this gift represents their family's acknowledgment of their recovery journey. Your agency primarily serves Indigenous communities, and you know refusing could damage the therapeutic alliance.`,
-    question: 'What should you do?',
-    options: [
-      'Accept it—cultural sensitivity is important',
-      'Decline politely and explain agency policy',
-      'Accept and share with the team',
-      'Accept but document it thoroughly'
-    ],
-    correctAnswer: 2,
-    explanation: `Best answer: "Accept and share with the team." Policy #14 allows gifts of nominal value (under $25), and cultural context matters. In many Indigenous communities, gift-giving is relational, not transactional—flat refusal can communicate rejection. Respond: "Thank you for this meaningful gift. In my tradition, when I receive something this special, I share it with my whole care team so everyone can be blessed by your grandmother's kindness. May I do that?" Share immediately and document the gift, cultural context, and your response. This honors the tradition while maintaining transparency and appropriate boundaries. When in doubt about culturally significant gifts, consult your supervisor.`,
-    policyReference: 'Policy #14: Gifts & Gratuities',
-    boundaryFocus: 'Gifts'
+    prompt: `A Native American client brings you homemade frybread made by their grandmother. The client explains that in their tradition, accepting food prepared by an elder is a sacred act of connection and healing. They've struggled with feelings of unworthiness throughout treatment, and this gift represents their family's acknowledgment of their recovery journey. Your agency primarily serves Indigenous communities, and you know refusing could damage the therapeutic alliance.\n\nPause and reflect: What should you do?`,
+    placeholder: 'Consider: How do you balance policy with cultural sensitivity? What does honoring the gift while maintaining boundaries look like?',
+    talkingPoints: [
+      '**Policy #14: Gifts & Gratuities** allows gifts of nominal value (under $25), and cultural context matters significantly.',
+      'Best approach: Accept and share with the team. In many Indigenous communities, gift-giving is relational, not transactional—flat refusal can communicate rejection.',
+      'Appropriate response: "Thank you for this meaningful gift. In my tradition, when I receive something this special, I share it with my whole care team so everyone can be blessed by your grandmother\'s kindness. May I do that?"',
+      'Share immediately and document the gift, cultural context, and your response. This honors the tradition while maintaining transparency and appropriate boundaries.',
+      'When in doubt about culturally significant gifts, consult your supervisor before responding.'
+    ]
   },
   {
     id: 28,
-    type: 'poll',
+    type: 'reflection',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 1.5,
+    duration: 2,
     title: 'Scenario 4: Only Provider in 60 Miles',
-    scenario: `During intake, you discover your new client attends the small church where you volunteer every Sunday. The client waited 6 weeks for this appointment and specifically requested you based on your reputation in the community. You're the only licensed substance use counselor within 60 miles—the nearest alternative has a 4-month waitlist. The client's assessment reveals high-risk daily opioid use requiring immediate intervention.`,
-    question: `What's your first step?`,
-    options: [
-      `Continue services—they need immediate help`,
-      'Disclose to supervisor immediately and discuss whether safeguards allow continuation',
-      `Ask the client if they're comfortable with the dual relationship`,
-      'Refer immediately to avoid any boundary issues'
-    ],
-    correctAnswer: 1,
-    explanation: `Correct: "Disclose to supervisor immediately and discuss safeguards or reassignment." Policies #4 and #5 require disclosure, not automatic termination—in rural areas, some overlap is inevitable. Your supervisor will assess objectivity, navigation strategies, and needed safeguards. Potential safeguards include proactive informed consent, documented supervision, and clear church interaction boundaries. Say to client: "I want to be transparent—we attend the same church. In this office, everything is confidential. At church, I'm another community member and won't reference our work. I'll consult my supervisor to ensure this doesn't compromise your care." Document thoroughly and honor both access to care and professional boundaries.`,
-    policyReference: 'Policy #4 & #5: Conflicts of Interest',
-    boundaryFocus: 'Dual Relationships'
+    prompt: `During intake, you discover your new client attends the small church where you volunteer every Sunday. The client waited 6 weeks for this appointment and specifically requested you based on your reputation in the community. You're the only licensed substance use counselor within 60 miles—the nearest alternative has a 4-month waitlist. The client's assessment reveals high-risk daily opioid use requiring immediate intervention.\n\nPause and reflect: What's your first step?`,
+    placeholder: 'Consider: What are your competing ethical obligations? How do you balance access to care with boundary concerns? What safeguards might apply?',
+    talkingPoints: [
+      '**Policies #4 & #5: Conflicts of Interest** require disclosure, not automatic termination—in rural areas, some overlap is inevitable.',
+      'Best first step: Disclose to supervisor immediately and discuss whether safeguards allow continuation. Your supervisor will assess objectivity, navigation strategies, and needed safeguards.',
+      'Potential safeguards include proactive informed consent, documented supervision, and clear church interaction boundaries.',
+      'Appropriate response to client: "I want to be transparent—we attend the same church. In this office, everything is confidential. At church, I\'m another community member and won\'t reference our work. I\'ll consult my supervisor to ensure this doesn\'t compromise your care."',
+      'Document thoroughly and honor both access to care and professional boundaries.'
+    ]
   },
   {
     id: 29,
-    type: 'poll',
+    type: 'reflection',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 1.5,
+    duration: 2,
     title: 'Scenario 5: Recovery Community Colleague',
-    scenario: `A client you discharged 6 months ago sends you a Facebook friend request. They're now a certified peer recovery specialist working at another agency and have referred several people to you. You're both active in the local recovery community and attend the same monthly community celebration events. Their request includes a message: "Would love to stay connected as colleagues in this recovery work. Your support meant everything to my journey."`,
-    question: 'Should you accept?',
-    options: [
-      `Yes—they're now a professional colleague`,
-      'No—professional boundaries continue after discharge',
-      'Ask them to wait until one year post-discharge',
-      'Accept but limit what they can see'
-    ],
-    correctAnswer: 1,
-    explanation: `Correct: "No—professional boundaries continue after discharge." Policy #6 prohibits social media connections with former clients because power differentials and confidentiality considerations persist indefinitely, even in collegial contexts. Risks include post misinterpretation, complicated re-referrals, and undermining their professional role. Respond warmly: "Thank you for this kind message—your support meant a lot. CMDHD policy prevents me from connecting on social media with former clients. That said, I deeply respect your recovery journey and work as a peer specialist. I look forward to collaborating professionally and seeing you at community events." At events, maintain warm professional boundaries. This refusal isn't rejection—it's professional consistency serving the whole recovery community.`,
-    policyReference: 'Policy #6: Social Media',
-    boundaryFocus: 'Social Media'
+    prompt: `A client you discharged 6 months ago sends you a Facebook friend request. They're now a certified peer recovery specialist working at another agency and have referred several people to you. You're both active in the local recovery community and attend the same monthly community celebration events. Their request includes a message: "Would love to stay connected as colleagues in this recovery work. Your support meant everything to my journey."\n\nPause and reflect: Should you accept?`,
+    placeholder: 'Consider: Do professional boundaries end after discharge? How do power dynamics persist? What message does your response send?',
+    talkingPoints: [
+      '**Policy #6: Social Media** prohibits social media connections with former clients because power differentials and confidentiality considerations persist indefinitely, even in collegial contexts.',
+      'Best response: No—professional boundaries continue after discharge. Risks include post misinterpretation, complicated re-referrals, and undermining their professional role.',
+      'Respond warmly: "Thank you for this kind message—your support meant a lot. CMDHD policy prevents me from connecting on social media with former clients. That said, I deeply respect your recovery journey and work as a peer specialist. I look forward to collaborating professionally and seeing you at community events."',
+      'At events, maintain warm professional boundaries. This refusal isn\'t rejection—it\'s professional consistency serving the whole recovery community.',
+      'Document the request and your response to demonstrate consistent boundary maintenance.'
+    ]
   },
 
-  // Section 8: Gray Zone Lab (Slides 30-31)
+  // Section 8: Decision Tree & Gray Zone Lab (Slides 30-32)
   {
     id: 30,
-    type: 'content',
-    section: 'Gray Zone Lab',
-    sectionIndex: 8,
-    duration: 5,
-    title: 'County-Specific Scenarios',
-    talkingPoints: [
-      'Form small groups by county and discuss your assigned scenario.'
-    ],
-    facilitatorNotes: [
-      'Allow 3-4 minutes for group discussion',
-      'Provide county-specific scenarios on handouts or slides',
-      'Encourage use of decision tree and policy references',
-      'Normalize uncertainty—gray zones are gray for a reason'
-    ]
-  },
-  {
-    id: 31,
-    type: 'content',
-    section: 'Gray Zone Lab',
-    sectionIndex: 8,
-    duration: 3,
-    title: 'Shared Lessons',
-    talkingPoints: [
-      `Despite local differences, supervision remains the universal safeguard across all counties.`,
-      `Every gray area has a policy touchpoint when you know where to look.`,
-      `Key themes that emerge across counties:`,
-      `• Disclosure + documentation = protection in dual relationship contexts`,
-      `• "Can I?" vs. "Should I?" — scope is about judgment, not just permission`,
-      `• When in doubt, consult before acting (not after)`,
-      `• Community size doesn't change professional standards—it changes how we apply them`,
-      `Your supervisors are resources, not gatekeepers. They want to help you navigate complexity.`,
-      `Rural practice requires more boundary vigilance, not less.`
-    ],
-    facilitatorNotes: [
-      'Activity: Ask each group to share one insight or question',
-      'Affirm the complexity—there are no "gotcha" scenarios',
-      'Connect insights back to specific policies',
-      'Emphasize: Supervision is a strength, not a weakness'
-    ]
-  },
-
-  // Section 9: Decision Tree & Documentation (Slides 32-34)
-  {
-    id: 32,
     type: 'tree',
     section: 'Decision Tree & Documentation',
-    sectionIndex: 9,
+    sectionIndex: 8,
     duration: 3,
     title: '5-Step Decision Tree',
     steps: [
@@ -948,6 +893,50 @@ export const presentationSlides: Slide[] = [
       `Real-world application: Walk through one of the scenario examples (slides 25-29) using this decision tree to demonstrate practical use.`
     ]
   },
+  {
+    id: 31,
+    type: 'content',
+    section: 'Gray Zone Lab',
+    sectionIndex: 8,
+    duration: 5,
+    title: 'The Story I\'m Telling Myself Is...',
+    talkingPoints: [
+      'Form small groups by county and discuss your assigned scenario.'
+    ],
+    facilitatorNotes: [
+      'Allow 3-4 minutes for group discussion',
+      'Provide county-specific scenarios on handouts or slides',
+      'Encourage use of decision tree and policy references',
+      'Normalize uncertainty—gray zones are gray for a reason'
+    ]
+  },
+  {
+    id: 32,
+    type: 'content',
+    section: 'Gray Zone Lab',
+    sectionIndex: 8,
+    duration: 3,
+    title: 'Shared Lessons',
+    talkingPoints: [
+      `Despite local differences, supervision remains the universal safeguard across all counties.`,
+      `Every gray area has a policy touchpoint when you know where to look.`,
+      `Key themes that emerge across counties:`,
+      `• Disclosure + documentation = protection in dual relationship contexts`,
+      `• "Can I?" vs. "Should I?" — scope is about judgment, not just permission`,
+      `• When in doubt, consult before acting (not after)`,
+      `• Community size doesn't change professional standards—it changes how we apply them`,
+      `Your supervisors are resources, not gatekeepers. They want to help you navigate complexity.`,
+      `Rural practice requires more boundary vigilance, not less.`
+    ],
+    facilitatorNotes: [
+      'Activity: Ask each group to share one insight or question',
+      'Affirm the complexity—there are no "gotcha" scenarios',
+      'Connect insights back to specific policies',
+      'Emphasize: Supervision is a strength, not a weakness'
+    ]
+  },
+
+  // Section 9: Documentation & Consultation (Slides 33-34)
   {
     id: 33,
     type: 'content',
@@ -1012,14 +1001,12 @@ export const presentationSlides: Slide[] = [
     title: 'Summary of Key Points',
     subtitle: 'What to Remember & Apply',
     talkingPoints: [
-      `**Boundaries are Ethical Practice**: They uphold autonomy, beneficence, non-maleficence, and justice. They protect the power differential and preserve therapeutic effectiveness.`,
-      `**Rural Context Requires Adaptation, Not Abandonment**: Dual relationships are inevitable in small communities—manage them through transparency, documentation, and supervision rather than avoidance.`,
-      `**The 5-Step Decision Tree is Your Tool**: Check role & scope → Scan for conflict → Confirm consent → Check time & channel → Document & debrief. If you can't answer "yes" to all five, consult before acting.`,
-      `**Supervision is Professional Development**: Consulting your supervisor about boundary gray zones isn't a sign of weakness—it's evidence-based practice that prevents violations and supports your well-being.`,
-      `**Documentation is Your Safety Net**: Chart boundary decisions, policy consultations, clinical reasoning, and client responses. Neutral, objective language protects you and demonstrates ethical care.`,
-      `**Bright Lines vs. Gray Zones**: Some boundaries are absolute (no sexual relationships, no transporting clients). Others require judgment (cultural gifts, community encounters). Know the difference and when to escalate.`,
-      `**Clarity is Kindness**: Clear boundaries reduce confusion, prevent resentment, and model healthy relationships. Saying "no" to what's outside your role preserves your capacity to say "yes" to what's within it.`,
-      `**You Are Not Alone**: CMDHD supervisors are trained in boundary management. Your colleagues share these challenges. Professional boundaries are navigable with the right frameworks and support.`
+      `**Boundaries Protect Everyone**: They uphold ethical principles, protect power differentials, and preserve therapeutic effectiveness for clients, organizations, and professionals.`,
+      `**Rural Complexity is Manageable**: Dual relationships are inevitable—manage them through transparency, documentation, and supervision rather than avoidance.`,
+      `**Use the 5-Step Decision Tree**: Check role & scope → Scan for conflict → Confirm consent → Check time & channel → Document & debrief. If unsure on any step, consult first.`,
+      `**Supervision Strengthens Practice**: Consulting supervisors about gray zones demonstrates professional judgment and prevents boundary violations.`,
+      `**Documentation is Protection**: Chart decisions, policy consultations, reasoning, and outcomes using neutral, objective language.`,
+      `**Know Your Boundaries**: Some are absolute (no sexual relationships, no transporting). Others require judgment (gifts, encounters). Clarity is kindness.`
     ],
     facilitatorNotes: [
       `Pause for questions: "What's one principle from today that will change how you approach boundary situations?"`,
