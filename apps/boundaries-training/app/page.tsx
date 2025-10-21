@@ -16,6 +16,7 @@ import {
   MapPin
 } from "lucide-react";
 import { learningObjectives, trainingSteps, learningOutcomes } from "@/lib/data";
+import { TrainingQRCode } from "@/components/training-qr-code";
 
 export default function Home() {
 
@@ -30,7 +31,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
         
         <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column */}
             <div className="space-y-8">
               <div className="space-y-4">
@@ -80,43 +81,55 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column - Key Info Card */}
-            <Card className="shadow-2xl border-2">
-              <CardHeader className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-2xl">Training Overview</CardTitle>
-                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Core Session</Badge>
-                </div>
-                <CardDescription className="text-base">
-                  Learn to navigate boundary challenges with confidence and compassion. Through interactive scenarios, reflective exercises, and practical frameworks, you&apos;ll develop skills that honor both professional standards and human connection.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-3">
-                  <h4 className="font-semibold flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
-                    What You&apos;ll Learn
-                  </h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    {learningOutcomes.map((outcome, idx) => {
-                      const Icon = outcome.icon;
-                      return (
-                        <li key={idx} className="flex items-start gap-3">
-                          <Icon className="w-4 h-4 mt-0.5 text-primary shrink-0" />
-                          <span>{outcome.text}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+            {/* Right Column - Cards */}
+            <div className="space-y-6">
+              {/* Training Overview Card */}
+              <Card className="shadow-2xl border-2">
+                <CardHeader className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-2xl">Training Overview</CardTitle>
+                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Core Session</Badge>
+                  </div>
+                  <CardDescription className="text-base">
+                    Learn to navigate boundary challenges with confidence and compassion. Through interactive scenarios, reflective exercises, and practical frameworks, you&apos;ll develop skills that honor both professional standards and human connection.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                      What You&apos;ll Learn
+                    </h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      {learningOutcomes.map((outcome, idx) => {
+                        const Icon = outcome.icon;
+                        return (
+                          <li key={idx} className="flex items-start gap-3">
+                            <Icon className="w-4 h-4 mt-0.5 text-primary shrink-0" />
+                            <span>{outcome.text}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
 
-                <div className="pt-4 border-t">
-                  <p className="text-xs text-muted-foreground">
-                    <strong className="text-foreground">Foundation:</strong> CMDHD Professional Boundaries Policy (effective June 30, 2025)
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="pt-4 border-t">
+                    <p className="text-xs text-muted-foreground">
+                      <strong className="text-foreground">Foundation:</strong> CMDHD Professional Boundaries Policy (effective June 30, 2025)
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* QR Code Card - Hidden on Mobile */}
+              <div className="hidden md:block">
+                <TrainingQRCode 
+                  size={256}
+                  title="In-Person? Scan Here!"
+                  description="Quick access on your mobile device"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
