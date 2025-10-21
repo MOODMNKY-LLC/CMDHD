@@ -101,7 +101,7 @@ export const presentationSlides: Slide[] = [
     duration: 2,
     title: `The Story We're Telling Ourselves`,
     subtitle: 'Professional Boundaries Training',
-    quote: 'CMDHD - Simeon Bowman, MSW Candidate\nFounder of MOODMNKY LLC'
+    quote: 'CMDHD - Simeon Bowman, MSW Candidate, CDCA\nFounder of MOODMNKY LLC'
   },
   {
     id: 2,
