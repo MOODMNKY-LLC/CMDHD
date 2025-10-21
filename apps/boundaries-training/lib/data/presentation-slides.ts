@@ -2,7 +2,7 @@
 // Formal Professional Development Content for Healthcare Workforce
 // Central Michigan District Health Department
 
-export type SlideType = 'title' | 'content' | 'poll' | 'scenario' | 'reflection' | 'table' | 'quote' | 'tree';
+export type SlideType = 'qr-welcome' | 'title' | 'content' | 'poll' | 'scenario' | 'reflection' | 'table' | 'quote' | 'tree';
 
 // Policy reference for visual integration
 export interface PolicyReference {
@@ -18,6 +18,12 @@ export interface BaseSlide {
   section: string;
   sectionIndex: number;
   duration?: number;
+}
+
+export interface QRWelcomeSlide extends BaseSlide {
+  type: 'qr-welcome';
+  title: string;
+  subtitle?: string;
 }
 
 export interface TitleSlide extends BaseSlide {
@@ -89,9 +95,19 @@ export interface TreeSlide extends BaseSlide {
   facilitatorNotes?: string[];
 }
 
-export type Slide = TitleSlide | ContentSlide | PollSlide | ReflectionSlide | TableSlide | QuoteSlide | TreeSlide;
+export type Slide = QRWelcomeSlide | TitleSlide | ContentSlide | PollSlide | ReflectionSlide | TableSlide | QuoteSlide | TreeSlide;
 
 export const presentationSlides: Slide[] = [
+  // Welcome Slide with QR Code (Slide 0)
+  {
+    id: 0,
+    type: 'qr-welcome',
+    section: 'Welcome',
+    sectionIndex: 0,
+    duration: 5,
+    title: 'Welcome to Professional Boundaries Training',
+    subtitle: 'Scan the QR code to access the training on your device'
+  },
   // Section 1: Opening & Framing (Slides 1-4)
   {
     id: 1,

@@ -18,6 +18,7 @@ import { CheckCircle2, Circle, MessageCircle, ChevronRight } from "lucide-react"
 import { useState, useEffect } from "react";
 import { PolicyCard } from "./policy-card";
 import { FacilitatorNotes } from "./facilitator-notes";
+import { PresentationQRCode } from "@/components/training-qr-code";
 import { cn } from "@/lib/utils";
 import type {
   Slide,
@@ -69,6 +70,8 @@ interface SlideRendererProps {
 
 export function SlideRenderer({ slide }: SlideRendererProps) {
   switch (slide.type) {
+    case 'qr-welcome':
+      return <QRWelcomeSlideComponent />;
     case 'title':
       return <TitleSlideComponent slide={slide as TitleSlide} />;
     case 'content':
@@ -86,6 +89,14 @@ export function SlideRenderer({ slide }: SlideRendererProps) {
     default:
       return <div>Unknown slide type</div>;
   }
+}
+
+function QRWelcomeSlideComponent() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-full px-4 sm:px-8 md:px-12 py-8">
+      <PresentationQRCode />
+    </div>
+  );
 }
 
 function TitleSlideComponent({ slide }: { slide: TitleSlide }) {
