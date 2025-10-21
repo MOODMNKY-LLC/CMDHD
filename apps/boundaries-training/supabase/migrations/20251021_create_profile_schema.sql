@@ -1,5 +1,5 @@
--- Enable UUID extension if not already enabled
-create extension if not exists "uuid-ossp";
+-- Note: Using gen_random_uuid() which is built-in to PostgreSQL 13+
+-- No extension needed
 
 -- ============================================================================
 -- PROFILES TABLE
@@ -44,7 +44,7 @@ create policy "Users can insert own profile"
 -- Tracks participant responses to scenario-based polls
 -- ============================================================================
 create table public.poll_responses (
-  id uuid default uuid_generate_v4() primary key,
+  id uuid default gen_random_uuid() primary key,
   user_id uuid references public.profiles(id) on delete cascade not null,
   poll_id integer not null, -- Maps to presentation slide ID
   selected_option integer not null, -- 0-based index of selected answer
@@ -73,7 +73,7 @@ create policy "Users can update own poll responses"
 -- Stores participant reflections and commitment statements
 -- ============================================================================
 create table public.reflections (
-  id uuid default uuid_generate_v4() primary key,
+  id uuid default gen_random_uuid() primary key,
   user_id uuid references public.profiles(id) on delete cascade not null,
   reflection_type text not null check (reflection_type in ('story', 'emotion', 'commitment')),
   content text not null,
@@ -106,7 +106,7 @@ create policy "Users can delete own reflections"
 -- Stores training evaluation and feedback
 -- ============================================================================
 create table public.feedback (
-  id uuid default uuid_generate_v4() primary key,
+  id uuid default gen_random_uuid() primary key,
   user_id uuid references public.profiles(id) on delete cascade not null,
   rating integer check (rating >= 1 and rating <= 5),
   most_valuable text, -- Which learning objective was most valuable
