@@ -79,7 +79,7 @@ export function CommitmentComponent({ commitment }: CommitmentComponentProps) {
             <span>Your Commitment</span>
           </div>
           <p className="text-sm text-muted-foreground italic">
-            "This month, I will strengthen my professional boundaries by..."
+            &ldquo;This month, I will strengthen my professional boundaries by...&rdquo;
           </p>
         </div>
 

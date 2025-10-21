@@ -185,7 +185,7 @@ export function ScenarioPollsComponent({ userResponses }: ScenarioPollsComponent
       </CardHeader>
       <CardContent>
         <Accordion type="single" collapsible className="w-full">
-          {SCENARIOS.map((scenario, index) => {
+          {SCENARIOS.map((scenario) => {
             const userResponse = localResponses.get(scenario.id);
             const hasAnswered = !!userResponse;
 
@@ -354,7 +354,7 @@ export function ScenarioPollsComponent({ userResponses }: ScenarioPollsComponent
               All Scenarios Complete!
             </p>
             <p className="text-sm text-green-700 dark:text-green-300 mt-1">
-              You've worked through all 6 boundary scenarios. Great work!
+              You&apos;ve worked through all 6 boundary scenarios. Great work!
             </p>
           </div>
         )}

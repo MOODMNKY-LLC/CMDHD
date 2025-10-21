@@ -77,7 +77,7 @@ export function TrainingProgressCard({ progress }: TrainingProgressCardProps) {
               <span>Certificate Eligible</span>
             </div>
             <p className="text-sm text-green-600 dark:text-green-500">
-              Congratulations! You've completed all required components. Your certificate is available for download.
+              Congratulations! You&apos;ve completed all required components. Your certificate is available for download.
             </p>
           </div>
         ) : (

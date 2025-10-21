@@ -11,7 +11,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { createClient } from "@/lib/supabase/server";
-import { LogoutButton } from "@/components/logout-button";
 import { getUserInitials } from "@/lib/data/profile";
 import { User, LogOut, Mail } from "lucide-react";
 

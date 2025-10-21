@@ -60,7 +60,7 @@ export function ReflectionsComponent({ storyReflection, emotionReflection }: Ref
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <Label htmlFor="story-reflection" className="text-base font-semibold">
-              The Story I'm Telling Myself (Slide 22)
+              The Story I&apos;m Telling Myself (Slide 22)
             </Label>
             {storyReflection && (
               <Badge variant="default" className="bg-green-600">
@@ -70,7 +70,7 @@ export function ReflectionsComponent({ storyReflection, emotionReflection }: Ref
             )}
           </div>
           <p className="text-sm text-muted-foreground italic">
-            "The story I'm telling myself about boundaries is..."
+            &ldquo;The story I&apos;m telling myself about boundaries is...&rdquo;
           </p>
           <form action={(formData) => handleSubmit('story', formData)}>
             <Textarea

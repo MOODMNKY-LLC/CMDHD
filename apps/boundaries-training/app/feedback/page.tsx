@@ -252,7 +252,7 @@ export default async function FeedbackPage() {
                       Training Complete!
                     </p>
                     <p className="text-sm text-green-700 dark:text-green-300 mt-1">
-                      You've completed all required components.
+                      You&apos;ve completed all required components.
                     </p>
                   </div>
                 ) : (
