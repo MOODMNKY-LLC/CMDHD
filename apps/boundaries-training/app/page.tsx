@@ -81,54 +81,78 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column - Cards */}
-            <div className="space-y-6">
-              {/* Training Overview Card */}
-              <Card className="shadow-2xl border-2">
-                <CardHeader className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-2xl">Training Overview</CardTitle>
-                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Core Session</Badge>
-                  </div>
-                  <CardDescription className="text-base">
-                    Learn to navigate boundary challenges with confidence and compassion. Through interactive scenarios, reflective exercises, and practical frameworks, you&apos;ll develop skills that honor both professional standards and human connection.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-3">
-                    <h4 className="font-semibold flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
-                      What You&apos;ll Learn
-                    </h4>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      {learningOutcomes.map((outcome, idx) => {
-                        const Icon = outcome.icon;
-                        return (
-                          <li key={idx} className="flex items-start gap-3">
-                            <Icon className="w-4 h-4 mt-0.5 text-primary shrink-0" />
-                            <span>{outcome.text}</span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
+            {/* Right Column - Training Overview Card */}
+            <Card className="shadow-2xl border-2">
+              <CardHeader className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-2xl">Training Overview</CardTitle>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Core Session</Badge>
+                </div>
+                <CardDescription className="text-base">
+                  Learn to navigate boundary challenges with confidence and compassion. Through interactive scenarios, reflective exercises, and practical frameworks, you&apos;ll develop skills that honor both professional standards and human connection.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                    What You&apos;ll Learn
+                  </h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {learningOutcomes.map((outcome, idx) => {
+                      const Icon = outcome.icon;
+                      return (
+                        <li key={idx} className="flex items-start gap-3">
+                          <Icon className="w-4 h-4 mt-0.5 text-primary shrink-0" />
+                          <span>{outcome.text}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
 
-                  <div className="pt-4 border-t">
-                    <p className="text-xs text-muted-foreground">
-                      <strong className="text-foreground">Foundation:</strong> CMDHD Professional Boundaries Policy (effective June 30, 2025)
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+                <div className="pt-4 border-t">
+                  <p className="text-xs text-muted-foreground">
+                    <strong className="text-foreground">Foundation:</strong> CMDHD Professional Boundaries Policy (effective June 30, 2025)
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
 
-              {/* QR Code Card - Hidden on Mobile */}
-              <div className="hidden md:block">
-                <TrainingQRCode 
-                  size={256}
-                  title="In-Person? Scan Here!"
-                  description="Quick access on your mobile device"
-                />
+      {/* Quick Access QR Code Section - Desktop Only */}
+      <section className="hidden md:block border-b bg-muted/30">
+        <div className="mx-auto max-w-7xl px-6 py-12">
+          <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Joining In Person?</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                Scan the QR code with your phone&apos;s camera to instantly access the training on your mobile device. No app required—just point, tap, and go.
+              </p>
+              <div className="flex items-center gap-6 text-sm text-muted-foreground pt-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">1</div>
+                  <span>Open camera</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">2</div>
+                  <span>Point at QR code</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">3</div>
+                  <span>Tap to open</span>
+                </div>
               </div>
+            </div>
+            
+            <div className="flex justify-center md:justify-end">
+              <TrainingQRCode 
+                size={200}
+                title="Quick Access"
+                description="Scan to create your account"
+              />
             </div>
           </div>
         </div>
