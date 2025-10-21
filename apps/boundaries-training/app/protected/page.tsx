@@ -12,6 +12,7 @@ import { Progress } from "@/components/ui/progress";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { DemographicsFormCard } from "@/components/profile/demographics-form-card";
 import { ReflectionsComponent } from "@/components/profile/reflections-component";
 import { ScenarioPollsComponent } from "@/components/profile/scenario-polls-component";
@@ -19,7 +20,7 @@ import { CommitmentComponent } from "@/components/profile/commitment-component";
 import { FeedbackFormCard } from "@/components/profile/feedback-form-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getUserInitials } from "@/lib/data/profile";
-import { ClipboardList, MessageCircle, ListChecks, Target, Star, CheckCircle2 } from "lucide-react";
+import { ClipboardList, MessageCircle, ListChecks, Target, Star, CheckCircle2, Info } from "lucide-react";
 
 export default async function ProfilePage() {
   const supabase = await createClient();
@@ -89,6 +90,15 @@ export default async function ProfilePage() {
                 Navigate through tabs to complete your CMDHD Professional Boundaries training
               </p>
             </div>
+
+            {/* Welcome Alert */}
+            <Alert className="border-primary/50 bg-primary/5">
+              <Info className="h-4 w-4" />
+              <AlertTitle>Welcome to Your Training Hub!</AlertTitle>
+              <AlertDescription>
+                Complete all 5 tabs below to finish your training (~60 minutes total). Start with &quot;Profile&quot; and complete the rest in any order. Your progress saves automatically.
+              </AlertDescription>
+            </Alert>
 
             <Tabs defaultValue="demographics" className="w-full">
               <TabsList className="grid w-full grid-cols-5 h-auto">

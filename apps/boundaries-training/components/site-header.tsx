@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { createClient } from "@/lib/supabase/server";
 import { getUserInitials } from "@/lib/data/profile";
-import { User, LogOut, Mail } from "lucide-react";
+import { GraduationCap, LogOut, Mail } from "lucide-react";
 
 export async function SiteHeader() {
   const supabase = await createClient();
@@ -26,32 +26,40 @@ export async function SiteHeader() {
           CMDHD Boundaries
         </Link>
         
-        <div className="hidden md:flex items-center gap-1">
-          <Link
-            href="/presentation"
-            className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-          >
-            Presentation
-          </Link>
-          <Link
-            href="/scenarios"
-            className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-          >
-            Scenarios
-          </Link>
-          <Link
-            href="/policy"
-            className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-          >
-            Policy
-          </Link>
-          <Link
-            href="/feedback"
-            className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-          >
-            Feedback
-          </Link>
-        </div>
+            <div className="hidden md:flex items-center gap-1">
+              {user && (
+                <Link
+                  href="/protected"
+                  className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                >
+                  Training Hub
+                </Link>
+              )}
+              <Link
+                href="/presentation"
+                className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+              >
+                Presentation
+              </Link>
+              <Link
+                href="/scenarios"
+                className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+              >
+                Scenarios
+              </Link>
+              <Link
+                href="/policy"
+                className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+              >
+                Policy
+              </Link>
+              <Link
+                href="/feedback"
+                className="inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+              >
+                Feedback
+              </Link>
+            </div>
 
         <div className="flex items-center gap-2">
           {user ? (
@@ -89,12 +97,12 @@ export async function SiteHeader() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link href="/protected" className="cursor-pointer">
-                    <User className="mr-2 h-4 w-4" />
-                    <span>Profile</span>
-                  </Link>
-                </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/protected" className="cursor-pointer">
+                      <GraduationCap className="mr-2 h-4 w-4" />
+                      <span>Training Hub</span>
+                    </Link>
+                  </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                   <form action={async () => {
