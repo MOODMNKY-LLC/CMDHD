@@ -1,7 +1,19 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "@/components/logout-button";
+import { getUserInitials } from "@/lib/data/profile";
+import { User, LogOut, Mail } from "lucide-react";
 
 export async function SiteHeader() {
   const supabase = await createClient();
@@ -44,9 +56,61 @@ export async function SiteHeader() {
 
         <div className="flex items-center gap-2">
           {user ? (
-            <div className="flex items-center gap-3 text-sm">
-              <span className="text-muted-foreground hidden sm:inline">Hey, {user.email}!</span>
-              <LogoutButton />
+            <div className="flex items-center gap-4">
+              {/* Email Display - Desktop Only */}
+              <div className="hidden md:flex items-center gap-2 rounded-md bg-muted/50 px-3 py-1.5">
+                <Mail className="h-3.5 w-3.5 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground max-w-[200px] truncate">
+                  {user.email}
+                </span>
+              </div>
+              
+              {/* Separator - Desktop Only */}
+              <Separator orientation="vertical" className="h-6 hidden md:block" />
+              
+              {/* Avatar with Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="relative h-9 w-9 rounded-full">
+                    <Avatar className="h-9 w-9">
+                      <AvatarImage src={undefined} alt={user.email || 'User'} />
+                      <AvatarFallback className="bg-primary/10 text-primary">
+                        {getUserInitials(user.full_name as string | null || null, user.email || '')}
+                      </AvatarFallback>
+                    </Avatar>
+                  </Button>
+                </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="end" forceMount>
+                <DropdownMenuLabel className="font-normal">
+                  <div className="flex flex-col space-y-1">
+                    <p className="text-sm font-medium leading-none">{user.full_name || 'Participant'}</p>
+                    <p className="text-xs leading-none text-muted-foreground">
+                      {user.email}
+                    </p>
+                  </div>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/protected" className="cursor-pointer">
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <form action={async () => {
+                    'use server'
+                    const { signOut } = await import('@/app/auth/logout/actions')
+                    await signOut()
+                  }} className="w-full">
+                    <button type="submit" className="flex w-full items-center text-sm">
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Log out</span>
+                    </button>
+                  </form>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           ) : (
             <>
