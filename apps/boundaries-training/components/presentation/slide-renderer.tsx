@@ -90,15 +90,15 @@ export function SlideRenderer({ slide }: SlideRendererProps) {
 
 function TitleSlideComponent({ slide }: { slide: TitleSlide }) {
   return (
-    <div className="flex flex-col items-center justify-center h-full min-h-[calc(100vh-200px)] text-center px-12">
-      <h1 className="text-7xl font-bold mb-8 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent leading-tight">
+    <div className="flex flex-col items-center justify-center min-h-full text-center px-4 sm:px-8 md:px-12 py-8">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent leading-tight">
         {slide.title}
       </h1>
       {slide.subtitle && (
-        <p className="text-3xl text-muted-foreground mb-10 max-w-4xl">{slide.subtitle}</p>
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 sm:mb-10 max-w-4xl">{slide.subtitle}</p>
       )}
       {slide.quote && (
-        <p className="text-xl text-muted-foreground italic max-w-3xl">{slide.quote}</p>
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground italic max-w-3xl whitespace-pre-line">{slide.quote}</p>
       )}
     </div>
   );
@@ -212,8 +212,8 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
   const isContentHeavy = slide.talkingPoints.length > 5;
   
   return (
-    <div className="flex flex-col h-full justify-center px-8 sm:px-12 md:px-16 lg:px-24 py-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full space-y-8">
+    <div className="flex flex-col min-h-full justify-center px-4 sm:px-8 md:px-12 lg:px-24 py-6 sm:py-8">
+      <div className="max-w-7xl mx-auto w-full space-y-6 sm:space-y-8">
         {/* Policy reference badge (compact, top) */}
         {slide.policyReference && (
           <div className="mb-6">
@@ -333,26 +333,26 @@ function PollSlideComponent({ slide }: { slide: PollSlide }) {
   }, [slide.id]);
 
   return (
-    <div className="flex flex-col h-full justify-center px-8 sm:px-12 md:px-16 lg:px-24 py-8 overflow-hidden">
-      <div className="max-w-3xl mx-auto w-full space-y-8">
+    <div className="flex flex-col min-h-full justify-center px-4 sm:px-8 md:px-12 lg:px-24 py-6 sm:py-8">
+      <div className="max-w-3xl mx-auto w-full space-y-6 sm:space-y-8">
         {/* Header */}
-        <div className="text-center space-y-4">
-          <Badge variant="secondary" className="text-sm px-4 py-1.5">
+        <div className="text-center space-y-3 sm:space-y-4">
+          <Badge variant="secondary" className="text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-1.5">
             {slide.boundaryFocus}
           </Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold">{slide.title}</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">{slide.title}</h2>
         </div>
 
         {/* Scenario & Question */}
-        <div className="space-y-6">
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-primary">Scenario</h3>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+        <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-2 sm:space-y-3">
+            <h3 className="text-base sm:text-lg md:text-xl font-semibold text-primary">Scenario</h3>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
               {slide.scenario}
             </p>
           </div>
           
-          <p className="text-2xl font-semibold">{slide.question}</p>
+          <p className="text-lg sm:text-xl md:text-2xl font-semibold">{slide.question}</p>
         </div>
 
         {/* Options */}
@@ -409,12 +409,12 @@ function ReflectionSlideComponent({ slide }: { slide: ReflectionSlide }) {
   const [response, setResponse] = useState("");
 
   return (
-    <div className="flex flex-col h-full justify-center px-8 sm:px-12 md:px-16 lg:px-24 py-8 overflow-hidden">
-      <div className="max-w-4xl mx-auto w-full space-y-8">
+    <div className="flex flex-col min-h-full justify-center px-4 sm:px-8 md:px-12 lg:px-24 py-6 sm:py-8">
+      <div className="max-w-4xl mx-auto w-full space-y-6 sm:space-y-8">
         {/* Header */}
-        <div className="text-center space-y-4">
-          <h2 className="text-5xl sm:text-6xl font-bold">{slide.title}</h2>
-          <p className="text-2xl text-muted-foreground">{slide.prompt}</p>
+        <div className="text-center space-y-3 sm:space-y-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">{slide.title}</h2>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground">{slide.prompt}</p>
         </div>
 
         {/* Response Area */}
@@ -447,18 +447,18 @@ function ReflectionSlideComponent({ slide }: { slide: ReflectionSlide }) {
 
 function TableSlideComponent({ slide }: { slide: TableSlide }) {
   return (
-    <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-6xl mx-auto py-12 px-8">
-      <div className="mb-8">
-        <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
+    <div className="flex flex-col justify-center min-h-full max-w-6xl mx-auto py-6 sm:py-8 md:py-12 px-4 sm:px-6 md:px-8">
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">{slide.title}</h2>
       </div>
 
       <Card>
-        <CardContent className="pt-6">
+        <CardContent className="pt-4 sm:pt-6 overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow>
                 {slide.headers.map((header, index) => (
-                  <TableHead key={index} className="font-bold text-base">
+                  <TableHead key={index} className="font-bold text-xs sm:text-sm md:text-base">
                     {header}
                   </TableHead>
                 ))}
@@ -468,7 +468,7 @@ function TableSlideComponent({ slide }: { slide: TableSlide }) {
               {slide.rows.map((row, rowIndex) => (
                 <TableRow key={rowIndex}>
                   {row.map((cell, cellIndex) => (
-                    <TableCell key={cellIndex} className="text-base py-4">
+                    <TableCell key={cellIndex} className="text-xs sm:text-sm md:text-base py-3 sm:py-4">
                       {cell}
                     </TableCell>
                   ))}
@@ -486,15 +486,15 @@ function TableSlideComponent({ slide }: { slide: TableSlide }) {
 
 function QuoteSlideComponent({ slide }: { slide: QuoteSlide }) {
   return (
-    <div className="flex flex-col items-center justify-center h-full min-h-[calc(100vh-200px)] text-center px-12">
-      <blockquote className="text-5xl font-serif italic mb-10 leading-relaxed max-w-4xl">
+    <div className="flex flex-col items-center justify-center min-h-full text-center px-4 sm:px-8 md:px-12 py-8">
+      <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic mb-6 sm:mb-10 leading-relaxed max-w-4xl">
         &ldquo;{slide.quote}&rdquo;
       </blockquote>
       {slide.author && (
-        <p className="text-2xl text-muted-foreground">— {slide.author}</p>
+        <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">— {slide.author}</p>
       )}
       {slide.context && (
-        <p className="text-xl text-muted-foreground mt-8 max-w-3xl leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mt-6 sm:mt-8 max-w-3xl leading-relaxed">
           {slide.context}
         </p>
       )}
@@ -504,22 +504,22 @@ function QuoteSlideComponent({ slide }: { slide: QuoteSlide }) {
 
 function TreeSlideComponent({ slide }: { slide: TreeSlide }) {
   return (
-    <div className="flex flex-col justify-center min-h-[calc(100vh-200px)] max-w-5xl mx-auto py-12 px-8">
-      <div className="mb-10 text-center">
-        <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
+    <div className="flex flex-col justify-center min-h-full max-w-5xl mx-auto py-6 sm:py-8 md:py-12 px-4 sm:px-6 md:px-8">
+      <div className="mb-6 sm:mb-8 md:mb-10 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">{slide.title}</h2>
       </div>
 
-      <div className="space-y-4 mb-6">
+      <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
         {slide.steps.map((step, index) => (
           <Card key={index} className="border-l-4 border-l-primary">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <Badge variant="default" className="text-lg px-4 py-2">
+            <CardHeader className="p-4 sm:p-6">
+              <CardTitle className="flex items-center gap-2 sm:gap-3">
+                <Badge variant="default" className="text-sm sm:text-base md:text-lg px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2">
                   {step.number}
                 </Badge>
-                <span className="text-2xl">{step.title}</span>
+                <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{step.title}</span>
               </CardTitle>
-              <CardDescription className="text-base ml-14">
+              <CardDescription className="text-xs sm:text-sm md:text-base ml-8 sm:ml-10 md:ml-14 mt-2">
                 {step.description}
               </CardDescription>
             </CardHeader>

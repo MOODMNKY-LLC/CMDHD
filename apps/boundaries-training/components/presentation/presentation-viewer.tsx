@@ -300,7 +300,7 @@ export function PresentationViewer() {
       </div>
 
       {/* Slide Content */}
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 overflow-y-auto scrollbar-hide">
         <SlideRenderer slide={currentSlide} />
       </div>
 
