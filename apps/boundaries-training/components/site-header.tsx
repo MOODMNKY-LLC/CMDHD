@@ -13,6 +13,7 @@ import {
 import { createClient } from "@/lib/supabase/server";
 import { getUserInitials } from "@/lib/data/profile";
 import { GraduationCap, LogOut, Mail } from "lucide-react";
+import { MobileNav } from "@/components/mobile-nav";
 
 export async function SiteHeader() {
   const supabase = await createClient();
@@ -22,9 +23,15 @@ export async function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between">
-        <Link href="/" className="font-semibold text-sm hover:text-primary transition-colors">
-          CMDHD Boundaries
-        </Link>
+        <div className="flex items-center gap-2">
+          {/* Mobile Navigation */}
+          <MobileNav user={user ? { email: user.email as string, full_name: user.full_name as string | null } : null} />
+          
+          {/* Logo */}
+          <Link href="/" className="font-semibold text-sm hover:text-primary transition-colors">
+            CMDHD Boundaries
+          </Link>
+        </div>
         
             <div className="hidden md:flex items-center gap-1">
               {user && (
