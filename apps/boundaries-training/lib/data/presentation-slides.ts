@@ -100,7 +100,7 @@ export const presentationSlides: Slide[] = [
     duration: 2,
     title: `The Story We're Telling Ourselves`,
     subtitle: 'Professional Boundaries Training',
-    quote: 'CMDHD - Simeon Bowman, MSW Candidate, Founder of MOODMNKY LLC'
+    quote: 'CMDHD - Simeon Bowman, MSW Candidate\nFounder of MOODMNKY LLC'
   },
   {
     id: 2,
@@ -277,11 +277,6 @@ export const presentationSlides: Slide[] = [
       'In rural settings, you will encounter situations where stepping outside your role seems like the obvious solution. The professional response maintains the boundary while connecting clients to appropriate resources.',
       'Always ask yourself: Does this request align with my CMDHD job description, or am I responding from personal compassion? Both matter, but only one is appropriate in your professional role.'
     ],
-    interactive: {
-      type: 'poll',
-      prompt: 'Would you drive a client to an appointment if it is "just down the road"?',
-      options: ['Yes', 'No', 'Maybe']
-    },
     facilitatorNotes: [
       'After poll: Explain correct answer is "No" - refer to Medicaid transport, community resources',
       'Provide script: "I understand this is challenging. CMDHD policy prevents me from providing transportation, but I can help you arrange [Medicaid transport/community resources]."',
@@ -399,11 +394,6 @@ export const presentationSlides: Slide[] = [
       'Professional boundaries extend beyond the active service period. Former clients remain off-limits for social media connection to protect both parties.',
       'Before accepting any friend request, assess: Is there potential for misinterpretation? Could protected information be shared inadvertently?'
     ],
-    interactive: {
-      type: 'poll',
-      prompt: 'Would you accept a friend request from a former client\'s parent?',
-      options: ['Yes', 'No', 'Not sure']
-    },
     facilitatorNotes: [
       'After poll: Correct answer is "No" - boundaries extend beyond active service',
       'Emphasize: Even "former" clients represent potential boundary violations',
@@ -466,10 +456,6 @@ export const presentationSlides: Slide[] = [
       'If a client initiates physical contact (reaching for a hug), you may respond appropriately while maintaining professionalism: a brief side hug or handshake is acceptable; prolonged or repeated physical contact is not.',
       'Document any physical contact that occurs, especially if it falls outside routine clinical procedures or if boundary questions arise.'
     ],
-    interactive: {
-      type: 'ask',
-      prompt: 'Discussion: A grieving client reaches for a hug after receiving difficult news. What do you do?'
-    },
     facilitatorNotes: [
       'Answer: Brief, professional response acceptable (side hug, hand on shoulder); redirect to verbal support',
       'Trauma-informed care principle: Always prioritize client agency and consent',
@@ -638,11 +624,6 @@ export const presentationSlides: Slide[] = [
       'If a client insists or you are uncertain about a gift\'s value, accept it temporarily and immediately notify your supervisor for guidance on appropriate handling.',
       'Cultural consideration: In some cultures, gift-giving is a significant expression of gratitude. Acknowledge the gesture warmly while maintaining the boundary.'
     ],
-    interactive: {
-      type: 'poll',
-      prompt: 'A client brings you homemade cookies to thank you for your help. What do you do?',
-      options: ['Accept them', 'Decline politely', 'Accept and share with team', 'Not sure']
-    },
     facilitatorNotes: [
       'After poll: "Accept and share with team" is acceptable (under $25, shared, documented)',
       'Red flags: Cash, gift cards, expensive items, or anything that feels like it creates obligation',
@@ -745,88 +726,103 @@ export const presentationSlides: Slide[] = [
   },
   {
     id: 25,
-    type: 'reflection',
+    type: 'poll',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 2,
+    duration: 1.5,
     title: 'Scenario 1: Emergency Transportation Dilemma',
-    prompt: `A client with a serious wound infection needs urgent follow-up care in 30 minutes. Their ride cancelled, Medicaid transport has a 2-hour wait, and missing this appointment could result in hospitalization. It's January in rural Michigan—roads are icy, and the client lives 15 miles outside of town with no family nearby. They ask if you can drive them "just this once" since you're headed that direction anyway.\n\nPause and reflect: What should you do, and why?`,
-    placeholder: 'Consider: What policy applies? What are the risks? How would you respond with empathy while maintaining boundaries?',
-    talkingPoints: [
-      '**Policy #2: Scope of Practice** explicitly prohibits transporting clients—no exceptions for weather, urgency, or distance.',
-      'The best response is to politely decline and help arrange alternative transport. This protects you from liability, prevents dependency, and maintains role clarity.',
-      'Appropriate response: "I understand how stressful this is. Let me call the clinic to explain the situation and arrange medical transport or reschedule for urgent care."',
-      'Your empathy and problem-solving demonstrate care within professional boundaries.',
-      'Document the situation and outcome thoroughly to show your professional judgment and client advocacy.'
-    ]
+    scenario: `A client with a serious wound infection needs urgent follow-up care in 30 minutes. Their ride cancelled, Medicaid transport has a 2-hour wait, and missing this appointment could result in hospitalization. It's January in rural Michigan—roads are icy, and the client lives 15 miles outside of town with no family nearby. They ask if you can drive them "just this once" since you're headed that direction anyway.`,
+    question: 'What should you do?',
+    options: [
+      `Drive them—it's a medical emergency`,
+      'Politely decline and help arrange alternative transport',
+      'Ask your supervisor for a one-time exception',
+      'Drive them but document it as an emergency situation'
+    ],
+    correctAnswer: 1,
+    explanation: `Correct: "Politely decline and help arrange alternative transport." Policy #2 explicitly prohibits transporting clients—no exceptions for weather, urgency, or distance—because it protects you from liability, prevents dependency, and maintains role clarity. Respond: "I understand how stressful this is. Let me call the clinic to explain the situation and arrange medical transport or reschedule for urgent care." Your empathy and problem-solving demonstrate care within professional boundaries. Document the situation and outcome thoroughly.`,
+    policyReference: 'Policy #2: Scope of Practice',
+    boundaryFocus: 'Scope of Practice'
   },
   {
     id: 26,
-    type: 'reflection',
+    type: 'poll',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 2,
+    duration: 1.5,
     title: 'Scenario 2: Community Crisis Contact',
-    prompt: `At 9:30 PM, you receive a text from a client who also teaches your child at the only school in town. The text expresses anxiety about a near-relapse after encountering a former using partner at tonight's community vigil for a local overdose death. The client mentions feeling reassured seeing you there but is now struggling. You both know everyone in this small community is grieving tonight.\n\nPause and reflect: What's the best response?`,
-    placeholder: 'Consider: What are the boundary implications? How do you balance compassion with professional limits? What message does your response send?',
-    talkingPoints: [
-      '**Policy #13: Work Hours** requires after-hours boundaries to protect both your well-being and long-term effectiveness.',
-      'The best response is to respond the next business day through proper channels. Responding immediately sets an unsustainable precedent and personalizes the dual relationship.',
-      'Next business day, respond via work channels: "I received your message. I\'m glad you reached out instead of using. Let\'s process this in our session today. If you\'re in immediate crisis, call the CMDHD crisis line or text 988."',
-      'During the session, affirm their healthy choice, acknowledge the dual relationship reality, and establish clear crisis protocols.',
-      'Document thoroughly, including the delayed response rationale and the boundary-setting conversation.'
-    ]
+    scenario: `At 9:30 PM, you receive a text from a client who also teaches your child at the only school in town. The text expresses anxiety about a near-relapse after encountering a former using partner at tonight's community vigil for a local overdose death. The client mentions feeling reassured seeing you there but is now struggling. You both know everyone in this small community is grieving tonight.`,
+    question: `What's the best response?`,
+    options: [
+      'Respond immediately—this is a genuine crisis',
+      'Respond the next business day through proper channels',
+      'Ignore it to maintain boundaries',
+      'Text back but keep it brief'
+    ],
+    correctAnswer: 1,
+    explanation: `Correct: "Respond the next business day through proper channels." Policy #13 requires after-hours boundaries to protect both your well-being and long-term effectiveness. Responding immediately sets an unsustainable precedent and personalizes the dual relationship. Next business day, respond via work channels: "I received your message. I'm glad you reached out instead of using. Let's process this in our session today. If you're in immediate crisis, call the CMDHD crisis line or text 988." During the session, affirm their healthy choice, acknowledge the dual relationship reality, and establish clear crisis protocols. Document thoroughly.`,
+    policyReference: 'Policy #13: Work Hours',
+    boundaryFocus: 'Work Hours'
   },
   {
     id: 27,
-    type: 'reflection',
+    type: 'poll',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 2,
+    duration: 1.5,
     title: 'Scenario 3: Healing Gift from Elder',
-    prompt: `A Native American client brings you homemade frybread made by their grandmother. The client explains that in their tradition, accepting food prepared by an elder is a sacred act of connection and healing. They've struggled with feelings of unworthiness throughout treatment, and this gift represents their family's acknowledgment of their recovery journey. Your agency primarily serves Indigenous communities, and you know refusing could damage the therapeutic alliance.\n\nPause and reflect: What should you do?`,
-    placeholder: 'Consider: How do you balance policy with cultural sensitivity? What does honoring the gift while maintaining boundaries look like?',
-    talkingPoints: [
-      '**Policy #14: Gifts & Gratuities** allows gifts of nominal value (under $25), and cultural context matters significantly.',
-      'Best approach: Accept and share with the team. In many Indigenous communities, gift-giving is relational, not transactional—flat refusal can communicate rejection.',
-      'Appropriate response: "Thank you for this meaningful gift. In my tradition, when I receive something this special, I share it with my whole care team so everyone can be blessed by your grandmother\'s kindness. May I do that?"',
-      'Share immediately and document the gift, cultural context, and your response. This honors the tradition while maintaining transparency and appropriate boundaries.',
-      'When in doubt about culturally significant gifts, consult your supervisor before responding.'
-    ]
+    scenario: `A Native American client brings you homemade frybread made by their grandmother. The client explains that in their tradition, accepting food prepared by an elder is a sacred act of connection and healing. They've struggled with feelings of unworthiness throughout treatment, and this gift represents their family's acknowledgment of their recovery journey. Your agency primarily serves Indigenous communities, and you know refusing could damage the therapeutic alliance.`,
+    question: 'What should you do?',
+    options: [
+      'Accept it—cultural sensitivity is important',
+      'Decline politely and explain agency policy',
+      'Accept and share with the team',
+      'Accept but document it thoroughly'
+    ],
+    correctAnswer: 2,
+    explanation: `Best answer: "Accept and share with the team." Policy #14 allows gifts of nominal value (under $25), and cultural context matters. In many Indigenous communities, gift-giving is relational, not transactional—flat refusal can communicate rejection. Respond: "Thank you for this meaningful gift. In my tradition, when I receive something this special, I share it with my whole care team so everyone can be blessed by your grandmother's kindness. May I do that?" Share immediately and document the gift, cultural context, and your response. This honors the tradition while maintaining transparency and appropriate boundaries. When in doubt about culturally significant gifts, consult your supervisor.`,
+    policyReference: 'Policy #14: Gifts & Gratuities',
+    boundaryFocus: 'Gifts'
   },
   {
     id: 28,
-    type: 'reflection',
+    type: 'poll',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 2,
+    duration: 1.5,
     title: 'Scenario 4: Only Provider in 60 Miles',
-    prompt: `During intake, you discover your new client attends the small church where you volunteer every Sunday. The client waited 6 weeks for this appointment and specifically requested you based on your reputation in the community. You're the only licensed substance use counselor within 60 miles—the nearest alternative has a 4-month waitlist. The client's assessment reveals high-risk daily opioid use requiring immediate intervention.\n\nPause and reflect: What's your first step?`,
-    placeholder: 'Consider: What are your competing ethical obligations? How do you balance access to care with boundary concerns? What safeguards might apply?',
-    talkingPoints: [
-      '**Policies #4 & #5: Conflicts of Interest** require disclosure, not automatic termination—in rural areas, some overlap is inevitable.',
-      'Best first step: Disclose to supervisor immediately and discuss whether safeguards allow continuation. Your supervisor will assess objectivity, navigation strategies, and needed safeguards.',
-      'Potential safeguards include proactive informed consent, documented supervision, and clear church interaction boundaries.',
-      'Appropriate response to client: "I want to be transparent—we attend the same church. In this office, everything is confidential. At church, I\'m another community member and won\'t reference our work. I\'ll consult my supervisor to ensure this doesn\'t compromise your care."',
-      'Document thoroughly and honor both access to care and professional boundaries.'
-    ]
+    scenario: `During intake, you discover your new client attends the small church where you volunteer every Sunday. The client waited 6 weeks for this appointment and specifically requested you based on your reputation in the community. You're the only licensed substance use counselor within 60 miles—the nearest alternative has a 4-month waitlist. The client's assessment reveals high-risk daily opioid use requiring immediate intervention.`,
+    question: `What's your first step?`,
+    options: [
+      `Continue services—they need immediate help`,
+      'Disclose to supervisor immediately and discuss whether safeguards allow continuation',
+      `Ask the client if they're comfortable with the dual relationship`,
+      'Refer immediately to avoid any boundary issues'
+    ],
+    correctAnswer: 1,
+    explanation: `Correct: "Disclose to supervisor immediately and discuss safeguards or reassignment." Policies #4 and #5 require disclosure, not automatic termination—in rural areas, some overlap is inevitable. Your supervisor will assess objectivity, navigation strategies, and needed safeguards. Potential safeguards include proactive informed consent, documented supervision, and clear church interaction boundaries. Say to client: "I want to be transparent—we attend the same church. In this office, everything is confidential. At church, I'm another community member and won't reference our work. I'll consult my supervisor to ensure this doesn't compromise your care." Document thoroughly and honor both access to care and professional boundaries.`,
+    policyReference: 'Policy #4 & #5: Conflicts of Interest',
+    boundaryFocus: 'Dual Relationships'
   },
   {
     id: 29,
-    type: 'reflection',
+    type: 'poll',
     section: 'Quick Polls & Scenarios',
     sectionIndex: 7,
-    duration: 2,
+    duration: 1.5,
     title: 'Scenario 5: Recovery Community Colleague',
-    prompt: `A client you discharged 6 months ago sends you a Facebook friend request. They're now a certified peer recovery specialist working at another agency and have referred several people to you. You're both active in the local recovery community and attend the same monthly community celebration events. Their request includes a message: "Would love to stay connected as colleagues in this recovery work. Your support meant everything to my journey."\n\nPause and reflect: Should you accept?`,
-    placeholder: 'Consider: Do professional boundaries end after discharge? How do power dynamics persist? What message does your response send?',
-    talkingPoints: [
-      '**Policy #6: Social Media** prohibits social media connections with former clients because power differentials and confidentiality considerations persist indefinitely, even in collegial contexts.',
-      'Best response: No—professional boundaries continue after discharge. Risks include post misinterpretation, complicated re-referrals, and undermining their professional role.',
-      'Respond warmly: "Thank you for this kind message—your support meant a lot. CMDHD policy prevents me from connecting on social media with former clients. That said, I deeply respect your recovery journey and work as a peer specialist. I look forward to collaborating professionally and seeing you at community events."',
-      'At events, maintain warm professional boundaries. This refusal isn\'t rejection—it\'s professional consistency serving the whole recovery community.',
-      'Document the request and your response to demonstrate consistent boundary maintenance.'
-    ]
+    scenario: `A client you discharged 6 months ago sends you a Facebook friend request. They're now a certified peer recovery specialist working at another agency and have referred several people to you. You're both active in the local recovery community and attend the same monthly community celebration events. Their request includes a message: "Would love to stay connected as colleagues in this recovery work. Your support meant everything to my journey."`,
+    question: 'Should you accept?',
+    options: [
+      `Yes—they're now a professional colleague`,
+      'No—professional boundaries continue after discharge',
+      'Ask them to wait until one year post-discharge',
+      'Accept but limit what they can see'
+    ],
+    correctAnswer: 1,
+    explanation: `Correct: "No—professional boundaries continue after discharge." Policy #6 prohibits social media connections with former clients because power differentials and confidentiality considerations persist indefinitely, even in collegial contexts. Risks include post misinterpretation, complicated re-referrals, and undermining their professional role. Respond warmly: "Thank you for this kind message—your support meant a lot. CMDHD policy prevents me from connecting on social media with former clients. That said, I deeply respect your recovery journey and work as a peer specialist. I look forward to collaborating professionally and seeing you at community events." At events, maintain warm professional boundaries. This refusal isn't rejection—it's professional consistency serving the whole recovery community.`,
+    policyReference: 'Policy #6: Social Media',
+    boundaryFocus: 'Social Media'
   },
 
   // Section 8: Decision Tree & Gray Zone Lab (Slides 30-32)

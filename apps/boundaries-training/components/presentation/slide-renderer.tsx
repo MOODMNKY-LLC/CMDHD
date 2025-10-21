@@ -104,8 +104,6 @@ function TitleSlideComponent({ slide }: { slide: TitleSlide }) {
 }
 
 function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
-  const [pollResponse, setPollResponse] = useState<number | null>(null);
-
   // Special layout for County-Specific Scenarios slide
   if (slide.title === 'County-Specific Scenarios') {
     return (
@@ -308,36 +306,6 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
         </div>
       </div>
 
-      {slide.interactive && (
-        <Card className="mb-6 border-primary/50 bg-primary/5">
-          <CardHeader>
-            <CardTitle className="text-xl flex items-center gap-2">
-              <MessageCircle className="h-5 w-5" />
-              {slide.interactive.type === 'poll' ? 'Quick Poll' : 'Discussion'}
-            </CardTitle>
-            <CardDescription className="text-base">
-              {slide.interactive.prompt}
-            </CardDescription>
-          </CardHeader>
-          {slide.interactive.options && (
-            <CardContent>
-              <div className="space-y-2">
-                {slide.interactive.options.map((option, index) => (
-                  <Button
-                    key={index}
-                    variant={pollResponse === index ? "default" : "outline"}
-                    className="w-full justify-start text-left h-auto py-3"
-                    onClick={() => setPollResponse(index)}
-                  >
-                    {option}
-                  </Button>
-                ))}
-              </div>
-            </CardContent>
-          )}
-        </Card>
-      )}
-
       <FacilitatorNotes notes={slide.facilitatorNotes} />
     </div>
   );
@@ -355,13 +323,13 @@ function PollSlideComponent({ slide }: { slide: PollSlide }) {
 
   return (
     <div className="flex flex-col h-full justify-center px-8 sm:px-12 md:px-16 lg:px-24 py-8 overflow-hidden">
-      <div className="max-w-5xl mx-auto w-full space-y-8">
+      <div className="max-w-3xl mx-auto w-full space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
           <Badge variant="secondary" className="text-sm px-4 py-1.5">
             {slide.boundaryFocus}
           </Badge>
-          <h2 className="text-5xl sm:text-6xl font-bold">{slide.title}</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold">{slide.title}</h2>
         </div>
 
         {/* Scenario & Question */}
