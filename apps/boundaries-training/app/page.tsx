@@ -124,24 +124,24 @@ export default function Home() {
 
       {/* Quick Access QR Code Section - Desktop Only */}
       <section className="hidden md:block border-b bg-muted/30">
-        <div className="mx-auto max-w-7xl px-6 py-12">
-          <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight">Joining In Person?</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+        <div className="mx-auto max-w-7xl px-6 py-8">
+          <div className="grid md:grid-cols-[1fr_auto] gap-6 items-center">
+            <div className="space-y-3">
+              <h2 className="text-2xl font-bold tracking-tight">Joining In Person?</h2>
+              <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
                 Scan the QR code with your phone&apos;s camera to instantly access the training on your mobile device. No app required—just point, tap, and go.
               </p>
-              <div className="flex items-center gap-6 text-sm text-muted-foreground pt-2">
+              <div className="flex items-center gap-6 text-sm text-muted-foreground pt-1">
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">1</div>
+                  <div className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">1</div>
                   <span>Open camera</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">2</div>
+                  <div className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">2</div>
                   <span>Point at QR code</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">3</div>
+                  <div className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">3</div>
                   <span>Tap to open</span>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function Home() {
             
             <div className="flex justify-center md:justify-end">
               <TrainingQRCode 
-                size={200}
+                size={180}
                 title="Quick Access"
                 description="Scan to create your account"
               />
