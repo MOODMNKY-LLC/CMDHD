@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   Table,
   TableBody,
@@ -305,6 +306,16 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
           })}
         </div>
       </div>
+
+      {slide.discussionPrompt && (
+        <Alert className="mt-6 border-primary/30 bg-primary/5">
+          <MessageCircle className="h-4 w-4" />
+          <AlertTitle>Discussion Question</AlertTitle>
+          <AlertDescription className="text-base mt-2">
+            {slide.discussionPrompt}
+          </AlertDescription>
+        </Alert>
+      )}
 
       <FacilitatorNotes notes={slide.facilitatorNotes} />
     </div>

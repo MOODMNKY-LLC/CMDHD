@@ -34,6 +34,7 @@ export interface ContentSlide extends BaseSlide {
   objective?: string;
   policyReference?: PolicyReference;  // Optional policy integration
   talkingPoints: string[];
+  discussionPrompt?: string;  // Simple discussion question for facilitator
   facilitatorNotes?: string[];
   interactive?: {
     type: 'poll' | 'question' | 'ask';
@@ -277,6 +278,7 @@ export const presentationSlides: Slide[] = [
       'In rural settings, you will encounter situations where stepping outside your role seems like the obvious solution. The professional response maintains the boundary while connecting clients to appropriate resources.',
       'Always ask yourself: Does this request align with my CMDHD job description, or am I responding from personal compassion? Both matter, but only one is appropriate in your professional role.'
     ],
+    discussionPrompt: 'Would you drive a client to an appointment if it is "just down the road"?',
     facilitatorNotes: [
       'After poll: Explain correct answer is "No" - refer to Medicaid transport, community resources',
       'Provide script: "I understand this is challenging. CMDHD policy prevents me from providing transportation, but I can help you arrange [Medicaid transport/community resources]."',
@@ -394,6 +396,7 @@ export const presentationSlides: Slide[] = [
       'Professional boundaries extend beyond the active service period. Former clients remain off-limits for social media connection to protect both parties.',
       'Before accepting any friend request, assess: Is there potential for misinterpretation? Could protected information be shared inadvertently?'
     ],
+    discussionPrompt: `Would you accept a friend request from a former client's parent?`,
     facilitatorNotes: [
       'After poll: Correct answer is "No" - boundaries extend beyond active service',
       'Emphasize: Even "former" clients represent potential boundary violations',
@@ -456,6 +459,7 @@ export const presentationSlides: Slide[] = [
       'If a client initiates physical contact (reaching for a hug), you may respond appropriately while maintaining professionalism: a brief side hug or handshake is acceptable; prolonged or repeated physical contact is not.',
       'Document any physical contact that occurs, especially if it falls outside routine clinical procedures or if boundary questions arise.'
     ],
+    discussionPrompt: 'A grieving client reaches for a hug after receiving difficult news. What do you do?',
     facilitatorNotes: [
       'Answer: Brief, professional response acceptable (side hug, hand on shoulder); redirect to verbal support',
       'Trauma-informed care principle: Always prioritize client agency and consent',
@@ -624,6 +628,7 @@ export const presentationSlides: Slide[] = [
       'If a client insists or you are uncertain about a gift\'s value, accept it temporarily and immediately notify your supervisor for guidance on appropriate handling.',
       'Cultural consideration: In some cultures, gift-giving is a significant expression of gratitude. Acknowledge the gesture warmly while maintaining the boundary.'
     ],
+    discussionPrompt: 'A client brings you homemade cookies to thank you for your help. What do you do?',
     facilitatorNotes: [
       'After poll: "Accept and share with team" is acceptable (under $25, shared, documented)',
       'Red flags: Cash, gift cards, expensive items, or anything that feels like it creates obligation',
@@ -824,10 +829,30 @@ export const presentationSlides: Slide[] = [
     policyReference: 'Policy #6: Social Media',
     boundaryFocus: 'Social Media'
   },
-
-  // Section 8: Decision Tree & Gray Zone Lab (Slides 30-32)
   {
     id: 30,
+    type: 'poll',
+    section: 'Quick Polls & Scenarios',
+    sectionIndex: 7,
+    duration: 1.5,
+    title: 'Scenario 6: Comforting Hug Dilemma',
+    scenario: `A client you've been working with for three months just received devastating news—their child's cancer has returned. They're visibly distraught, tears streaming down their face, and they reach out toward you for a hug. You've built a strong therapeutic relationship, and your instinct is to offer comfort. However, you're also aware of professional boundaries around physical contact.`,
+    question: 'What do you do?',
+    options: [
+      'Step back and maintain physical distance',
+      'Accept the hug—they clearly need comfort',
+      'Offer a brief, professional side hug or hand on shoulder',
+      'Redirect to verbal support only'
+    ],
+    correctAnswer: 2,
+    explanation: `Best answer: "Offer a brief, professional side hug or hand on shoulder." Policy #8 requires consent-based approach to physical contact. When a client initiates contact in genuine distress, a brief, professional response is acceptable while maintaining boundaries. Say: "I can see how hard this is" (offer brief side hug or hand on shoulder). Then redirect to verbal support: "Let's sit down and talk about what you're feeling and what support you need right now." Document the interaction, including that the client initiated contact and your professional response. Avoid prolonged or repeated physical contact. If uncertain about appropriateness, consult your supervisor.`,
+    policyReference: 'Policy #8: Physical Boundaries & Consent',
+    boundaryFocus: 'Consent'
+  },
+
+  // Section 8: Decision Tree & Gray Zone Lab (Slides 31-33)
+  {
+    id: 31,
     type: 'tree',
     section: 'Decision Tree & Documentation',
     sectionIndex: 8,
@@ -890,7 +915,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 31,
+    id: 32,
     type: 'content',
     section: 'Gray Zone Lab',
     sectionIndex: 8,
@@ -907,7 +932,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 32,
+    id: 33,
     type: 'content',
     section: 'Gray Zone Lab',
     sectionIndex: 8,
@@ -934,7 +959,7 @@ export const presentationSlides: Slide[] = [
 
   // Section 9: Documentation & Consultation (Slides 33-34)
   {
-    id: 33,
+    id: 34,
     type: 'content',
     section: 'Decision Tree & Documentation',
     sectionIndex: 9,
@@ -959,7 +984,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 34,
+    id: 35,
     type: 'content',
     section: 'Decision Tree & Documentation',
     sectionIndex: 9,
@@ -987,9 +1012,9 @@ export const presentationSlides: Slide[] = [
     ]
   },
 
-  // Section 10: Closing & Commitments (Slides 35-38)
+  // Section 10: Closing & Commitments (Slides 36-39)
   {
-    id: 35,
+    id: 36,
     type: 'content',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1010,7 +1035,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 36,
+    id: 37,
     type: 'reflection',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1032,7 +1057,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 37,
+    id: 38,
     type: 'content',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1058,7 +1083,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 38,
+    id: 39,
     type: 'quote',
     section: 'Closing & Commitments',
     sectionIndex: 10,
