@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useSwipeable } from "react-swipeable";
 import { presentationSlides, presentationSections } from "@/lib/data/presentation-slides";
 import { SlideRenderer } from "./slide-renderer";
 import { Button } from "@/components/ui/button";
@@ -70,6 +71,15 @@ export function PresentationViewer() {
   const goToSlide = (index: number) => {
     setCurrentSlideIndex(index);
   };
+
+  // Swipe gesture handlers for mobile
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => goToNext(),
+    onSwipedRight: () => goToPrevious(),
+    trackMouse: false,  // Touch only, don't interfere with mouse
+    preventScrollOnSwipe: true,  // Prevent scroll during horizontal swipe
+    delta: 75,  // Minimum swipe distance in pixels
+  });
 
   // Keyboard navigation
   useEffect(() => {
@@ -296,15 +306,18 @@ export function PresentationViewer() {
         </div>
 
         {/* Progress Bar */}
-        <Progress value={progress} className="h-1 rounded-none" />
+        <Progress value={progress} className="h-1.5 sm:h-1 rounded-none" />
       </div>
 
-      {/* Slide Content */}
-      <div className="flex-1 overflow-y-auto scrollbar-hide">
+      {/* Slide Content - With Swipe Support */}
+      <div 
+        {...swipeHandlers}
+        className="flex-1 overflow-y-auto scrollbar-hide touch-manipulation"
+      >
         <SlideRenderer slide={currentSlide} />
       </div>
 
-      {/* Footer Navigation */}
+      {/* Footer Navigation - Enhanced for Mobile */}
       <div className="border-t bg-background/95 backdrop-blur p-3 sm:p-4">
         <div className="flex items-center justify-between max-w-7xl mx-auto gap-3">
           <Button
@@ -312,9 +325,9 @@ export function PresentationViewer() {
             onClick={goToPrevious}
             disabled={currentSlideIndex === 0}
             size="default"
-            className="min-h-[44px] min-w-[44px] touch-manipulation"
+            className="min-h-[48px] px-6 sm:px-4 touch-manipulation active:scale-95 transition-transform"
           >
-            <ChevronLeft className="h-4 w-4 sm:mr-2" />
+            <ChevronLeft className="h-5 w-5 sm:h-4 sm:w-4 sm:mr-2" />
             <span className="hidden sm:inline">Previous</span>
           </Button>
 
@@ -332,10 +345,10 @@ export function PresentationViewer() {
             onClick={goToNext}
             disabled={currentSlideIndex === totalSlides - 1}
             size="default"
-            className="min-h-[44px] min-w-[44px] touch-manipulation"
+            className="min-h-[48px] px-6 sm:px-4 touch-manipulation active:scale-95 transition-transform"
           >
             <span className="hidden sm:inline">Next</span>
-            <ChevronRight className="h-4 w-4 sm:ml-2" />
+            <ChevronRight className="h-5 w-5 sm:h-4 sm:w-4 sm:ml-2" />
           </Button>
         </div>
       </div>

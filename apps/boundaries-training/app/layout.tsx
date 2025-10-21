@@ -16,6 +16,14 @@ export const metadata: Metadata = {
   description: "Embracing Professional Boundaries: The stories we tell ourselves - Training module for Central Michigan District Health Department",
 };
 
+// Viewport configuration for optimal mobile experience
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false, // Prevents double-tap zoom for better touch interactions
+};
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   display: "swap",
