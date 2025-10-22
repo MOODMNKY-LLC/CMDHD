@@ -15,7 +15,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { CheckCircle2, Circle, MessageCircle, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { PolicyCard } from "./policy-card";
 import { FacilitatorNotes } from "./facilitator-notes";
 import { PresentationQRCode } from "@/components/training-qr-code";
@@ -96,7 +96,7 @@ export function SlideRenderer({ slide }: SlideRendererProps) {
     case 'content':
       return <ContentSlideComponent slide={slide as ContentSlide} />;
     case 'poll':
-      return <PollSlideComponent slide={slide as PollSlide} />;
+      return <PollSlideComponent key={slide.id} slide={slide as PollSlide} />;
     case 'reflection':
       return <ReflectionSlideComponent slide={slide as ReflectionSlide} />;
     case 'table':
@@ -353,14 +353,9 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
 }
 
 function PollSlideComponent({ slide }: { slide: PollSlide }) {
+  // Use slide.id as key to reset state when slide changes
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
-
-  // Reset state when slide changes
-  useEffect(() => {
-    setSelectedOption(null);
-    setShowAnswer(false);
-  }, [slide.id]);
 
   return (
     <div className="flex flex-col min-h-full justify-center px-4 sm:px-8 md:px-12 lg:px-24 py-6 sm:py-8">

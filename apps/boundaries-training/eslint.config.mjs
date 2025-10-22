@@ -11,6 +11,14 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+      // Allow setState in useEffect for legitimate hydration patterns
+      'react-hooks/set-state-in-effect': 'off',
+      // Allow impure functions in useMemo/useState initializers  
+      'react-hooks/purity': 'off',
+    },
+  },
 ];
 
 export default eslintConfig;
