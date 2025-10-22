@@ -1,24 +1,43 @@
 # Coolify Deployment Guide for CMDHD Monorepo
 
-## Problem
+## Monorepo Configuration (Like Vercel)
 
-Coolify is currently configured to build from `apps/boundaries-training` subdirectory, which fails because:
+This monorepo supports **two deployment approaches**:
 
-1. ❌ It doesn't have access to the monorepo root `package.json` with pnpm overrides
-2. ❌ It doesn't have access to `pnpm-workspace.yaml`
-3. ❌ It uses npm instead of pnpm, causing dependency version conflicts
-4. ❌ It can't use Turborepo's build orchestration
+### ✅ Approach 1: Point to App Directory (Recommended - Like Vercel)
 
-## Solution: Configure Coolify to Build from Root
+**In Coolify:**
+1. Enable **Monorepo** option
+2. Point to: `apps/boundaries-training`
+3. The app-level `nixpacks.toml` handles building from workspace root
 
-### Step 1: Update Coolify Build Configuration
+**How it works:**
+- Coolify detects `apps/boundaries-training/nixpacks.toml`
+- Nixpacks navigates to workspace root (`../..`)
+- Runs `pnpm install` from root (gets overrides)
+- Builds using Turborepo filter
+- This matches Vercel's monorepo behavior
 
-In your Coolify project settings for "Professional Boundaries Training":
+### Approach 2: Build from Repository Root
 
-1. Go to **Configuration** tab
-2. Set **Base Directory** to: `.` (root) or leave empty
-3. Set **Build Directory** to: `.` (root) or leave empty  
-4. **Do NOT** set it to `apps/boundaries-training`
+Alternatively, you can build from the root:
+1. Set **Base Directory** to: `.` (root) or leave empty
+2. Uses root `nixpacks.toml`
+
+## Current Issue & Fix
+
+The deployment was failing because Coolify auto-detected the app as a standalone Node.js project:
+
+**Problem:**
+- ❌ Auto-detected as `nodejs_18` + `npm`
+- ❌ No access to root `pnpm-lock.yaml` and overrides
+- ❌ Wrong Tailwind CSS version installed
+
+**Solution:**
+- ✅ Added `apps/boundaries-training/nixpacks.toml`
+- ✅ Forces Node.js 22 + pnpm 9.9.0
+- ✅ Navigates to root for install and build
+- ✅ Works like Vercel monorepo deployment
 
 ### Step 2: Verify Root Build Directory
 
