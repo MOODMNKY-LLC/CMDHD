@@ -36,5 +36,11 @@
       "@cmdhd/config/eslint"
     ]
   },
-  "prettier": "@cmdhd/config/prettier"
+  "prettier": "@cmdhd/config/prettier",
+  "pnpm": {
+    "overrides": {
+      "tailwindcss": "3.4.17",
+      "@tailwindcss/postcss": "npm:tailwindcss@3.4.17"
+    }
+  }
 }
