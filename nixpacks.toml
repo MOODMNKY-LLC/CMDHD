@@ -1,0 +1,23 @@
+# Nixpacks configuration for CMDHD Turborepo monorepo
+[phases.setup]
+nixPkgs = ["nodejs-22_x"]
+aptPkgs = []
+
+[phases.install]
+cmds = [
+  "corepack enable",
+  "corepack prepare pnpm@9.9.0 --activate",
+  "pnpm install --frozen-lockfile"
+]
+
+[phases.build]
+cmds = [
+  "pnpm run build"
+]
+
+[start]
+cmd = "cd apps/boundaries-training && pnpm start"
+
+[variables]
+NODE_ENV = "production"
+
