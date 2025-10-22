@@ -4,9 +4,11 @@ import { motion, useScroll } from "motion/react"
 
 import { cn } from "@/lib/utils"
 
-interface ScrollProgressProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface ScrollProgressProps {
+  className?: string
+}
 
-export function ScrollProgress({ className, ...props }: ScrollProgressProps) {
+export function ScrollProgress({ className }: ScrollProgressProps) {
   const { scrollYProgress } = useScroll()
 
   return (
@@ -16,7 +18,6 @@ export function ScrollProgress({ className, ...props }: ScrollProgressProps) {
         className
       )}
       style={{ scaleX: scrollYProgress }}
-      {...props}
     />
   )
 }

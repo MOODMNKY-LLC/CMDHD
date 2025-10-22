@@ -64,6 +64,25 @@ function parseContentPoint(point: string): ParsedContent {
   };
 }
 
+// Helper function to render text with inline bold formatting
+function renderTextWithBold(text: string) {
+  // Split text by **bold** markers
+  const parts = text.split(/(\*\*.*?\*\*|<strong>.*?<\/strong>)/g);
+  
+  return parts.map((part, i) => {
+    // Handle **bold** syntax
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="font-bold text-primary">{part.slice(2, -2)}</strong>;
+    }
+    // Handle <strong>bold</strong> syntax
+    if (part.startsWith('<strong>') && part.endsWith('</strong>')) {
+      return <strong key={i} className="font-bold text-primary">{part.slice(8, -9)}</strong>;
+    }
+    // Regular text
+    return part;
+  });
+}
+
 interface SlideRendererProps {
   slide: Slide;
 }
@@ -242,7 +261,7 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
             <p className={cn(
               "text-muted-foreground",
               isContentHeavy ? "text-xl sm:text-2xl" : "text-2xl sm:text-3xl"
-            )}>{slide.subtitle}</p>
+            )}>{renderTextWithBold(slide.subtitle)}</p>
           )}
           {slide.objective && (
             <p className={cn(
@@ -280,7 +299,7 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
                       "text-foreground pl-5 leading-relaxed",
                       isContentHeavy ? "text-xl" : "text-2xl"
                     )}>
-                      {parsed.content}
+                      {renderTextWithBold(parsed.content)}
                     </p>
                   </div>
                 </div>
@@ -297,7 +316,7 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
                   <span className={cn(
                     "leading-relaxed",
                     isContentHeavy ? "text-xl" : "text-2xl"
-                  )}>{parsed.content}</span>
+                  )}>{renderTextWithBold(parsed.content)}</span>
                 </div>
               );
             }
@@ -311,7 +330,7 @@ function ContentSlideComponent({ slide }: { slide: ContentSlide }) {
                 <span className={cn(
                   "leading-relaxed",
                   isContentHeavy ? "text-xl" : "text-2xl"
-                  )}>{parsed.content}</span>
+                )}>{renderTextWithBold(parsed.content)}</span>
               </div>
             );
           })}

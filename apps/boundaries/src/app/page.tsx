@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import { FileText, Presentation, BookOpen, Users } from "lucide-react";
+import { Presentation, BookOpen, Users } from "lucide-react";
 import { RetroGrid } from "@/components/ui/retro-grid";
 
 export default function Home() {

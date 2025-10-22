@@ -128,12 +128,11 @@ export const presentationSlides: Slide[] = [
     title: 'Agenda & Expectations',
     subtitle: 'How We Will Learn Together Today',
     talkingPoints: [
-      `**Time**: 60 minutes total structured as: 20 min policy foundation, 15 min interactive scenarios, 10 min decision tree & documentation, 10 min county-specific discussion, 5 min closing commitments.`,
-      `**Technology**: Use your phones for polls and reflection prompts. QR code on screen links to interactive platform—no login required.`,
-      `**Psychological Safety**: This is a learning space, not an evaluation. There are no "gotcha" questions. Boundary challenges are normal and navigable—that's why we're here.`,
-      `**Confidentiality Agreement**: Share principles and learning, not personal client cases or colleague situations. What's discussed here stays here, but what's learned here leaves with you.`,
-      `**Participation Guidelines**: Your questions and experiences enrich everyone's learning. Speak from your own perspective. Listen with curiosity. Challenge ideas, not people.`,
-      `**Adult Learning Approach**: You are the expert in your own practice context. This training provides frameworks and policy guidance—you will adapt them to your specific situations through reflection and supervision.`
+      `<strong>Technology:</strong> Use your phones for polls and reflection prompts. QR code on screen links to interactive platform—no login required.`,
+      `<strong>Psychological Safety:</strong> This is a learning space, not an evaluation. There are no "gotcha" questions. Boundary challenges are normal and navigable—that's why we're here.`,
+      `<strong>Confidentiality Agreement:</strong> Share principles and learning, not personal client cases or colleague situations. What's discussed here stays here, but what's learned here leaves with you.`,
+      `<strong>Participation Guidelines:</strong> Your questions and experiences enrich everyone's learning. Speak from your own perspective. Listen with curiosity. Challenge ideas, not people.`,
+      `<strong>Adult Learning Approach:</strong> You are the expert in your own practice context. This training provides frameworks and policy guidance—you will adapt them to your specific situations through reflection and supervision.`
     ],
     facilitatorNotes: [
       `Set friendly, open tone: "We're all navigating the same challenges in different contexts."`,
@@ -147,14 +146,13 @@ export const presentationSlides: Slide[] = [
     sectionIndex: 1,
     duration: 2,
     title: 'Session Goals',
-    subtitle: 'What You Will Learn Today',
+    subtitle: 'By the end of this session, you will be able to:',
     talkingPoints: [
-      `**By the end of this session, you will be able to:**`,
-      `**Distinguish** between boundary crossings (gray zones requiring judgment) and boundary violations (bright lines that are never acceptable).`,
-      `**Apply** a 5-Step Decision Tree to real-world boundary dilemmas in your practice, including scenarios specific to rural Michigan healthcare.`,
-      `**Identify** which CMDHD policies apply to common boundary situations (scope of practice, dual relationships, gifts, communication, social media).`,
-      `**Articulate** when and how to consult your supervisor about boundary concerns using structured communication.`,
-      `**Commit** to one specific, measurable boundary practice change you will implement this month.`
+      `<strong>Distinguish</strong> between boundary crossings (gray zones requiring judgment) and boundary violations (bright lines that are never acceptable).`,
+      `<strong>Apply</strong> a 5-Step Decision Tree to real-world boundary dilemmas in your practice, including scenarios specific to rural Michigan healthcare.`,
+      `<strong>Identify</strong> which CMDHD policies apply to common boundary situations (scope of practice, dual relationships, gifts, communication, social media).`,
+      `<strong>Articulate</strong> when and how to consult your supervisor about boundary concerns using structured communication.`,
+      `<strong>Commit</strong> to one specific, measurable boundary practice change you will implement this month.`
     ],
     facilitatorNotes: [
       `Objective: Orient participants to measurable learning objectives and outcomes`,
@@ -171,12 +169,12 @@ export const presentationSlides: Slide[] = [
     title: 'Why Boundaries Matter',
     subtitle: 'The Foundation of Ethical Healthcare Practice',
     talkingPoints: [
-      `**Ethical Foundation**: Boundaries uphold the four core principles of healthcare ethics—autonomy (client choice), beneficence (acting in their best interest), non-maleficence (doing no harm), and justice (fair treatment).`,
-      `**Power Differential**: Professional boundaries acknowledge and protect against the inherent power imbalance between provider and client. You have access to sensitive information, professional authority, and influence—boundaries ensure this power serves healing, not harm.`,
-      `**Trust & Predictability**: Boundaries create consistency. Clients know what to expect, which builds safety. Safety enables vulnerability. Vulnerability allows healing. This is the therapeutic foundation.`,
-      `**Rural Reality**: In small communities, boundary challenges are "inevitable and ubiquitous" (research shows this is the #1 ethical concern for rural mental health providers). This training equips you to navigate these overlaps with transparency and integrity.`,
-      `**Provider Well-Being**: Boundaries aren\'t just about client protection—they prevent burnout, compassion fatigue, and vicarious trauma. Sustainable care requires sustainable boundaries.`,
-      `**Clarity is Kindness**: Clear boundaries reduce confusion, prevent resentment, and model healthy relationships. When you say "no" to what's outside your role, you preserve capacity to say "yes" to what's within it.`
+      `<strong>Ethical Foundation:</strong> Boundaries uphold the four core principles of healthcare ethics—autonomy (client choice), beneficence (acting in their best interest), non-maleficence (doing no harm), and justice (fair treatment).`,
+      `<strong>Power Differential:</strong> Professional boundaries acknowledge and protect against the inherent power imbalance between provider and client. You have access to sensitive information, professional authority, and influence—boundaries ensure this power serves healing, not harm.`,
+      `<strong>Trust & Predictability:</strong> Boundaries create consistency. Clients know what to expect, which builds safety. Safety enables vulnerability. Vulnerability allows healing. This is the therapeutic foundation.`,
+      `<strong>Rural Reality:</strong> In small communities, boundary challenges are "inevitable and ubiquitous" (research shows this is the #1 ethical concern for rural mental health providers). This training equips you to navigate these overlaps with transparency and integrity.`,
+      `<strong>Provider Well-Being:</strong> Boundaries aren\'t just about client protection—they prevent burnout, compassion fatigue, and vicarious trauma. Sustainable care requires sustainable boundaries.`,
+      `<strong>Clarity is Kindness:</strong> Clear boundaries reduce confusion, prevent resentment, and model healthy relationships. When you say "no" to what's outside your role, you preserve capacity to say "yes" to what's within it.`
     ],
     facilitatorNotes: [
       `Objective: Link emotional reflection to ethical clarity and professional sustainability`,
@@ -935,6 +933,29 @@ export const presentationSlides: Slide[] = [
     type: 'content',
     section: 'Gray Zone Lab',
     sectionIndex: 8,
+    duration: 5,
+    title: 'County-Specific Scenarios',
+    talkingPoints: [
+      'Each county in our district faces unique relational challenges and boundary pressures.',
+      'Form small groups by county and discuss your assigned scenario:',
+      '• <strong>Arenac County:</strong> "Everyone knows everyone" — tight-knit communities where anonymity is impossible',
+      '• <strong>Clare/Gladwin:</strong> Limited resources — long waitlists and few alternative providers create pressure to overextend',
+      '• <strong>Isabella County:</strong> Campus and tribal contexts — multiple overlapping communities with diverse populations',
+      '• <strong>Osceola/Roscommon:</strong> Rural overlaps — high senior populations and provider shortages',
+      'Use the 5-Step Decision Tree to work through your county\'s scenario.',
+      'Consider: What policies apply? What are the risks? What would you document?'
+    ],
+    facilitatorNotes: [
+      'Allow 3-4 minutes for group discussion by county',
+      'Circulate to ensure groups are applying the decision tree framework',
+      'Prepare to facilitate whole-group debrief in next slide'
+    ]
+  },
+  {
+    id: 33,
+    type: 'content',
+    section: 'Gray Zone Lab',
+    sectionIndex: 8,
     duration: 3,
     title: 'Shared Lessons',
     talkingPoints: [
@@ -956,9 +977,9 @@ export const presentationSlides: Slide[] = [
     ]
   },
 
-  // Section 9: Documentation & Consultation (Slides 33-34)
+  // Section 9: Documentation & Consultation (Slides 34-35)
   {
-    id: 33,
+    id: 34,
     type: 'content',
     section: 'Decision Tree & Documentation',
     sectionIndex: 9,
@@ -966,15 +987,15 @@ export const presentationSlides: Slide[] = [
     title: 'Supervisor Communication Script',
     subtitle: 'How to Initiate Boundary Consultations',
     talkingPoints: [
-      `**Why Consult?**: Supervision isn't a sign of incompetence—it's evidence-based practice. Research shows that proactive consultation prevents boundary violations, reduces provider anxiety, and improves clinical outcomes.`,
-      `**When to Consult**: Before acting on gray zone situations, when policies seem to conflict, when you feel emotionally pulled, when a client requests something that "feels off," or when county-specific contexts create unique challenges.`,
-      `**Structured Communication Framework** (reduces defensiveness and saves time):`,
-      `• **Situation**: "I'm working with a client who [specific circumstance]."`,
-      `• **Policy Reference**: "I've reviewed Policy #[number] on [topic], and I'm uncertain how it applies here."`,
-      `• **Specific Question**: "I'm considering [option A] vs. [option B]. What factors should guide this decision?"`,
-      `• **Timeline**: "This isn't urgent/This needs decision by [date] because..."`,
-      `**Example Script**: "Hi [Supervisor], I'm assigned to a new client who attends my church and volunteers in the same ministry I do. I've reviewed Policies #4 and #5 on conflicts of interest and dual relationships. Given the 6-week waitlist and this client's high-risk assessment, I'm considering continuing services with documented safeguards versus exploring referral options. Can we discuss this before my next session on Thursday?"`,
-      `**Barriers to Overcome**: "I don't want to bother them" (reframe: you're preventing bigger problems), "I should know this" (reframe: complex situations require collaboration), "They'll think I'm incompetent" (reframe: consultation demonstrates professional judgment).`
+      `<strong>Why Consult?</strong> Supervision isn't a sign of incompetence—it's evidence-based practice. Research shows that proactive consultation prevents boundary violations, reduces provider anxiety, and improves clinical outcomes.`,
+      `<strong>When to Consult:</strong> Before acting on gray zone situations, when policies seem to conflict, when you feel emotionally pulled, when a client requests something that "feels off," or when county-specific contexts create unique challenges.`,
+      `<strong>Structured Communication Framework</strong> (reduces defensiveness and saves time):`,
+      `• <strong>Situation:</strong> "I'm working with a client who [specific circumstance]."`,
+      `• <strong>Policy Reference:</strong> "I've reviewed Policy #[number] on [topic], and I'm uncertain how it applies here."`,
+      `• <strong>Specific Question:</strong> "I'm considering [option A] vs. [option B]. What factors should guide this decision?"`,
+      `• <strong>Timeline:</strong> "This isn't urgent/This needs decision by [date] because..."`,
+      `<strong>Example Script:</strong> "Hi [Supervisor], I'm assigned to a new client who attends my church and volunteers in the same ministry I do. I've reviewed Policies #4 and #5 on conflicts of interest and dual relationships. Given the 6-week waitlist and this client's high-risk assessment, I'm considering continuing services with documented safeguards versus exploring referral options. Can we discuss this before my next session on Thursday?"`,
+      `<strong>Barriers to Overcome:</strong> "I don't want to bother them" (reframe: you're preventing bigger problems), "I should know this" (reframe: complex situations require collaboration), "They'll think I'm incompetent" (reframe: consultation demonstrates professional judgment).`
     ],
     facilitatorNotes: [
       `Normalize consultation: "Your supervisor would rather hear about 50 gray zones that turn out fine than miss the one that becomes a problem."`,
@@ -983,7 +1004,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 34,
+    id: 35,
     type: 'content',
     section: 'Decision Tree & Documentation',
     sectionIndex: 9,
@@ -991,18 +1012,18 @@ export const presentationSlides: Slide[] = [
     title: 'Documentation Template Walk-Through',
     subtitle: 'Your Safety Net in Writing',
     talkingPoints: [
-      `**Why Document?**: Professional documentation is your protection against allegations, misunderstandings, and liability. It demonstrates thoughtful clinical reasoning and adherence to ethical standards.`,
-      `**What to Document** (for boundary-relevant situations):`,
-      `• **Situation**: What occurred/was requested? (Objective, factual description)`,
-      `• **Policy Consulted**: "Reviewed CMDHD Professional Boundaries Policy #[X]"`,
-      `• **Clinical Reasoning**: Why did you make this decision? What factors did you consider?`,
-      `• **Supervision**: "Consulted with [Supervisor Name] on [Date]. Guidance: [specific recommendation]."`,
-      `• **Client Response**: How did the client react to your boundary decision?`,
-      `• **Action Taken**: What specific steps did you implement? Follow-up plan?`,
-      `**Example Documentation**:`,
+      `<strong>Why Document?</strong> Professional documentation is your protection against allegations, misunderstandings, and liability. It demonstrates thoughtful clinical reasoning and adherence to ethical standards.`,
+      `<strong>What to Document</strong> (for boundary-relevant situations):`,
+      `• <strong>Situation:</strong> What occurred/was requested? (Objective, factual description)`,
+      `• <strong>Policy Consulted:</strong> "Reviewed CMDHD Professional Boundaries Policy #[X]"`,
+      `• <strong>Clinical Reasoning:</strong> Why did you make this decision? What factors did you consider?`,
+      `• <strong>Supervision:</strong> "Consulted with [Supervisor Name] on [Date]. Guidance: [specific recommendation]."`,
+      `• <strong>Client Response:</strong> How did the client react to your boundary decision?`,
+      `• <strong>Action Taken:</strong> What specific steps did you implement? Follow-up plan?`,
+      `<strong>Example Documentation:</strong>`,
       `"Client requested ride to medical appointment due to transportation barrier (Policy #2: Scope of Practice). Explained that transporting clients is outside my professional role. Collaborated with client to problem-solve: called clinic to explain situation and request appointment hold; contacted Medicaid transport for emergency pickup (arrived within 45 minutes). Client expressed initial frustration but appreciation for problem-solving. Documented transportation barriers for care coordination team. Plan: Establish transportation backup plan in next session."`,
-      `**Language Tips**: Use neutral, descriptive, non-judgmental language. Avoid: "Client was manipulative." Use: "Client expressed strong preference for immediate assistance and difficulty accepting alternative options."`,
-      `**Your Safety Net**: If a boundary question ever becomes a complaint or legal issue, your contemporaneous documentation is your best defense. Chart it, date it, sign it.`
+      `<strong>Language Tips:</strong> Use neutral, descriptive, non-judgmental language. Avoid: "Client was manipulative." Use: "Client expressed strong preference for immediate assistance and difficulty accepting alternative options."`,
+      `<strong>Your Safety Net:</strong> If a boundary question ever becomes a complaint or legal issue, your contemporaneous documentation is your best defense. Chart it, date it, sign it.`
     ],
     facilitatorNotes: [
       `Provide handout: One-page documentation template with the 6 elements listed above.`,
@@ -1011,9 +1032,9 @@ export const presentationSlides: Slide[] = [
     ]
   },
 
-  // Section 10: Closing & Commitments (Slides 35-38)
+  // Section 10: Closing & Commitments (Slides 36-39)
   {
-    id: 35,
+    id: 36,
     type: 'content',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1021,12 +1042,12 @@ export const presentationSlides: Slide[] = [
     title: 'Summary of Key Points',
     subtitle: 'What to Remember & Apply',
     talkingPoints: [
-      `**Boundaries Protect Everyone**: They uphold ethical principles, protect power differentials, and preserve therapeutic effectiveness for clients, organizations, and professionals.`,
-      `**Rural Complexity is Manageable**: Dual relationships are inevitable—manage them through transparency, documentation, and supervision rather than avoidance.`,
-      `**Use the 5-Step Decision Tree**: Check role & scope → Scan for conflict → Confirm consent → Check time & channel → Document & debrief. If unsure on any step, consult first.`,
-      `**Supervision Strengthens Practice**: Consulting supervisors about gray zones demonstrates professional judgment and prevents boundary violations.`,
-      `**Documentation is Protection**: Chart decisions, policy consultations, reasoning, and outcomes using neutral, objective language.`,
-      `**Know Your Boundaries**: Some are absolute (no sexual relationships, no transporting). Others require judgment (gifts, encounters). Clarity is kindness.`
+      `<strong>Boundaries Protect Everyone:</strong> They uphold ethical principles, protect power differentials, and preserve therapeutic effectiveness for clients, organizations, and professionals.`,
+      `<strong>Rural Complexity is Manageable:</strong> Dual relationships are inevitable—manage them through transparency, documentation, and supervision rather than avoidance.`,
+      `<strong>Use the 5-Step Decision Tree:</strong> Check role & scope → Scan for conflict → Confirm consent → Check time & channel → Document & debrief. If unsure on any step, consult first.`,
+      `<strong>Supervision Strengthens Practice:</strong> Consulting supervisors about gray zones demonstrates professional judgment and prevents boundary violations.`,
+      `<strong>Documentation is Protection:</strong> Chart decisions, policy consultations, reasoning, and outcomes using neutral, objective language.`,
+      `<strong>Know Your Boundaries:</strong> Some are absolute (no sexual relationships, no transporting). Others require judgment (gifts, encounters). Clarity is kindness.`
     ],
     facilitatorNotes: [
       `Pause for questions: "What's one principle from today that will change how you approach boundary situations?"`,
@@ -1034,7 +1055,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 36,
+    id: 37,
     type: 'reflection',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1056,7 +1077,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 37,
+    id: 38,
     type: 'content',
     section: 'Closing & Commitments',
     sectionIndex: 10,
@@ -1064,16 +1085,16 @@ export const presentationSlides: Slide[] = [
     title: 'Evaluation & Feedback',
     subtitle: 'Your Voice Shapes Future Learning',
     talkingPoints: [
-      `**Why Your Feedback Matters**: Adult learning research shows that learner feedback is essential for continuous improvement. Your perspective as a rural healthcare professional helps us refine content, adjust examples, and address gaps we might have missed.`,
-      `**What We'll Do With It**: Your feedback directly informs future training revisions, supervisor coaching, and CMDHD's professional development priorities. Anonymous feedback will be aggregated and shared with leadership to support ongoing ethics education.`,
-      `**Evaluation Questions** (2-3 minutes):`,
+      `<strong>Why Your Feedback Matters:</strong> Adult learning research shows that learner feedback is essential for continuous improvement. Your perspective as a rural healthcare professional helps us refine content, adjust examples, and address gaps we might have missed.`,
+      `<strong>What We'll Do With It:</strong> Your feedback directly informs future training revisions, supervisor coaching, and CMDHD's professional development priorities. Anonymous feedback will be aggregated and shared with leadership to support ongoing ethics education.`,
+      `<strong>Evaluation Questions</strong> (2-3 minutes):`,
       `• Which learning objective was most valuable to your practice?`,
       `• What boundary challenge do you still have questions about?`,
       `• How would you rate the relevance of scenarios to rural Michigan contexts?`,
       `• What one thing would improve this training?`,
-      `**QR Code Access**: Scan the code on screen—no login required. Your responses are anonymous unless you choose to share your name for follow-up support.`,
-      `**Reflection Prompt**: In one word, what are you leaving with today? (Clarity? Questions? Tools? Confidence? Overwhelmed? Relief?)`,
-      `**Thank You**: Your commitment to ethical practice matters. Your willingness to engage with difficult boundary questions protects clients, supports colleagues, and strengthens our community's healthcare.`
+      `<strong>QR Code Access:</strong> Scan the code on screen—no login required. Your responses are anonymous unless you choose to share your name for follow-up support.`,
+      `<strong>Reflection Prompt:</strong> In one word, what are you leaving with today? (Clarity? Questions? Tools? Confidence? Overwhelmed? Relief?)`,
+      `<strong>Thank You:</strong> Your commitment to ethical practice matters. Your willingness to engage with difficult boundary questions protects clients, supports colleagues, and strengthens our community's healthcare.`
     ],
     facilitatorNotes: [
       `Display QR code prominently on screen throughout this slide.`,
@@ -1082,7 +1103,7 @@ export const presentationSlides: Slide[] = [
     ]
   },
   {
-    id: 38,
+    id: 39,
     type: 'quote',
     section: 'Closing & Commitments',
     sectionIndex: 10,

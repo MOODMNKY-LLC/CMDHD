@@ -19,6 +19,9 @@ out
 .env
 .env.*.local
 
+# Cursor MCP config (contains secrets)
+.cursor/mcp.json
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

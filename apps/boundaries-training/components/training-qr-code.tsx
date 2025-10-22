@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import QRCode from "react-qr-code";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -17,10 +18,16 @@ export function TrainingQRCode({
   description = "Scan to join training on your phone"
 }: TrainingQRCodeProps) {
   // Get base URL from environment or use fallback
-  const baseUrl = 
-    process.env.NEXT_PUBLIC_BASE_URL || 
-    (typeof window !== 'undefined' && window.location.origin) ||
-    'http://localhost:3000';
+  const [baseUrl, setBaseUrl] = useState(
+    process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+  );
+  
+  // Update base URL on client side only to avoid hydration mismatch
+  useEffect(() => {
+    if (!process.env.NEXT_PUBLIC_BASE_URL && typeof window !== 'undefined') {
+      setBaseUrl(window.location.origin);
+    }
+  }, []);
   
   const signUpUrl = `${baseUrl}/auth/sign-up`;
 
@@ -61,10 +68,16 @@ export function TrainingQRCode({
  * Optimized for scanning from distance
  */
 export function PresentationQRCode() {
-  const baseUrl = 
-    process.env.NEXT_PUBLIC_BASE_URL || 
-    (typeof window !== 'undefined' && window.location.origin) ||
-    'http://localhost:3000';
+  const [baseUrl, setBaseUrl] = useState(
+    process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+  );
+  
+  // Update base URL on client side only to avoid hydration mismatch
+  useEffect(() => {
+    if (!process.env.NEXT_PUBLIC_BASE_URL && typeof window !== 'undefined') {
+      setBaseUrl(window.location.origin);
+    }
+  }, []);
   
   const signUpUrl = `${baseUrl}/auth/sign-up`;
 
