@@ -3,7 +3,7 @@
 # Coolify points to this app directory
 
 [phases.setup]
-nixPkgs = ["nodejs-22_x"]
+nixPkgs = ["nodejs_20"]
 
 [phases.install]
 cmds = [

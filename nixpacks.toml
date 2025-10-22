@@ -1,6 +1,6 @@
 # Nixpacks configuration for CMDHD Turborepo monorepo
 [phases.setup]
-nixPkgs = ["nodejs-22_x"]
+nixPkgs = ["nodejs_20"]
 aptPkgs = []
 
 [phases.install]
